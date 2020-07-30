@@ -27,6 +27,8 @@ $semestre = $_POST['semestre'];
 $ano = $_POST['ano'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
+$nivel = 1;
+$pontuacao = 0;
 
 
 $extensao = strtolower(substr($_FILES['foto']['name'], -4));
@@ -59,7 +61,7 @@ if(mysqli_num_rows($select) > 0){
   <?php
         die;
     }else{
-        $query = "INSERT INTO cadastro (nome,dataNasc,curso,matricula,semestre,ano,email,senha,foto, avatar) VALUES ('$nome','$dataNasc','$curso','$matricula','$semestre','$ano','$email','$senha','$novo_nome', '$avatar')";
+        $query = "INSERT INTO cadastro (nome,dataNasc,curso,matricula,semestre,ano,email,senha,foto, avatar, nivel, pontuacao) VALUES ('$nome','$dataNasc','$curso','$matricula','$semestre','$ano','$email','$senha','$novo_nome', '$avatar', $nivel, $pontuacao)";
         $insert = mysqli_query($connect,$query);
 
     if($insert){

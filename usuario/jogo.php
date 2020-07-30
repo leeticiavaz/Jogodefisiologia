@@ -31,6 +31,8 @@ while ($dados = mysqli_fetch_array($foto)) {
 
 $resultFoto = $dados['foto'];
 
+$nivel = $dados['nivel'];
+
 
 
 ?>
@@ -60,43 +62,187 @@ $resultFoto = $dados['foto'];
 <br>
 <div class="container">
   <div class="row">
+    <div class="col s6 m6">
      <div align="left">
         <div class="btn-large">
-         <a href="#">Fase 1</a>
+         <a href="../fases/fase1/nivel1.php" style="color: black"><i class="material-icons left">lock_open</i>Fase 1</a>
        </div>
        <br>
        <br>
        <br>
        <br>
-       <br>
-       <div class=" col s12 m6 push-m1">
-         <div class="btn-large">
-         <a href="#">Fase 2</a>
-         </div>
-       <br>
-       <br>
-       <br>
-       <br>
-           <div class=" col s12 m6 push-m1">
-           <div class="btn-large" >
-           <a href="#">Fase 3</a>
-           </div>
-           </div>
-        </div>
-       <br>
-       <br>
-       
-       <div class="btn-large">
-         <a href="#">Fase 4</a>
-       </div>
-       
+      <?php 
+      if ($nivel < 2) {
+      ?>
+      <div class="btn-large red">
+      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i> Fase 2</a>
+      </div>
+      <?php
+      }else{ 
+      ?>
+      <div class="btn-large">
+      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 2</a>
+      </div>
+      <?php
+      }
+      ?>
        <br>
        <br>
-       <div class="btn-large">
-         <a href="#">Fase 5</a>
-       </div>
+       <br>
+       <br>
+      <?php 
+      if ($nivel < 3) {
+      ?>
+      <div class="btn-large red">
+      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 3</a>
+      </div>
+      <?php
+      }else{ 
+      ?>
+      <div class="btn-large">
+      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 3</a>
+      </div>
+      <?php
+      }
+      ?>
+       <br>
+       <br>
+       <br>
+       <br>
+       <?php 
+      if ($nivel < 4) {
+      ?>
+      <div class="btn-large red">
+      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 4</a>
+      </div>
+      <?php
+      }else{ 
+      ?>
+      <div class="btn-large">
+      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 4</a>
+      </div>
+      <?php
+      }
+      ?>
+       <br>
+       <br>
+       <br>
+       <br>
+       <?php 
+      if ($nivel < 5) {
+      ?>
+      <div class="btn-large red">
+      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 5</a>
+      </div>
+      <?php
+      }else{ 
+      ?>
+      <div class="btn-large">
+      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 5</a>
+      </div>
+      <?php
+      }
+      ?>
      </div>
    </div>
+
+   <div class="col s6 m6">
+    <div align="right">
+         <?php 
+      if ($nivel < 6) {
+      ?>
+      <div class="btn-large red">
+      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 6</a>
+      </div>
+      <?php
+      }else{ 
+      ?>
+      <div class="btn-large">
+      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 6</a>
+      </div>
+      <?php
+      }
+      ?>
+       <br>
+       <br>
+       <br>
+       <br>
+       <?php 
+      if ($nivel < 7) {
+      ?>
+      <div class="btn-large red">
+      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 7</a>
+      </div>
+      <?php
+      }else{ 
+      ?>
+      <div class="btn-large">
+      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 7</a>
+      </div>
+      <?php
+      }
+      ?>
+       <br>
+       <br>
+       <br>
+       <br>
+       <?php 
+      if ($nivel < 8) {
+      ?>
+      <div class="btn-large red">
+      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 8</a>
+      </div>
+      <?php
+      }else{ 
+      ?>
+      <div class="btn-large">
+      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 8</a>
+      </div>
+      <?php
+      }
+      ?>
+       <br>
+       <br>
+       <br>
+       <br>
+        <?php 
+      if ($nivel < 9) {
+      ?>
+      <div class="btn-large red">
+      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 9</a>
+      </div>
+      <?php
+      }else{ 
+      ?>
+      <div class="btn-large">
+      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 9</a>
+      </div>
+      <?php
+      }
+      ?>
+       <br>
+       <br>
+       <br>
+       <br>
+        <?php 
+      if ($nivel < 10) {
+      ?>
+      <div class="btn-large red">
+      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 10</a>
+      </div>
+      <?php
+      }else{ 
+      ?>
+      <div class="btn-large">
+      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 10</a>
+      </div>
+      <?php
+      }
+      ?>
+     </div>
+   </div>
+
+ </div>
 </div>
 
 <?php

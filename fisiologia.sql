@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Jul-2020 às 23:50
+-- Generation Time: 31-Jul-2020 às 00:35
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -38,8 +38,10 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
   `senha` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `foto` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `avatar` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `nivel` int(11) NOT NULL,
+  `pontuacao` int(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
