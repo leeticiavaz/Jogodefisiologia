@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="../materialize/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
+<!--
 <body style="background-image: url('../back2.jpg'); background-repeat: no-repeat; background-size: 100%;">
+-->
+<body>  
 	<script type="text/javascript">
   $(document).ready(function(){
     $('.sidenav').sidenav();
@@ -27,9 +30,9 @@ require "../bd.php";
 $sql = "SELECT * FROM cadastro WHERE email='$email'";
 $foto = mysqli_query($connect, $sql);
 if(mysqli_num_rows($foto) > 0){ 
-while ($dados = mysqli_fetch_array($foto)) { 
+while ($dados = mysqli_fetch_array($foto)) {
 
-$resultFoto = $dados['foto'];
+
 
 $nivel = $dados['nivel'];
 
@@ -48,7 +51,7 @@ $nivel = $dados['nivel'];
 <ul id="slide-out" class="sidenav" style="background-color: #fb8c00;">
     <li>
       <div class="user-view">
-      <img  class="circle" style="width: 240px; height: 240px;" src="../fotos/<?php echo $resultFoto; ?>">
+      
       <span class="white-text name" style="font-family: arial; font-weight: bold; font-size: 20px;">
       <blockquote><?php echo "$nome" ?> </blockquote>
       </span>
@@ -58,192 +61,130 @@ $nivel = $dados['nivel'];
       </div>
    </li>
 </ul>
-<br>
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col s6 m6">
-     <div align="left">
-        <div class="btn-large">
-         <a href="../fases/fase1/nivel1.php" style="color: black"><i class="material-icons left">lock_open</i>Fase 1</a>
-       </div>
-       <br>
-       <br>
-       <br>
-       <br>
-      <?php 
-      if ($nivel < 2) {
-      ?>
-      <div class="btn-large red">
-      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i> Fase 2</a>
-      </div>
-      <?php
-      }else{ 
-      ?>
-      <div class="btn-large">
-      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 2</a>
-      </div>
-      <?php
-      }
-      ?>
-       <br>
-       <br>
-       <br>
-       <br>
-      <?php 
-      if ($nivel < 3) {
-      ?>
-      <div class="btn-large red">
-      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 3</a>
-      </div>
-      <?php
-      }else{ 
-      ?>
-      <div class="btn-large">
-      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 3</a>
-      </div>
-      <?php
-      }
-      ?>
-       <br>
-       <br>
-       <br>
-       <br>
-       <?php 
-      if ($nivel < 4) {
-      ?>
-      <div class="btn-large red">
-      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 4</a>
-      </div>
-      <?php
-      }else{ 
-      ?>
-      <div class="btn-large">
-      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 4</a>
-      </div>
-      <?php
-      }
-      ?>
-       <br>
-       <br>
-       <br>
-       <br>
-       <?php 
-      if ($nivel < 5) {
-      ?>
-      <div class="btn-large red">
-      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 5</a>
-      </div>
-      <?php
-      }else{ 
-      ?>
-      <div class="btn-large">
-      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 5</a>
-      </div>
-      <?php
-      }
-      ?>
-     </div>
-   </div>
 
-   <div class="col s6 m6">
-    <div align="right">
-         <?php 
-      if ($nivel < 6) {
-      ?>
-      <div class="btn-large red">
-      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 6</a>
-      </div>
-      <?php
-      }else{ 
-      ?>
-      <div class="btn-large">
-      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 6</a>
-      </div>
-      <?php
-      }
-      ?>
-       <br>
-       <br>
-       <br>
-       <br>
-       <?php 
-      if ($nivel < 7) {
-      ?>
-      <div class="btn-large red">
-      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 7</a>
-      </div>
-      <?php
-      }else{ 
-      ?>
-      <div class="btn-large">
-      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 7</a>
-      </div>
-      <?php
-      }
-      ?>
-       <br>
-       <br>
-       <br>
-       <br>
-       <?php 
-      if ($nivel < 8) {
-      ?>
-      <div class="btn-large red">
-      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 8</a>
-      </div>
-      <?php
-      }else{ 
-      ?>
-      <div class="btn-large">
-      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 8</a>
-      </div>
-      <?php
-      }
-      ?>
-       <br>
-       <br>
-       <br>
-       <br>
-        <?php 
-      if ($nivel < 9) {
-      ?>
-      <div class="btn-large red">
-      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 9</a>
-      </div>
-      <?php
-      }else{ 
-      ?>
-      <div class="btn-large">
-      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 9</a>
-      </div>
-      <?php
-      }
-      ?>
-       <br>
-       <br>
-       <br>
-       <br>
-        <?php 
-      if ($nivel < 10) {
-      ?>
-      <div class="btn-large red">
-      <a href="#" style="color: black"><i class="material-icons left">lock_outline</i>Fase 10</a>
-      </div>
-      <?php
-      }else{ 
-      ?>
-      <div class="btn-large">
-      <a href="#" style="color: black"><i class="material-icons left">lock_open</i>Fase 10</a>
-      </div>
-      <?php
-      }
-      ?>
-     </div>
-   </div>
 
- </div>
-</div>
+
+<map name="rotas"> 
+       
+      <?php 
+      if ($nivel == 1) {
+      ?>
+      <img src="../back/back1.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <?php
+      } 
+      if ($nivel == 2) {
+      ?>
+      <img src="../back/back2.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="163, 162, 331, 236" href="../fases/fase1/nivel1.php" />
+      <?php
+      }
+      if ($nivel == 3) {
+      ?>
+      <img src="../back/back3.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="163, 162, 331, 236" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="230, 286, 401, 355" href="../fases/fase1/nivel1.php" />
+      <?php
+      }
+    
+      if ($nivel == 4) {
+      ?>
+      <img src="../back/back4.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="163, 162, 331, 236" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="230, 286, 401, 355" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="337, 382, 509, 459" href="../fases/fase1/nivel1.php" />
+      <?php
+      }
+       
+      if ($nivel == 5) {
+      ?>
+      <img src="../back/back5.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="163, 162, 331, 236" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="230, 286, 401, 355" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="337, 382, 509, 459" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="352, 506, 540, 586" href="../fases/fase1/nivel1.php" />
+      <?php
+      }
+      
+      if ($nivel == 6) {
+      ?>
+      <img src="../back/back6.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="163, 162, 331, 236" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="230, 286, 401, 355" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="337, 382, 509, 459" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="352, 506, 540, 586" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="666, 511, 839, 581" href="../fases/fase1/nivel1.php" />
+      <?php
+      }
+        
+      if ($nivel == 7) {
+      ?>
+      <img src="../back/back7.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="163, 162, 331, 236" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="230, 286, 401, 355" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="337, 382, 509, 459" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="352, 506, 540, 586" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="666, 511, 839, 581" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="661, 381, 840, 461" href="../fases/fase1/nivel1.php" />
+      <?php
+      }
+         
+      if ($nivel == 8) {
+      ?>
+      <img src="../back/back8.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="163, 162, 331, 236" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="230, 286, 401, 355" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="337, 382, 509, 459" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="352, 506, 540, 586" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="666, 511, 839, 581" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="661, 381, 840, 461" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="703, 281, 878, 361" href="../fases/fase1/nivel1.php" />
+      <?php
+      }
+
+      if ($nivel == 9) {
+      ?>
+      <img src="../back/back9.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="163, 162, 331, 236" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="230, 286, 401, 355" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="337, 382, 509, 459" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="352, 506, 540, 586" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="666, 511, 839, 581" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="661, 381, 840, 461" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="703, 281, 878, 361" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="840, 192, 1015, 267" href="../fases/fase1/nivel1.php" />
+      <?php
+      }
+
+      if ($nivel == 10) {
+      ?>
+      <img src="../back/back10.jpg" id="back" usemap="#rotas">
+      <area shape="rect" alt="botao1" coords="93, 53, 274, 133" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="163, 162, 331, 236" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="230, 286, 401, 355" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="337, 382, 509, 459" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="352, 506, 540, 586" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="666, 511, 839, 581" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="661, 381, 840, 461" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="703, 281, 878, 361" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="840, 192, 1015, 267" href="../fases/fase1/nivel1.php" />
+      <area shape="rect" alt="botao1" coords="1022, 117, 1200, 193" href="../fases/fase1/nivel1.php" />
+      <?php
+      }
+      ?>
+   
+
+
+
+</map>
 
 <?php
 }

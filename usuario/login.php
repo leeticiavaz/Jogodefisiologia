@@ -21,35 +21,47 @@
   </nav>
 <br>
 
-<div class="container">
-  <div class="row">
-     <p align="center">
-      <b><a class="waves-effect waves-light btn-large indigo darken-4" style="height: 70px; width: 300px; font-size: 300%">Login
-      </b></a>
-    </p>
-  </div>
-</div>
 
 
-<div class="container">
-  <div class="row">
-    <form action="../actions/logar.php" method="post">
 
-    	<div align="center">
-    		<div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Email * </p></div>
+
+    <div class="row">
+    <div class="col s12 m6 push-m3">
+      <div class="card white">
+        <nav>
+          <div class="nav-wrapper #4a148c purple darken-4">
+           <a class="brand-logo center">Login</a>
+           </div>
+  </nav>
+        <div class="card-content white-text">
+          
+          <form action="../actions/logar.php" method="post">
+
+        <div align="center">
+        <div id="font" align="center"> <p style=" color: black; font-size: 30px; font-weight: bold; text-align: left;"> Email * </p></div>
         <input placeholder="Digite aqui seu email" id="text2" name="email" type="email" class="validate" required>
         <br>
-        <div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Senha * </p></div>
+        <br>
+        <div id="font" align="center"> <p style=" color: black; font-size: 30px; font-weight: bold; text-align: left;"> Senha * </p></div>
         <input placeholder="Digite aqui seu email" id="text2" name="senha" type="password" class="validate" required>
-    	</div>
+        </div>
 
-    	<br><br>
+        <br><br>
 
-    	<div align="center">
-    <button class="btn-large waves-effect waves-light #2e7d32 green darken-3" type="submit" name="sub" style="width: 26%; height: 70px"><div style="font-size: 300%"><b>Entrar</b></div></button>
-</div>
+        <div align="center">
+         <button  type="submit" name="sub" style="width: 100%; height: 70px; background-color: green;"><div style="font-size: 300%; color: white;"><b>Entrar</b></div></button>
+        </div>
 
-</form>
+            </form>
+        </div>
+      </div>
+    </div>
+   </div>
+
+
+<div class="container">
+  <div class="row">
+    
 </div>
 </div>
 

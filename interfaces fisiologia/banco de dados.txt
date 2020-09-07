@@ -1,0 +1,14 @@
+database: fisiologia
+tabela: questoes
+
+id(11) int not null auto increment primary_key
+nivel(2) int not null
+fase(2) int not null
+texto(text)
+opcao1(text)
+opcao2(text)
+opcao3(text)
+opcao4(text)
+opcao5(text)
+textoajuda(text)
+correta(1) int

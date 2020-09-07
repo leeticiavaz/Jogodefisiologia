@@ -32,117 +32,119 @@
 <div class="container">
   <div class="row">
     <form action="../actions/cadastrar.php" method="post" enctype="multipart/form-data">
-    <div class="col s6">
-
-    
-      <div align="center">
-        <div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Nome completo * </p> </div>
-        <input placeholder="Digite aqui seu nome completo" id="text2" name="nome" type="text" class="validate" required>
-      </div> 
-
-      <div align="center">
-        <div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Data de nascimento * </p></div>
-        <input id="text2" placeholder="Clique aqui" name="dataNasc" type="date"  required>
-      </div>
-
-      <div align="center">
-        <div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Curso: * </p></div>
-          <input placeholder="Digite aqui seu curso" id="text2" name="curso" type="text" class="validate" required>
-      </div>
-
-      <div align="center">
-        <div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Matricula: * </p></div>
-          <input placeholder="Digite aqui sua matrícula" id="text2" name="matricula" type="text" class="validate" required>
-      </div>
-
-      <div align="center">
-        <div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Semestre de ingresso: * </p> </div>
-      <div class="input-field col s12 m3 push-m3">
-      <select style="width: 20%" name="semestre" required>
-      <option disabled>Escolha o semestre de ingresso</option>
-      <option value="01" >01</option>
-      <option value="02" >02</option>
-    </select>
-    </div>
-
-    <div class="input-field col s12 m3 push-m3">
-    <select style="width: 20%" name="ano" required>
-      <option disabled>Escolha o Ano</option>
-      <option value="2014" >2014</option>
-      <option value="2015" >2015</option>
-      <option value="2016" >2016</option>
-      <option value="2017" >2017</option>
-      <option value="2018" >2018</option>
-      <option value="2019" >2019</option>
-      <option value="2020" >2020</option>
-    </select>
-      </div>
-    <br>
-    <br>
-    <br>
-    <br>
-
-  </div>
-</div>
-
-  <div class="col s6" align="right">
-
-    <div align="center"><div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Email: * </p></div>
-          <input placeholder="Digite aqui seu email" id="text2" name="email" type="email" class="validate" required></div>
-
-    <div align="center">
-      <div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Senha: * </p></div>
-          <input placeholder="Digite aqui sua senha" id="text2" name="senha" type="password" class="validate" required>
-
-
-      <br>
-
-      <div class="file-field input-field" style="width: 60%">
-        <div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Foto: * </p> </div>
-      <div class="btn indigo darken-4">
-        <span>Anexar</span>
-        <input type="file" name="foto" required>
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text" style="width: 100%; border-radius: 4px; background: #cccccc; border:1px solid #000000;">
-      </div>
-    </div>
-
-    <div id="font" align="center" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;"> <p style=" color: #808080; font-size: 30px"> Escolha seu avatar: * </p></div>
-    <p>
-      <label>
-        <input class="with-gap" name="avatar" type="radio" value="masculino" checked />
-        <span style="color: black">Masculino</span>
-        <img src="avatar1.png" width="70" height="70">
-      </label>
-      <label>
-        <input class="with-gap" name="avatar" type="radio" value="feminino" />
-        <span style="color: black">Feminino</span>
-        <img src="avatar2.png" width="70" height="70">
-      </label>
-    </p>
-    <br>
-    <br>
-    <br>
-    <div align="center">
-      <a target="__blank" href="termo_de_consentimento.php" style="color: blue; text-decoration: underline;">Termos de condição</a>
-      <br>
-      <label>
-        <input type="checkbox" required />
-        <span style="color: black;">Li e aceito os termos de condição</span>
-      </label>
-    </div>
-
-    </div>
    
 
+    <div class="col s12 m6">
+      <div class="card #81d4fa light-blue lighten-3">
+        <div class="card-content white-text">
+          <fieldset style="background-color: white; border-radius: 10px;">
+          <span class="card-title center" style="font-family: arial; font-weight: bold; color: black;">Informações Pessoais</span>
+          <div id="font"> <p style=" color: black; font-size: 20px; font-family: arial;"> Nome completo * </p> </div>
+        <input placeholder="Digite aqui seu nome completo" id="text2" name="nome" type="text" class="validate" required>
+
+        <div align="center">
+        
+        <div id="font" align="center"> <p style=" color: black; font-size: 20px; font-family: arial; text-align: left;"> Data de nascimento * </p></div>
+        <input id="text2" placeholder="Clique aqui" name="dataNasc" type="date"  required>
+        </div>
+        </fieldset>
+        <br>
+        <fieldset style="background-color: white; border-radius: 10px;">
+        <span class="card-title center" style="font-family: arial; font-weight: bold; color: black;"> Informações de Conta</span>
+        <div align="center"><div id="font" align="center"> <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Email: * </p></div>
+          <input placeholder="Digite aqui seu email" id="text2" name="email" type="email" class="validate" required></div>
+
+        <div id="font" align="center"> <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Senha: * </p></div>
+          <input placeholder="Digite aqui sua senha" id="text2" name="senha" type="password" class="validate" required>
+        <br> <br><br>
+        <a target="__blank" href="termo_de_consentimento.php" style="color: blue; text-decoration: underline;">Termos de condição</a>
+        <br>
+        <label>
+        <input type="checkbox" required />
+        <span style="color: black;">Li e aceito os termos de condição</span>
+        </label>
+        <br>
+        
+        </fieldset>
+        </div>
+      </div>
+    </div>
+
+
+ <div class="col s12 m6">
+      <div class="card #81d4fa light-blue lighten-3">
+        <div class="card-content white-text">
+          <fieldset style="background-color: white; border-radius: 10px;">
+          <span class="card-title" style="font-family: arial; font-weight: bold; color: black;">Informações do Curso</span>
+
+          <div id="font" align="center"> <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Curso: * </p></div>
+          <input placeholder="Digite aqui seu curso" id="text2" name="curso" type="text" class="validate" required>
+         
+          <div id="font" align="center"> 
+          <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Matricula: * </p></div>
+          <input placeholder="Digite aqui sua matrícula" id="text2" name="matricula" type="text" class="validate" required>
+
+          <div id="font" align="center"> <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Semestre de ingresso: * </p> </div>
+            <div class="input-field col s12 m3 push-m1">
+            <select style="width: 20%" name="semestre" required>
+            <option disabled>Escolha o semestre de ingresso</option>
+            <option value="01" >01</option>
+            <option value="02" >02</option>
+            </select>
+            </div>
+           <br> <br><br><br>
+            <div id="font" align="center"> <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Escolha o ano: * </p> </div>
+            <div class="input-field col s12 m3 push-m1">
+            <select name="ano" required>
+            <option disabled>Escolha o Ano</option>
+            <option value="2014" >2014</option>
+            <option value="2015" >2015</option>
+            <option value="2016" >2016</option>
+            <option value="2017" >2017</option>
+            <option value="2018" >2018</option>
+            <option value="2019" >2019</option>
+            <option value="2020" >2020</option>
+            </select>
+            </div>
+            <br> <br><br><br>
+            <div id="font" align="center"> <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Escolha seu avatar: * </p></div>
+            <p>
+              <label>
+                <input class="with-gap" name="avatar" type="radio" value="masculino" checked />
+                <span style="color: black">Masculino</span>
+                <img src="avatar1.png" width="70" height="70" class="circle">
+              </label>
+              <label>
+                <input class="with-gap" name="avatar" type="radio" value="feminino" />
+                <span style="color: black">Feminino</span>
+                <img src="avatar2.png" width="70" height="70" class="circle">
+              </label>
+            </p>
+            <input type="hidden" name="fase" value="1">
+         </fieldset>
+        </div>
+      </div>
+    </div>
+
+      
+    
+    <br>
+    <br>
+    <br>
+    <br>
+
   </div>
+
+
+   
 
     <br>
     </div>
-<div align="center">
+    <div align="center">
+      
     <button class="btn-large waves-effect waves-light #2e7d32 green darken-3" type="submit" name="action" style="width: 24%; height: 70px"><div style="font-size: 300%"><b>Enviar</b></div></button>
-</div>
+     
+    </div>
   </form>
 
   </div>
