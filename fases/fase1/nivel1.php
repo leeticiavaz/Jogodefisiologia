@@ -7,6 +7,24 @@
 	<script src="../../materialize/js/materialize.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
+    <style type="text/css">
+      .zoom {
+  overflow: hidden;
+}
+
+.zoom img {
+  max-width: 100%;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.zoom:hover img {
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
+    </style>
 </head>
 <body>
 	<nav>
@@ -49,6 +67,7 @@ while ($linha = mysqli_fetch_array($result1)) {
   $correta = $linha['correta'];
   $corretaVouf = $linha['corretaVouf'];
   $texto_ajuda = $linha['textoajuda'];
+  $foto = $linha['foto'];
   $categoria = $linha['categoria'];
 }
 
@@ -77,6 +96,16 @@ if ($categoria == 'quest') {
       <div class="card #1976d2 blue darken-2">
         <div class="card-content white-text">
           <span class="card-title center"><?php echo "Nivel $nivel_questao Fase $fase_questao - 10 pontos"; ?></span><br><br>
+          <?php if ($foto != 'empty') {
+          ?>
+          <p>
+          <div class="zoom" style="cursor: zoom-in;">
+          <img class="materialboxed" style="margin-left: 20%" width="300" height="300" src="../../adm/fotos/<?php echo $foto ?>">
+          <?php
+          ?>
+          </div> </p>
+          <?php
+          }  ?> 
           <p><blockquote><?php echo $texto; ?></blockquote></p>
 
           <p>
@@ -137,6 +166,16 @@ if ($categoria == 'quest') {
       <div class="card #1976d2 blue darken-2">
         <div class="card-content white-text">
           <span class="card-title center"><?php echo "Fase $fase_questao - 10 pontos"; ?></span><br><br>
+           <?php if ($foto != 'empty') {
+          ?>
+          <p>
+          <div class="zoom" style="cursor: zoom-in;">
+          <img class="materialboxed" style="margin-left: 20%" width="300" height="300" src="../../adm/fotos/<?php echo $foto ?>">
+          <?php
+          ?>
+          </div> </p>
+          <?php
+          }  ?> 
           <p><blockquote><?php echo $texto; ?></blockquote></p>
 
           <p>
@@ -174,6 +213,7 @@ if ($categoria == 'quest') {
 
 <script type="text/javascript">
 	$(document).ready(function(){
+  $('.materialboxed').materialbox();
 	$('.modal').modal();
     $('#modal1').modal('open');
   });
@@ -184,6 +224,7 @@ if ($categoria == 'quest') {
 		background-image: url("../background.jpg");
 		background-repeat: no-repeat;
 		background-size: 100%;
+    background-attachment: fixed;
 	}
 </style>
 

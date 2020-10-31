@@ -23,7 +23,7 @@
 
 <div class="container">
 
-<form method="post" action="addBd.php">
+<form method="post" action="addBd.php" enctype="multipart/form-data">
 
 <div class="row center">
   <p>
@@ -68,21 +68,31 @@
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
-          <label style="color: black">Nível</label>
+          <label style="color: black">Nível *</label>
           </div></p>
 
           	<p>Texto:</p>
           	<textarea  maxlength="1500" name="texto" id="editor" class="materialize-textarea" style="max-width: 70%"></textarea><br>
 
             
-  			 <p>Opção 1:</p>
+  			 <p>*Opção 1:</p>
             <textarea  maxlength="1500" name="opcao1"  class="materialize-textarea" style="max-width: 70%"></textarea> 
 
-            <p>Opção 2:</p>
+            <p>*Opção 2:</p>
             <textarea  maxlength="1500" name="opcao2"  class="materialize-textarea" style="max-width: 70%"></textarea> 
         
-            <p>Opção 3:</p>
-            <textarea  maxlength="1500" name="opcao3"  class="materialize-textarea" style="max-width: 70%"></textarea> 
+            <p>*Opção 3:</p>
+            <textarea  maxlength="1500" name="opcao3"  class="materialize-textarea" style="max-width: 70%"></textarea>
+
+            <div class="file-field input-field">
+          <div class="btn">
+            <span>Adicionar imagem</span>
+              <input type="file" name="fotoquest">
+          </div>
+         <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" name="fototext" style="max-width: 45%">
+          </div>
+        </div>
 
 			</div>
 
@@ -103,20 +113,20 @@
             <option value="8">8</option>
             <option value="9">9</option>
           </select>
-          <label style="color: black">Fase</label>
+          <label style="color: black">Fase *</label>
           </div>
         </p>
 
           <p>Texto de ajuda:</p>
             <textarea  maxlength="1500" name="ajuda" id="editor2"  class="materialize-textarea" style="max-width: 70%"></textarea><br>
 
-            <p>Opção 4:</p>
+            <p>*Opção 4:</p>
             <textarea  maxlength="1500" name="opcao4"  class="materialize-textarea" style="max-width: 70%"></textarea> 
 
-            <p>Opção 5:</p>
+            <p>*Opção 5:</p>
             <textarea  maxlength="1500" name="opcao5"  class="materialize-textarea" style="max-width: 70%"></textarea> 
         
-            <p>Opção correta:</p>
+            <p>*Opção correta:</p>
             
         <select name="correta"  >
           <option value="" disabled selected>Escolha a opção correta</option>
@@ -129,7 +139,7 @@
           	
 
 			</div>
-          
+            
 
         </div>
 
@@ -163,7 +173,7 @@
             <p>
             <div class="input-field">
             <select name="nivel1"  style="width: 20%">
-            <option value="" disabled selected >Escolha o Nível</option>
+            <option value="" disabled selected >Escolha o Nível *</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -178,8 +188,18 @@
           <label style="color: black">Nível</label>
           </div></p>
 
-          <p >Texto:</p>
+          <p>Texto:</p>
             <textarea  maxlength="1500" name="texto1" id="editor3" class="materialize-textarea" style="max-width: 70%"></textarea><br>
+
+           <div class="file-field input-field">
+            <div class="btn">
+              <span>Adicionar imagem</span>
+                <input type="file" name="fotovouf">
+            </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" name="fototextvouf">
+          </div>
+        </div> 
 
           </div>
           
@@ -200,23 +220,23 @@
             <option value="8">8</option>
             <option value="9">9</option>
           </select>
-          <label style="color: black">Fase</label>
+          <label style="color: black">Fase *</label>
           </div>
         </p>
 
         <p>Texto de ajuda:</p>
-            <textarea  maxlength="1500" name="ajuda1" id="editor4"  class="materialize-textarea" style="max-width: 70%"></textarea><br>
+            <textarea  maxlength="1500" name="ajuda1" id="editor4"  class="materialize-textarea" style="max-width: 70%"></textarea><br><br>
 
+
+            <select name="correta1"  >
+            <option value="" disabled selected>Escolha a opção correta *</option>
+            <option value="verdadeiro">Verdadeiro</option>
+            <option value="falso">Falso</option>
+            </select>
             
           </div><br><br>
 
-            <div class="col s12 m4 push-m4">
-            <select name="correta1"  >
-            <option value="" disabled selected>Escolha a opção correta</option>
-            <option value="verdadeiro">verdadeiro</option>
-            <option value="falso">falso</option>
-            </select>
-          </div>
+            
           
         </div>
 

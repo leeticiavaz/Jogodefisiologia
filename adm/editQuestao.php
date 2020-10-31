@@ -30,7 +30,7 @@ $id = $_GET['id'];
 $sql = "SELECT * FROM questoes WHERE id = '$id'";
 $resultado = mysqli_query($connect,$sql);
 while ($dados = mysqli_fetch_array($resultado)) { ?>
-<form method="post" action="updateQuestao.php?id=<?php echo $dados['id']; ?>">
+<form method="post" action="updateQuestao.php?id=<?php echo $dados['id']; ?>" enctype="multipart/form-data">
 
 <div class="row">
   <div class="input-field col s3 push-m2">
@@ -99,7 +99,17 @@ if ($dados['categoria'] == 'quest') {
             <textarea  maxlength="1500" name="opcao2"  class="materialize-textarea" style="max-width: 70%"><?php echo $dados['opcao2']; ?></textarea> 
         
             <p>Opção 3:</p>
-            <textarea  maxlength="1500" name="opcao3"  class="materialize-textarea" style="max-width: 70%"><?php echo $dados['opcao3']; ?></textarea> 
+            <textarea  maxlength="1500" name="opcao3"  class="materialize-textarea" style="max-width: 70%"><?php echo $dados['opcao3']; ?></textarea>
+
+          <div class="file-field input-field">
+          <div class="btn">
+            <span>Adicionar imagem</span>
+              <input type="file" name="fotoquest">
+          </div>
+         <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" name="fototext" style="max-width: 45%">
+          </div>
+        </div>
 
       </div>
 
@@ -165,7 +175,15 @@ if ($dados['categoria'] == 'quest') {
           <p >Texto:</p>
             <textarea  maxlength="1500" name="texto1" id="editor3" class="materialize-textarea" style="max-width: 70%"><?php echo $dados['texto']; ?></textarea><br>
 
-
+            <div class="file-field input-field">
+            <div class="btn">
+              <span>Adicionar imagem</span>
+                <input type="file" name="fotovouf">
+            </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" name="fototextvouf">
+          </div>
+        </div> 
           </div>
           
 
@@ -174,18 +192,16 @@ if ($dados['categoria'] == 'quest') {
             
 
         <p>Texto de ajuda:</p>
-            <textarea  maxlength="1500" name="ajuda1" id="editor4"  class="materialize-textarea" style="max-width: 70%"><?php echo $dados['textoajuda']; ?></textarea><br>
+            <textarea  maxlength="1500" name="ajuda1" id="editor4"  class="materialize-textarea" style="max-width: 70%"><?php echo $dados['textoajuda']; ?></textarea><br><br>
 
-           
-          </div><br><br>
-
-            <div class="col s12 m4 push-m4">
-            <select name="correta1"  >
+           <select name="correta1"  >
             <option value="" disabled selected>Escolha a opção correta</option>
             <option value="verdadeiro">verdadeiro</option>
             <option value="falso">falso</option>
             </select>
-          </div>
+
+          </div><br><br>
+
           
         </div>
 

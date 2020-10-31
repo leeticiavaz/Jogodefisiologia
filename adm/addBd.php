@@ -7,6 +7,7 @@
 	<script src="../materialize/js/materialize.min.js"></script>
     <link rel="stylesheet" href="../materialize/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 <?php
@@ -26,6 +27,20 @@ $opcao3 = $_POST['opcao3'];
 $opcao4 = $_POST['opcao4'];
 $opcao5 = $_POST['opcao5'];
 $ajuda = $_POST['ajuda'];
+
+if (isset($_POST['fototext'])) {
+  $extensao = strtolower(substr($_FILES['fotoquest']['name'], -4));
+  if ($extensao) {
+  $novo_nome = md5(time()).".".$extensao;
+  $diretorio = "fotos/";
+  move_uploaded_file($_FILES['fotoquest']['tmp_name'], $diretorio.$novo_nome);
+  }else{
+  $novo_nome = "empty";
+  }
+  
+}
+
+
 }
 
 
@@ -35,6 +50,19 @@ $fase1 = $_POST['fase1'];
 $texto1 = $_POST['texto1'];
 $ajuda1 = $_POST['ajuda1'];
 $correta1 = $_POST['correta1'];
+
+if (isset($_POST['fototextvouf'])) {
+  $extensao = strtolower(substr($_FILES['fotovouf']['name'], -4));
+  if ($extensao) {
+  $novo_nome = md5(time()).".".$extensao;
+  $diretorio = "fotos/";
+  move_uploaded_file($_FILES['fotovouf']['tmp_name'], $diretorio.$novo_nome);
+  }else{
+  $novo_nome = "empty";
+  }
+  
+}
+
 }
 
 
@@ -42,12 +70,12 @@ mysqli_set_charset($connect, "UTF-8");
 
 if ($categoria == 'quest') {
 
-$sql = "INSERT INTO questoes (nivel, fase, texto, opcao1, opcao2, opcao3, opcao4, opcao5, categoria, textoajuda, correta) VALUES ($nivel, $fase, '$texto', '$opcao1', '$opcao2', '$opcao3', '$opcao4', '$opcao5', '$categoria', '$ajuda', $correta) ";
+$sql = "INSERT INTO questoes (nivel, fase, texto, opcao1, opcao2, opcao3, opcao4, opcao5, categoria, textoajuda, foto, correta) VALUES ($nivel, $fase, '$texto', '$opcao1', '$opcao2', '$opcao3', '$opcao4', '$opcao5', '$categoria', '$ajuda', '$novo_nome', $correta) ";
 
 }
 
 if ($categoria == 'vouf') {
-  $sql = "INSERT INTO questoes (nivel, fase, texto, categoria, textoajuda, corretaVouf) VALUES ($nivel1, $fase1, '$texto1',  '$categoria', '$ajuda1', '$correta1') ";
+  $sql = "INSERT INTO questoes (nivel, fase, texto, categoria, textoajuda, foto, corretaVouf) VALUES ($nivel1, $fase1, '$texto1',  '$categoria', '$ajuda1', '$novo_nome', '$correta1') ";
 
 }
 
