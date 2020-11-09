@@ -34,7 +34,7 @@ require "../bd.php";
 
 $sql = "SELECT * FROM cadastro WHERE email='$email'";
 $foto = mysqli_query($connect, $sql);
-if(mysqli_num_rows($foto) > 0){ 
+if(mysqli_num_rows($foto) > 0){
 while ($dados = mysqli_fetch_array($foto)) {
 
 
@@ -67,587 +67,212 @@ $nivel = $dados['nivel'];
    </li>
 </ul>
 
+<br>
+<br>
+<div class="row">
+<div class=" col s4 push-m3">
 
 <?php
 
 if ($nivel == 1) {
 ?>
 
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
+
 <div class="section">
     <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 1</a>
 </div>
-    
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-</div>
-
-<div class="col s4 push-m4">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-</div>
-</div>
-
 
 <?php
-}
+} if ($nivel > 1) {
 ?>
 
-<?php
+<div class="section">
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 1</a>
+</div>
+<?php 
+}
+
 if ($nivel == 2) {
 ?>
 
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"> 1</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 2</a>
 </div>
-    
-<div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">2</a>
-</div>
+
+<?php
+} if ($nivel > 2) {
+?>
 
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 2</a>
 </div>
+
+<?php 
+} if ($nivel < 2) {
+?>
 
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
 </div>
-
+<?php
+} if ($nivel == 3) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 3</a>
 </div>
-</div>
-
-<div class="col s4 push-m4">
+<?php
+} if ($nivel > 3) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 3</a>
 </div>
-
+<?php
+} if ($nivel < 3) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
 </div>
-
+<?php
+} if ($nivel == 4) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 4</a>
 </div>
-
+<?php
+} if ($nivel > 4) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 4</a>
 </div>
-
-
+<?php
+} if ($nivel < 4) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
 </div>
+<?php
+} if ($nivel == 5) {
+?>
+<div class="section">
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 5</a>
 </div>
+<?php
+} if ($nivel > 5) {
+?>
+<div class="section">
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 5</a>
 </div>
-
-
+<?php
+} if ($nivel < 5) {
+?>
+<div class="section">
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+</div>
 <?php
 }
 ?>
-
-<?php
-if ($nivel == 3) {
-?>
-
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"> 1</a>
-</div>
-    
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">2</a>
-</div>
-
-<div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">3</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
 </div>
 
 <div class="col s4 push-m4">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
 
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
+<?php 
 
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-</div>
-</div>
-
-
-<?php
-}
-?>
-
-<?php
-if ($nivel == 4) {
-?>
-
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"> 1</a>
-</div>
-    
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">2</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">3</a>
-</div>
-
-<div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">4</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-</div>
-
-<div class="col s4 push-m4">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-</div>
-</div>
-
-
-<?php
-}
-?>
-
-<?php
-if ($nivel == 5) {
-?>
-
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"> 1</a>
-</div>
-    
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">2</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">3</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">4</a>
-</div>
-
-<div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">5</a>
-</div>
-</div>
-
-<div class="col s4 push-m4">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-</div>
-</div>
-
-
-<?php
-}
-?>
-
-<?php
 if ($nivel == 6) {
 ?>
 
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"> 1</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 6</a>
 </div>
-    
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">2</a>
-</div>
+
+<?php
+} if ($nivel > 6) {
+?>
 
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">3</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 6</a>
 </div>
+
+<?php 
+} if ($nivel < 6) {
+?>
 
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">4</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
 </div>
-
+<?php
+} if ($nivel == 7) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">5</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 7</a>
 </div>
-</div>
-
-<div class="col s4 push-m4">
+<?php
+} if ($nivel > 7) {
+?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">6</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 7</a>
 </div>
-
+<?php
+} if ($nivel < 7) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
 </div>
-
+<?php
+} if ($nivel == 8) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 8</a>
 </div>
-
+<?php
+} if ($nivel > 8) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 8</a>
 </div>
-
-
+<?php
+} if ($nivel < 8) {
+?>
 <div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
 </div>
+<?php
+} if ($nivel == 9) {
+?>
+<div class="section">
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 9</a>
 </div>
+<?php
+} if ($nivel > 9) {
+?>
+<div class="section">
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 9</a>
 </div>
-
-
+<?php
+} if ($nivel < 9) {
+?>
+<div class="section">
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+</div>
+<?php
+} if ($nivel == 10) {
+?>
+    <div class="section">
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 10</a>
+</div>
+<?php
+} if ($nivel < 10) {
+?>
+    <div class="section">
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+</div>
 <?php
 }
 ?>
 
-<?php
-if ($nivel == 7) {
-?>
-
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"> 1</a>
-</div>
-    
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">2</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">3</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">4</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">5</a>
-</div>
-</div>
-
-<div class="col s4 push-m4">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">6</a>
-</div>
-
-<div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">7</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
 </div>
 </div>
 
 
-<?php
-}
-?>
-
-<?php
-if ($nivel == 8) {
-?>
-
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"> 1</a>
-</div>
-    
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">2</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">3</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">4</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">5</a>
-</div>
-</div>
-
-<div class="col s4 push-m4">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">6</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">7</a>
-</div>
-
-<div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">8</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-</div>
-</div>
-
-
-<?php
-}
-?>
-
-<?php
-if ($nivel == 9) {
-?>
-
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"> 1</a>
-</div>
-    
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">2</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">3</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">4</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">5</a>
-</div>
-</div>
-
-<div class="col s4 push-m4">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">6</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">7</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">8</a>
-</div>
-
-<div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">9</a>
-</div>
-
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: red; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"><i class="Large material-icons">lock</i></a>
-</div>
-</div>
-</div>
-
-
-<?php
-}
-?>
-
-<?php
-if ($nivel == 10) {
-?>
-
-<br>
-<br>
-<div class="row">
-<div class=" col s4 push-m3">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;"> 1</a>
-</div>
-    
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">2</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">3</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">4</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">5</a>
-</div>
-</div>
-
-<div class="col s4 push-m4">
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">6</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">7</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">8</a>
-</div>
-
-<div class="section">
-    <a id="bot" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">9</a>
-</div>
-
-
-<div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white; width: 15%; height: 60px; font-family: arial; font-size: 20px; border-radius: 8px;">10</a>
-</div>
-</div>
-</div>
-
-
-<?php
-}
-?>
 
 
 <?php

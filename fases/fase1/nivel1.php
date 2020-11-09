@@ -1,3 +1,16 @@
+<?php
+session_start();
+require "../../bd.php";
+$email = $_SESSION['email'];
+
+$sql = "SELECT * FROM cadastro WHERE email = '$email'";
+$result = mysqli_query($connect, $sql);
+while ($linha = mysqli_fetch_array($result)){
+ $nivel_jogador = $linha['nivel'];
+ $fase_jogador = $linha['fase'];
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +43,7 @@
 	<nav>
     <div class="nav-wrapper #fb8c00 orange darken-1">
 
-    	<a href="#" class="brand-logo">Fase 1</a>
+    	<a href="#" class="brand-logo">Nivel <?php echo $nivel_jogador; ?></a>
       
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li style="font-size: 200%"><a class="modal-trigger" href="#modal2"><i class="material-icons left">help</i>Ajuda</a></li>
@@ -42,16 +55,6 @@
 
 <?php
 
-session_start();
-require "../../bd.php";
-$email = $_SESSION['email'];
-
-$sql = "SELECT * FROM cadastro WHERE email = '$email'";
-$result = mysqli_query($connect, $sql);
-while ($linha = mysqli_fetch_array($result)){
- $nivel_jogador = $linha['nivel'];
- $fase_jogador = $linha['fase'];
-}
 
 $sql1 = "SELECT * FROM questoes WHERE nivel = '$nivel_jogador' AND fase = '$fase_jogador'";
 $result1 = mysqli_query($connect, $sql1);
@@ -95,7 +98,7 @@ if ($categoria == 'quest') {
     <div class="col s12 m6 push-m3">
       <div class="card #1976d2 blue darken-2">
         <div class="card-content white-text">
-          <span class="card-title center"><?php echo "Nivel $nivel_questao Fase $fase_questao - 10 pontos"; ?></span><br><br>
+          <span class="card-title center"><?php echo "Fase $fase_questao - 10 pontos"; ?></span><br><br>
           <?php if ($foto != 'empty') {
           ?>
           <p>

@@ -22,10 +22,14 @@ $correta = $_POST['correta'];
 $sql1 = "SELECT * FROM cadastro WHERE email = '$email'";
 $result1 = mysqli_query($connect, $sql1);
 while ($linha = mysqli_fetch_array($result1)) {
-  $pontuacao = $linha['pontuacao'];
   $fase = $linha['fase'];
   $nivel_jogador = $linha['nivel'];
   $fase_jogador = $linha['fase'];
+  $string = strval($nivel_jogador);
+  $pontuacao = $linha['p'.$string];
+  if ($pontuacao > 100) {
+    $pontuacao = 0;
+  }
 }
 
 $sql1 = "SELECT * FROM questoes WHERE nivel = '$nivel_jogador' AND fase = '$fase_jogador'";
@@ -47,10 +51,11 @@ while ($linha = mysqli_fetch_array($result1)) {
 
 if ($categoria == 'quest') {
   if ($resultado == $correta) {
+
   $fase = $fase + 1;
   $pontuacao = $pontuacao + 10;
-  $sql = "UPDATE cadastro SET fase = $fase, pontuacao = $pontuacao WHERE email = '$email'";
-  $result = mysqli_query($connect, $sql);
+  
+  
 ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
@@ -62,6 +67,59 @@ if ($categoria == 'quest') {
     </div>
   </div>
 <?php
+
+switch ($nivel_jogador) {
+    case 1:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p1 = $pontuacao WHERE email = '$email'";
+      break;
+    
+    case 2:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p2 = $pontuacao WHERE email = '$email'";
+      break;
+    case 3:
+     $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p3 = $pontuacao WHERE email = '$email'";
+      break;
+    case 4:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p4 = $pontuacao WHERE email = '$email'";
+      break;
+    case 5:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p5 = $pontuacao WHERE email = '$email'";
+      break;
+    case 6:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p6 = $pontuacao WHERE email = '$email'";
+      break;
+    
+    case 7:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p7 = $pontuacao WHERE email = '$email'";
+      break;
+    case 8:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p8 = $pontuacao WHERE email = '$email'";
+      break;
+    case 9:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p9 = $pontuacao WHERE email = '$email'";
+      break;
+    case 10:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p10 = $pontuacao WHERE email = '$email'";
+      break;
+  }
+  $result = mysqli_query($connect, $sql);
+
+if ($fase > 10) {
+  $nivel_jogador = $nivel_jogador + 1;
+  $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = 1 WHERE email = '$email'";
+  $result = mysqli_query($connect, $sql);
+?>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Resposta correta!</h4>
+      <p>Parabéns, você acertou essa questão. Clique em ok para avançar para o próximo nível!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="nivel1.php" class="modal-close waves-effect waves-green btn-flat green" style="color: white">Ok</a>
+    </div>
+  </div>
+<?php
+}
 }else{
 ?>
 <div id="modal1" class="modal">
@@ -77,10 +135,10 @@ if ($categoria == 'quest') {
 }
 }else{
   if ($resultado == $corretaVouf) {
+
   $fase = $fase + 1;
   $pontuacao = $pontuacao + 10;
-  $sql = "UPDATE cadastro SET fase = $fase, pontuacao = $pontuacao WHERE email = '$email'";
-  $result = mysqli_query($connect, $sql);
+  
 ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
@@ -92,6 +150,57 @@ if ($categoria == 'quest') {
     </div>
   </div>
 <?php
+
+switch ($nivel_jogador) {
+    case 1:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p1 = $pontuacao WHERE email = '$email'";
+    break;
+    case 2:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p2 = $pontuacao WHERE email = '$email'";
+      break;
+    case 3:
+     $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p3 = $pontuacao WHERE email = '$email'";
+      break;
+    case 4:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p4 = $pontuacao WHERE email = '$email'";
+      break;
+    case 5:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p5 = $pontuacao WHERE email = '$email'";
+      break;
+    case 6:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p6 = $pontuacao WHERE email = '$email'";
+      break;
+    
+    case 7:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p7 = $pontuacao WHERE email = '$email'";
+      break;
+    case 8:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p8 = $pontuacao WHERE email = '$email'";
+      break;
+    case 9:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p9 = $pontuacao WHERE email = '$email'";
+      break;
+    case 10:
+      $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = $fase, p10 = $pontuacao WHERE email = '$email'";
+      break;
+  }
+  $result = mysqli_query($connect, $sql);
+  if ($fase > 10) {
+  $nivel_jogador = $nivel_jogador + 1;
+  $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = 1 WHERE email = '$email'";
+  $result = mysqli_query($connect, $sql);
+?>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Resposta correta!</h4>
+      <p>Parabéns, você acertou essa questão. Clique em ok para avançar para o próximo nível!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="nivel1.php" class="modal-close waves-effect waves-green btn-flat green" style="color: white">Ok</a>
+    </div>
+  </div>
+<?php
+}
 }else{
 ?>
 <div id="modal1" class="modal">

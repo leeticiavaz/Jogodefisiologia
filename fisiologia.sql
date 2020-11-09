@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 31-Out-2020 às 01:48
+-- Generation Time: 09-Nov-2020 às 05:48
 -- Versão do servidor: 5.6.17
 -- PHP Version: 7.4.8
 
@@ -39,9 +39,19 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
   `avatar` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `nivel` int(11) NOT NULL,
   `fase` int(11) NOT NULL,
+  `p1` int(10) NOT NULL,
+  `p2` int(10) NOT NULL,
+  `p3` int(10) NOT NULL,
+  `p4` int(10) NOT NULL,
+  `p5` int(10) NOT NULL,
+  `p6` int(10) NOT NULL,
+  `p7` int(10) NOT NULL,
+  `p8` int(10) NOT NULL,
+  `p9` int(10) NOT NULL,
+  `p10` int(10) NOT NULL,
   `pontuacao` int(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -65,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `questoes` (
   `correta` int(1) NOT NULL,
   `corretaVouf` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
