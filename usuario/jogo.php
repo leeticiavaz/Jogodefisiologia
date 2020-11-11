@@ -9,15 +9,43 @@
     <link rel="stylesheet" href="../materialize/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <style type="text/css">
+
+      body{
+        background-image: url('../back/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
        #bot:hover{
            top: -5px;
        }
+       .textPont{
+        text-align: center;
+        vertical-align: middle;
+       }
+       .pont{
+        background-color: white;
+        width: 220px;
+        height: 50px;
+        margin-left: 80%;
+        border:2px;
+        border-style: solid;
+        border-color: blue;
+        border-radius: 8px;
+        position: absolute;
+        top: 12%;
+       }
+       .pont:hover{
+        border-color: green;
+        top: 11%;
+       }
     </style>
+
 </head>
 <!--
 <body style="background-image: url('../back2.jpg'); background-repeat: no-repeat; background-size: 100%;">
 -->
-<body style="background-image: url('../back/background.jpg');">  
+<body>  
 	<script type="text/javascript">
   $(document).ready(function(){
     $('.sidenav').sidenav();
@@ -40,6 +68,8 @@ while ($dados = mysqli_fetch_array($foto)) {
 
 
 $nivel = $dados['nivel'];
+
+$pontuacao = $dados['p1'] + $dados['p2'] + $dados['p3'] + $dados['p4'] + $dados['p5'] + $dados['p6'] + $dados['p7'] + $dados['p8'] + $dados['p9'] + $dados['p10'];
 
 
 
@@ -67,6 +97,8 @@ $nivel = $dados['nivel'];
    </li>
 </ul>
 
+<div class="pont"><p class="textPont">Sua pontuação: <b> <?php echo $pontuacao; ?> </b></p></div>
+
 <br>
 <br>
 <div class="row">
@@ -87,7 +119,7 @@ if ($nivel == 1) {
 ?>
 
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 1</a>
+    <button id="bot" data-target="modal1" class="waves-effect waves-light btn modal-trigger" href="#modal1" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 1</button>
 </div>
 <?php 
 }
@@ -104,7 +136,7 @@ if ($nivel == 2) {
 ?>
 
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 2</a>
+    <button data-target="modal2" class="waves-effect waves-light btn modal-trigger" href="#modal2" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 2</button>
 </div>
 
 <?php 
@@ -112,7 +144,7 @@ if ($nivel == 2) {
 ?>
 
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+    <button id="bot" data-target="modal11" href="#modal11" class="waves-effect waves-light btn modal-trigger" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></button>
 </div>
 <?php
 } if ($nivel == 3) {
@@ -124,13 +156,13 @@ if ($nivel == 2) {
 } if ($nivel > 3) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 3</a>
+    <button id="bot" data-target="modal3" class="waves-effect waves-light btn modal-trigger" href="#modal3" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 3</button>
 </div>
 <?php
 } if ($nivel < 3) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+    <button id="bot" data-target="modal11" href="#modal11" class="waves-effect waves-light btn modal-trigger" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></button>
 </div>
 <?php
 } if ($nivel == 4) {
@@ -142,13 +174,13 @@ if ($nivel == 2) {
 } if ($nivel > 4) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 4</a>
+    <button id="bot" data-target="modal4" class="waves-effect waves-light btn modal-trigger" href="#modal4" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 4</button>
 </div>
 <?php
 } if ($nivel < 4) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+    <button id="bot" data-target="modal11" href="#modal11" class="waves-effect waves-light btn modal-trigger" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></button>
 </div>
 <?php
 } if ($nivel == 5) {
@@ -160,13 +192,13 @@ if ($nivel == 2) {
 } if ($nivel > 5) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 5</a>
+    <button id="bot" data-target="modal5" class="waves-effect waves-light btn modal-trigger" href="#modal5" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 5</button>
 </div>
 <?php
 } if ($nivel < 5) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+    <button id="bot" data-target="modal11" href="#modal11" class="waves-effect waves-light btn modal-trigger" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></button>
 </div>
 <?php
 }
@@ -189,7 +221,7 @@ if ($nivel == 6) {
 ?>
 
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 6</a>
+    <button id="bot" data-target="modal6" class="waves-effect waves-light btn modal-trigger" href="#modal6" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 6</button>
 </div>
 
 <?php 
@@ -197,7 +229,7 @@ if ($nivel == 6) {
 ?>
 
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+    <button id="bot" data-target="modal11" href="#modal11" class="waves-effect waves-light btn modal-trigger" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></button>
 </div>
 <?php
 } if ($nivel == 7) {
@@ -209,13 +241,13 @@ if ($nivel == 6) {
 } if ($nivel > 7) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 7</a>
+    <button id="bot" data-target="modal7" class="waves-effect waves-light btn modal-trigger" href="#modal7" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 7</button>
 </div>
 <?php
 } if ($nivel < 7) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+    <button id="bot" data-target="modal11" href="#modal11" class="waves-effect waves-light btn modal-trigger" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></button>
 </div>
 <?php
 } if ($nivel == 8) {
@@ -225,15 +257,16 @@ if ($nivel == 6) {
 </div>
 <?php
 } if ($nivel > 8) {
+
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 8</a>
+    <button id="bot" data-target="modal8" class="waves-effect waves-light btn modal-trigger" href="#modal8" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 8</button>
 </div>
 <?php
 } if ($nivel < 8) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+    <button id="bot" data-target="modal11" href="#modal11" class="waves-effect waves-light btn modal-trigger" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></button>
 </div>
 <?php
 } if ($nivel == 9) {
@@ -243,30 +276,38 @@ if ($nivel == 6) {
 </div>
 <?php
 } if ($nivel > 9) {
+ 
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 9</a>
+    <button id="bot" data-target="modal9" class="waves-effect waves-light btn modal-trigger" href="#modal9" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 9</button>
 </div>
 <?php
 } if ($nivel < 9) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+    <button id="bot" data-target="modal11" href="#modal11" class="waves-effect waves-light btn modal-trigger" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></button>
 </div>
 <?php
 } if ($nivel == 10) {
 ?>
     <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 10</a>
+    <a id="bot" href="../fases/fase1/nivel1.php?rec=10" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 10</a>
 </div>
 <?php
 } if ($nivel < 10) {
 ?>
     <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></a>
+    <button id="bot" data-target="modal11" href="#modal11" class="waves-effect waves-light btn modal-trigger" style="background-color: red; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> <i class="Large material-icons">lock</i></button>
 </div>
 <?php
-}
+} if ($nivel > 10) {
+ 
+?>
+<div class="section">
+    <button id="bot" data-target="modal12" class="waves-effect waves-light btn modal-trigger" href="#modal12" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 10</button>
+</div>
+<?php
+} 
 ?>
 
 </div>
@@ -278,6 +319,149 @@ if ($nivel == 6) {
 <?php
 }
 }
+
 ?>
+
+<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=1" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+
+<!-- Modal Structure -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=2" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=3" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+<!-- Modal Structure -->
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=4" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+<!-- Modal Structure -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=5" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+
+  <!-- Modal Structure -->
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=6" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+
+<!-- Modal Structure -->
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=7" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=8" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+<!-- Modal Structure -->
+  <div id="modal9" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=9" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="modal12" class="modal">
+    <div class="modal-content">
+      <h4>Refazer Nível</h4>
+      <p>Você deseja refazer esse nível? Caso você refaça, sua pontuação nesse nível começará a partir do zero.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../fases/fase1/recform.php?rec=10" class="modal-close waves-effect waves-green btn-flat green white-text">Recomeçar Nível</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red white-text">Cancelar</a>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="modal11" class="modal">
+    <div class="modal-content">
+      <h4>Nível bloqueado!</h4>
+      <p>Esse nível ainda está bloqueado, complete os níveis anteriores para liberá-lo!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-close waves-effect waves-green btn-flat green white-text">Ok</a>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+</script>
+
 </body>
 </html>

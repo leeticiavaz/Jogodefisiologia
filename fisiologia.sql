@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Nov-2020 às 05:48
+-- Generation Time: 11-Nov-2020 às 07:23
 -- Versão do servidor: 5.6.17
 -- PHP Version: 7.4.8
 
@@ -49,9 +49,10 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
   `p8` int(10) NOT NULL,
   `p9` int(10) NOT NULL,
   `p10` int(10) NOT NULL,
-  `pontuacao` int(4) NOT NULL,
+  `recnivel` int(2) NOT NULL,
+  `recfase` int(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
