@@ -66,15 +66,14 @@ if ($fase_jogador > 10) {
 }
     </style>
 </head>
-<body>
+<body bgcolor="#21D6F7">
 	<nav>
     <div class="nav-wrapper #fb8c00 orange darken-1">
 
     	<a href="#" class="brand-logo">Nivel <?php echo $nivel_jogador; ?></a>
       
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li style="font-size: 200%"><a class="modal-trigger" href="#modal2"><i class="material-icons left">help</i>Ajuda</a></li>
-        <li style="font-size: 200%"><a href="../../usuario/jogo.php">Página inicial</a></li>
+        <li style="font-size: 200%"><a href="#modal3" class="modal-trigger">Página inicial</a></li>
       </ul>
     </div>
 </nav>
@@ -115,17 +114,37 @@ while ($linha = mysqli_fetch_array($result1)) {
     </div>
   </div>
 
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <h4>Sair do questionário</h4>
+      <p>Você tem certeza que deseja sair do questionário? Você optou por refazer esse questionário, caso saia a pontuação não ficará completa e você voltará para a questão 1!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="recsair.php" class="modal-close waves-effect waves-green btn-flat green" style="color: white">Ok</a>
+      <a href="#" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Cancelar</a>
+    </div>
+  </div>
+
+<div id="modal4" class="modal">
+    <div class="modal-content">
+      <h4>Questão incorreta</h4>
+      <p>Você errou essa questão, mas ainda possui 1 tentativa!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+    </div>
+  </div>
 
 <?php
 if ($categoria == 'quest') {
 ?>
 
-<form action="recpont.php" method="post">
+<form action="recpont.php" id="formquest" method="post">
 <div class="row">
     <div class="col s12 m6 push-m3">
-      <div class="card #1976d2 blue darken-2">
+      <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title center"><?php echo "Fase $fase_questao - 10 pontos"; ?></span><br><br>
+          <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
           <?php if ($foto != 'empty') {
           ?>
           <p>
@@ -177,6 +196,7 @@ if ($categoria == 'quest') {
       <input type="hidden" name="correta" value="<?php echo $correta; ?>">
         </div>
         <div class="card-action">
+          <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
            <button class="btn waves-effect waves-light green" type="submit" name="action">Enviar
     		<i class="material-icons right">send</i>
   			</button>
@@ -193,9 +213,9 @@ if ($categoria == 'quest') {
 <form action="recpont.php" method="post">
 <div class="row">
     <div class="col s12 m6 push-m3">
-      <div class="card #1976d2 blue darken-2">
+      <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title center"><?php echo "Fase $fase_questao - 10 pontos"; ?></span><br><br>
+          <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
            <?php if ($foto != 'empty') {
           ?>
           <p>
@@ -227,6 +247,7 @@ if ($categoria == 'quest') {
       <input type="hidden" name="correta" value="<?php echo $corretaVouf; ?>">
         </div>
         <div class="card-action">
+          <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
            <button class="btn waves-effect waves-light green" type="submit" name="action">Enviar
         <i class="material-icons right">send</i>
         </button>
@@ -247,15 +268,23 @@ if ($categoria == 'quest') {
 	$('.modal').modal();
     $('#modal1').modal('open');
   });
+
+var tentativa = 1;
+
+$(document).on('submit', '#formquest', function(event){
+
+      var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
+      var correta = <?php echo $correta; ?>
+
+      if(opcaocheck != correta && tentativa == 1) {
+        $('#modal4').modal('open');
+        tentativa = 0;
+        event.preventDefault();
+      }
+
+});
+
 </script>
 
-<style type="text/css">
-	body{
-		background-image: url("../background.jpg");
-		background-repeat: no-repeat;
-		background-size: 100%;
-    background-attachment: fixed;
-	}
-</style>
 
 </body>

@@ -39,14 +39,13 @@ while ($linha = mysqli_fetch_array($result)){
 }
     </style>
 </head>
-<body>
+<body bgcolor="#21D6F7">
 	<nav>
     <div class="nav-wrapper #fb8c00 orange darken-1">
 
     	<a href="#" class="brand-logo">Nivel <?php echo $nivel_jogador; ?></a>
       
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li style="font-size: 200%"><a class="modal-trigger" href="#modal2"><i class="material-icons left">help</i>Ajuda</a></li>
         <li style="font-size: 200%"><a href="../../usuario/jogo.php">Página inicial</a></li>
       </ul>
     </div>
@@ -89,16 +88,27 @@ while ($linha = mysqli_fetch_array($result1)) {
   </div>
 
 
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <h4>Questão incorreta</h4>
+      <p>Você errou essa questão, mas ainda possui 1 tentativa!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+    </div>
+  </div>
+
+
 <?php
 if ($categoria == 'quest') {
 ?>
 
-<form action="fase1formq1.php" method="post">
+<form action="fase1formq1.php" id="formquest" method="post">
 <div class="row">
     <div class="col s12 m6 push-m3">
-      <div class="card #1976d2 blue darken-2">
+      <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title center"><?php echo "Fase $fase_questao - 10 pontos"; ?></span><br><br>
+          <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
           <?php if ($foto != 'empty') {
           ?>
           <p>
@@ -150,6 +160,7 @@ if ($categoria == 'quest') {
       <input type="hidden" name="correta" value="<?php echo $correta; ?>">
         </div>
         <div class="card-action">
+          <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
            <button class="btn waves-effect waves-light green" type="submit" name="action">Enviar
     		<i class="material-icons right">send</i>
   			</button>
@@ -166,12 +177,13 @@ if ($categoria == 'quest') {
 <form action="fase1formq1.php" method="post">
 <div class="row">
     <div class="col s12 m6 push-m3">
-      <div class="card #1976d2 blue darken-2">
+      <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title center"><?php echo "Fase $fase_questao - 10 pontos"; ?></span><br><br>
+          <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
            <?php if ($foto != 'empty') {
           ?>
           <p>
+            <p><blockquote><?php echo $texto; ?></blockquote></p>
           <div class="zoom" style="cursor: zoom-in;">
           <img class="materialboxed" style="margin-left: 20%" width="300" height="300" src="../../adm/fotos/<?php echo $foto ?>">
           <?php
@@ -179,7 +191,6 @@ if ($categoria == 'quest') {
           </div> </p>
           <?php
           }  ?> 
-          <p><blockquote><?php echo $texto; ?></blockquote></p>
 
           <p>
           <label>
@@ -200,6 +211,7 @@ if ($categoria == 'quest') {
       <input type="hidden" name="correta" value="<?php echo $corretaVouf; ?>">
         </div>
         <div class="card-action">
+          <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
            <button class="btn waves-effect waves-light green" type="submit" name="action">Enviar
         <i class="material-icons right">send</i>
         </button>
@@ -220,15 +232,24 @@ if ($categoria == 'quest') {
 	$('.modal').modal();
     $('#modal1').modal('open');
   });
+
+  var tentativa = 1;
+
+$(document).on('submit', '#formquest', function(event){
+
+      var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
+      var correta = <?php echo $correta; ?>
+
+      if(opcaocheck != correta && tentativa == 1) {
+        $('#modal4').modal('open');
+        tentativa = 0;
+        event.preventDefault();
+      }
+
+});
+
+
 </script>
 
-<style type="text/css">
-	body{
-		background-image: url("../background.jpg");
-		background-repeat: no-repeat;
-		background-size: 100%;
-    background-attachment: fixed;
-	}
-</style>
-
 </body>
+</html>

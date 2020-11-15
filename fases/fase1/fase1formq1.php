@@ -125,17 +125,36 @@ if ($fase > 10) {
 <?php
 }
 }else{
+$fase = $fase + 1;
+$sql = "UPDATE cadastro SET fase = $fase WHERE email = '$email'";
+$result = mysqli_query($connect, $sql);
 ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Resposta errada!</h4>
-      <p>Tente novamente.<br>Em caso de dúvida acesse a opção ajuda!</p>
+      <p>Infelizmente você errou essa questão!</p>
     </div>
     <div class="modal-footer">
       <a href="nivel1.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
     </div>
   </div>
 <?php
+if ($fase > 10) {
+  $nivel_jogador = $nivel_jogador + 1;
+  $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = 1 WHERE email = '$email'";
+  $result = mysqli_query($connect, $sql);
+?>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Resposta errada!</h4>
+      <p>Infelizmente você errou essa questão! Clique em Ok para avançar de nível</p>
+    </div>
+    <div class="modal-footer">
+      <a href="nivel1.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+    </div>
+  </div>
+<?php
+}
 }
 }else{
   if ($resultado == $corretaVouf) {
@@ -206,17 +225,37 @@ switch ($nivel_jogador) {
 <?php
 }
 }else{
+$fase = $fase + 1;
+$sql = "UPDATE cadastro SET fase = $fase WHERE email = '$email'";
+$result = mysqli_query($connect, $sql);
 ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Resposta errada!</h4>
-      <p>Tente novamente.<br>Em caso de dúvida acesse a opção ajuda!</p>
+      <p>Infelizmente você errou essa questão!</p>
     </div>
     <div class="modal-footer">
       <a href="nivel1.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
     </div>
   </div>
 <?php
+
+if ($fase > 10) {
+  $nivel_jogador = $nivel_jogador + 1;
+  $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = 1 WHERE email = '$email'";
+  $result = mysqli_query($connect, $sql);
+?>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Resposta errada!</h4>
+      <p>Infelizmente você errou essa questão! Clique em Ok para avançar de nível</p>
+    </div>
+    <div class="modal-footer">
+      <a href="nivel1.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+    </div>
+  </div>
+<?php
+}
 }
 }
 

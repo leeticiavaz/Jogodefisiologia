@@ -16,8 +16,26 @@
         background-size: cover;
       }
 
+       @keyframes nivel{
+        0%{
+          border-radius: 14px;
+        }
+        25%{
+          border-radius: 20px;
+        }
+        50%{
+          border-radius: 50px;
+        }
+        75%{
+          border-radius: 20px;
+        }
+        100%{
+          border-radius: 14px;
+        }
+       }
+
        #bot:hover{
-           top: -5px;
+        top: -5px;
        }
        .textPont{
         text-align: center;
@@ -30,7 +48,7 @@
         margin-left: 80%;
         border:2px;
         border-style: solid;
-        border-color: blue;
+        animation: border 5s infinite;
         border-radius: 8px;
         position: absolute;
         top: 12%;
@@ -39,6 +57,28 @@
         border-color: green;
         top: 11%;
        }
+
+       @keyframes border {
+          0% {
+            border-color: blue;
+            border-radius: 8px;
+          }
+          25%{
+            border-color: green;
+            border-radius: 15px;
+            
+          }
+          50%{
+            border-color: red;
+            border-radius: 20px;
+           
+          }
+          75%{
+            border-color: brown;
+            border-radius: 30px;
+            
+          }
+        }
     </style>
 
 </head>
@@ -59,6 +99,9 @@ $email = $_SESSION['email'];
 $nome = $_SESSION['nome'];
 
 require "../bd.php";
+
+$sql = "UPDATE cadastro SET recfase = 1 WHERE email = '$email'";
+$result = mysqli_query($connect, $sql);
 
 $sql = "SELECT * FROM cadastro WHERE email='$email'";
 $foto = mysqli_query($connect, $sql);
@@ -111,7 +154,7 @@ if ($nivel == 1) {
 
 
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 1</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite; "> 1</a>
 </div>
 
 <?php
@@ -128,7 +171,7 @@ if ($nivel == 2) {
 ?>
 
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 2</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite;"> 2</a>
 </div>
 
 <?php
@@ -136,7 +179,7 @@ if ($nivel == 2) {
 ?>
 
 <div class="section">
-    <button data-target="modal2" class="waves-effect waves-light btn modal-trigger" href="#modal2" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 2</button>
+    <button data-target="modal2" id="bot" class="waves-effect waves-light btn modal-trigger" href="#modal2" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 2</button>
 </div>
 
 <?php 
@@ -150,7 +193,7 @@ if ($nivel == 2) {
 } if ($nivel == 3) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 3</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite;"> 3</a>
 </div>
 <?php
 } if ($nivel > 3) {
@@ -168,7 +211,7 @@ if ($nivel == 2) {
 } if ($nivel == 4) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 4</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite;">4</a>
 </div>
 <?php
 } if ($nivel > 4) {
@@ -186,7 +229,7 @@ if ($nivel == 2) {
 } if ($nivel == 5) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 5</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite;"> 5</a>
 </div>
 <?php
 } if ($nivel > 5) {
@@ -213,7 +256,7 @@ if ($nivel == 6) {
 ?>
 
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 6</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite;"> 6</a>
 </div>
 
 <?php
@@ -235,7 +278,7 @@ if ($nivel == 6) {
 } if ($nivel == 7) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 7</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite;"> 7</a>
 </div>
 <?php
 } if ($nivel > 7) {
@@ -253,7 +296,7 @@ if ($nivel == 6) {
 } if ($nivel == 8) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 8</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite;"> 8</a>
 </div>
 <?php
 } if ($nivel > 8) {
@@ -272,7 +315,7 @@ if ($nivel == 6) {
 } if ($nivel == 9) {
 ?>
 <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 9</a>
+    <a id="bot" href="../fases/fase1/nivel1.php" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite;"> 9</a>
 </div>
 <?php
 } if ($nivel > 9) {
@@ -291,7 +334,7 @@ if ($nivel == 6) {
 } if ($nivel == 10) {
 ?>
     <div class="section">
-    <a id="bot" href="../fases/fase1/nivel1.php?rec=10" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px;"> 10</a>
+    <a id="bot" href="../fases/fase1/nivel1.php?rec=10" class="waves-effect waves-light btn" style="background-color: green; color: white;  width: 15%; height: 60px; font-family: arial; font-size: 15px; border-radius: 8px; animation: nivel 4s infinite;"> 10</a>
 </div>
 <?php
 } if ($nivel < 10) {

@@ -61,7 +61,7 @@
         <br>
         <label>
         <input type="checkbox" required />
-        <span style="color: black;">Li e aceito os termos de condição</span>
+        <span style="color: black;">Li e aceito o termo de consetimento livre e esclarecido</span>
         </label>
         <br>
         

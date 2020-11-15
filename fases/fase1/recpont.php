@@ -119,17 +119,36 @@ if ($fase > 10) {
 <?php
 }
 }else{
+  $fase = $fase + 1;
+$sql = "UPDATE cadastro SET recfase = $fase WHERE email = '$email'";
+$result = mysqli_query($connect, $sql);
+
+if ($fase > 10) {
 ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Resposta errada!</h4>
-      <p>Tente novamente.<br>Em caso de dúvida acesse a opção ajuda!</p>
+      <p>Infelizmente você errou essa questão! Clique em Ok para voltar ao menu principal</p>
     </div>
     <div class="modal-footer">
-      <a href="recform.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+      <a href="recindex.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
     </div>
   </div>
 <?php
+}
+
+?>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Resposta errada!</h4>
+      <p>Infelizmente você errou essa questão!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="recform.php?rec=<?php echo $nivel_jogador; ?>" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+    </div>
+  </div>
+<?php
+
 }
 }else{
   if ($resultado == $corretaVouf) {
@@ -197,17 +216,36 @@ switch ($nivel_jogador) {
 <?php
 }
 }else{
+$fase = $fase + 1;
+$sql = "UPDATE cadastro SET recfase = $fase WHERE email = '$email'";
+$result = mysqli_query($connect, $sql);
+
+if ($fase > 10) {
 ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Resposta errada!</h4>
-      <p>Tente novamente.<br>Em caso de dúvida acesse a opção ajuda!</p>
+      <p>Infelizmente você errou essa questão! Clique em Ok para voltar ao menu principal</p>
     </div>
     <div class="modal-footer">
-      <a href="recform.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+      <a href="recindex.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
     </div>
   </div>
 <?php
+}
+
+?>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Resposta errada!</h4>
+      <p>Infelizmente você errou essa questão!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="recform.php?rec=<?php echo $nivel_jogador; ?>" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+    </div>
+  </div>
+<?php
+
 }
 }
 
