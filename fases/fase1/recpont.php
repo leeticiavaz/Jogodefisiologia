@@ -30,6 +30,12 @@ while ($linha = mysqli_fetch_array($result1)) {
   if ($pontuacao > 100) {
     $pontuacao = 0;
   }
+
+$somapont = $linha['p1'] + $linha['p2'] + $linha['p3'] + $linha['p4'] + $linha['p5'] + $linha['p6'] + $linha['p7'] + $linha['p8'] + $linha['p9'] + $linha['p10'];
+
+$sql = "UPDATE cadastro SET pontuacao = $somapont WHERE email = '$email'";
+$result = mysqli_query($connect, $sql);
+
 }
 
 
@@ -48,7 +54,10 @@ while ($linha = mysqli_fetch_array($result1)) {
   $texto_ajuda = $linha['textoajuda'];
   $categoria = $linha['categoria'];
   $corretaVouf = $linha['corretaVouf'];
+
 }
+
+
 
 if ($categoria == 'quest') {
   if ($resultado == $correta) {
@@ -56,7 +65,8 @@ if ($categoria == 'quest') {
   $fase = $fase + 1;
   $pontuacao = $pontuacao + 10;
   
-  
+if ($fase != 11) {
+
 ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
@@ -68,6 +78,7 @@ if ($categoria == 'quest') {
     </div>
   </div>
 <?php
+}
 
 switch ($nivel_jogador) {
     case 1:
@@ -156,6 +167,8 @@ if ($fase > 10) {
   $fase = $fase + 1;
   $pontuacao = $pontuacao + 10;
   
+if ($fase != 11) {
+
 ?>
 <div id="modal1" class="modal">
     <div class="modal-content">
@@ -167,6 +180,7 @@ if ($fase > 10) {
     </div>
   </div>
 <?php
+}
 
 switch ($nivel_jogador) {
     case 1:
@@ -202,6 +216,7 @@ switch ($nivel_jogador) {
       break;
   }
   $result = mysqli_query($connect, $sql);
+
   if ($fase > 10) {
 ?>
 <div id="modal1" class="modal">

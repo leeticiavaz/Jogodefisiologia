@@ -40,7 +40,11 @@
           <fieldset style="background-color: white; border-radius: 10px;">
           <span class="card-title center" style="font-family: arial; font-weight: bold; color: black;">Informações Pessoais</span>
           <div id="font"> <p style=" color: black; font-size: 20px; font-family: arial;"> Nome completo * </p> </div>
-        <input placeholder="Digite aqui seu nome completo" id="text2" name="nome" type="text" class="validate" required>
+        <input placeholder="Digite aqui seu nome completo" id="text2" maxlength="60" name="nome" type="text" class="validate" required>
+
+        <div id="font"> <p style=" color: black; font-size: 20px; font-family: arial;"> Nome de jogador * </p> </div>
+
+        <input type="text" maxlength="30" placeholder="Digite aqui seu nome de jogador" id="text2" name="nick" required>
 
         <div align="center">
         
@@ -56,7 +60,7 @@
 
         <div id="font" align="center"> <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Senha: * </p></div>
           <input placeholder="Digite aqui sua senha" id="text2" name="senha" type="password" class="validate" required>
-        <br> <br><br>
+        
         <a target="__blank" href="termo_de_consentimento.php" style="color: blue; text-decoration: underline;">Termos de condição</a>
         <br>
         <label>
@@ -108,6 +112,7 @@
             </div>
             <br> <br><br><br>
             <div id="font" align="center"> <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Escolha seu avatar: * </p></div>
+            <br><br>
             <p>
               <label>
                 <input class="with-gap" name="avatar" type="radio" value="masculino" checked />
@@ -120,6 +125,7 @@
                 <img src="avatar2.png" width="70" height="70" class="circle">
               </label>
             </p>
+
             <input type="hidden" name="fase" value="1">
          </fieldset>
         </div>

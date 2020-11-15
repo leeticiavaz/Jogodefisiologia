@@ -7,12 +7,9 @@
 	<script src="materialize/js/materialize.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <script type="text/javascript" src="consulta.js"></script>
 </head>
 <body bgcolor="#26c6da">
-
-<?php
-require "bd.php";
-?>
 
 <nav>
     <div class="nav-wrapper #fb8c00 orange darken-1">
@@ -24,33 +21,20 @@ require "bd.php";
   </nav>
 
 
-<?php
-$sql = "SELECT * FROM cadastro";
-$resultado = mysqli_query($connect, $sql);
-?>
-
-<table>
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>Pontuação</th>
-          </tr>
-        </thead>
-        <?php
-            while ($dados = mysqli_fetch_array($resultado)) {
-             ?>
-
-        <tbody>
-          <tr>
-            <td><?php echo $dados['nome']; ?></td>
-            <td><?php echo $dados['p1'] + $dados['p2'] + $dados['p3'] + $dados['p4'] + $dados['p5'] + $dados['p6'] + $dados['p7'] + $dados['p8'] + $dados['p9'] + $dados['p10']; ?></td>
-
-          </tr>
-        </tbody>
-         <?php
-          }
-          ?>
-      </table>
+ <div class="row" style="margin-top: 5%">
+    <div class="col s12 m8 push-m2">
+      <div class="card large #ffffff white">
+        <div class="card-content black-text">
+          <span class="card-title"><b>Ranking</b></span> <input type="text" placeholder="Pesquisar por nome de jogador" style="max-width: 30%" id="pesquisa">
+          <table class="resultado">
+            
+          </table> 
+          <iframe src="rankingpont.php" width="100%" height="350"></iframe>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
 
 </body>

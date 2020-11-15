@@ -104,7 +104,7 @@ if ($categoria == 'quest') {
 ?>
 
 <form action="fase1formq1.php" id="formquest" method="post">
-<div class="row">
+<div class="row" style="margin-top: 3%">
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
@@ -175,7 +175,7 @@ if ($categoria == 'quest') {
 ?>
 
 <form action="fase1formq1.php" method="post">
-<div class="row">
+<div class="row" style="margin-top: 3%">
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">

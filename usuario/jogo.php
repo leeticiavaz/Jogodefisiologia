@@ -20,14 +20,8 @@
         0%{
           border-radius: 14px;
         }
-        25%{
-          border-radius: 20px;
-        }
         50%{
           border-radius: 50px;
-        }
-        75%{
-          border-radius: 20px;
         }
         100%{
           border-radius: 14px;
@@ -114,7 +108,8 @@ $nivel = $dados['nivel'];
 
 $pontuacao = $dados['p1'] + $dados['p2'] + $dados['p3'] + $dados['p4'] + $dados['p5'] + $dados['p6'] + $dados['p7'] + $dados['p8'] + $dados['p9'] + $dados['p10'];
 
-
+$sql = "UPDATE cadastro SET recfase = 1, pontuacao = $pontuacao WHERE email = '$email'";
+$result = mysqli_query($connect, $sql);
 
 ?>
 <nav>
@@ -131,7 +126,7 @@ $pontuacao = $dados['p1'] + $dados['p2'] + $dados['p3'] + $dados['p4'] + $dados[
       <div class="user-view">
       
       <span class="white-text name" style="font-family: arial; font-weight: bold; font-size: 20px;">
-      <blockquote><?php echo "$nome" ?> </blockquote>
+      <blockquote><?php echo $dados['nick']; ?> </blockquote>
       </span>
       <span class="white-text email" style="font-size: 17px;">
       <?php echo "$email" ?></span>

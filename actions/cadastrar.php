@@ -20,6 +20,7 @@
 require "../bd.php";
 
 $nome = $_POST['nome'];
+$nick = $_POST['nick'];
 $dataNasc = $_POST['dataNasc'];
 $curso = $_POST['curso'];
 $matricula = $_POST['matricula'];
@@ -57,7 +58,7 @@ if(mysqli_num_rows($select) > 0){
   <?php
         die;
     }else{
-        $query = "INSERT INTO cadastro (nome,dataNasc,curso,matricula,semestre,ano,email,senha, avatar, nivel, fase, recnivel, recfase) VALUES ('$nome','$dataNasc','$curso','$matricula','$semestre','$ano','$email','$senha','$avatar', $nivel, $fase, $recnivel, $recfase)";
+        $query = "INSERT INTO cadastro (nome, nick, dataNasc,curso,matricula,semestre,ano,email,senha, avatar, nivel, fase, recnivel, recfase) VALUES ('$nome', '$nick', '$dataNasc','$curso','$matricula','$semestre','$ano','$email','$senha','$avatar', $nivel, $fase, $recnivel, $recfase)";
         $insert = mysqli_query($connect,$query);
 
     if($insert){

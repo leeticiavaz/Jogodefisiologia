@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Nov-2020 às 07:23
+-- Generation Time: 15-Nov-2020 às 21:22
 -- Versão do servidor: 5.6.17
 -- PHP Version: 7.4.8
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `cadastro` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `nick` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `dataNasc` date NOT NULL,
   `curso` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `matricula` int(30) NOT NULL,
@@ -49,10 +50,11 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
   `p8` int(10) NOT NULL,
   `p9` int(10) NOT NULL,
   `p10` int(10) NOT NULL,
+  `pontuacao` int(25) NOT NULL,
   `recnivel` int(2) NOT NULL,
   `recfase` int(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -76,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `questoes` (
   `correta` int(1) NOT NULL,
   `corretaVouf` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -2,50 +2,16 @@
 session_start();
 require "../../bd.php";
 $email = $_SESSION['email'];
-
-$sql = "SELECT * FROM cadastro WHERE email = '$email'";
-$result1 = mysqli_query($connect, $sql);
-while ($linha = mysqli_fetch_array($result1)){
- if (isset($_GET['rec'])) {
-   $nivel_jogador = $_GET['rec'];
-   $fase_jogador = $linha['recfase'];
- $rec = $_GET['rec'];
- $sql = "UPDATE cadastro SET recnivel = $rec WHERE email = '$email'";
- $result = mysqli_query($connect, $sql);
- if ($fase_jogador == 1) {
-   $string = "p".strval($nivel_jogador);
-   $sql2 = "UPDATE cadastro SET $string = 0 WHERE email = '$email'";
-   $result2 = mysqli_query($connect, $sql2);
- }
- }
- 
-
-}
-
-if ($fase_jogador > 10) {
-?>
-<div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Você refez esse nível!</h4>
-      <p>Parabéns, você refez esse nível. Clique em ok para voltar ao menu principal!</p>
-    </div>
-    <div class="modal-footer">
-      <a href="recindex.php" class="modal-close waves-effect waves-green btn-flat green" style="color: white">Ok</a>
-    </div>
-  </div>
-<?php
-}
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jogo</title>
-	<meta charset="utf-8">
+  <title>Jogo</title>
+  <meta charset="utf-8">
     <script type="text/javascript" src="../../jquery-3.4.1.js"></script>
-	<script src="../../materialize/js/materialize.min.js"></script>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="../../materialize/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
     <style type="text/css">
       .zoom {
@@ -66,6 +32,37 @@ if ($fase_jogador > 10) {
 }
     </style>
 </head>
+
+<?php
+$sql = "SELECT * FROM cadastro WHERE email = '$email'";
+$result1 = mysqli_query($connect, $sql);
+while ($linha = mysqli_fetch_array($result1)){
+ if (isset($_GET['rec'])) {
+   $nivel_jogador = $_GET['rec'];
+   $fase_jogador = $linha['recfase'];
+ $rec = $_GET['rec'];
+ $sql = "UPDATE cadastro SET recnivel = $rec WHERE email = '$email'";
+ $result = mysqli_query($connect, $sql);
+ if ($fase_jogador == 1) {
+   $string = "p".strval($nivel_jogador);
+   $sql2 = "UPDATE cadastro SET $string = 0 WHERE email = '$email'";
+   $result2 = mysqli_query($connect, $sql2);
+ }
+
+ }
+ 
+ $somapont = $linha['p1'] + $linha['p2'] + $linha['p3'] + $linha['p4'] + $linha['p5'] + $linha['p6'] + $linha['p7'] + $linha['p8'] + $linha['p9'] + $linha['p10'];
+
+$sql = "UPDATE cadastro SET pontuacao = $somapont WHERE email = '$email'";
+$result = mysqli_query($connect, $sql);
+
+}
+
+
+
+?>
+
+
 <body bgcolor="#21D6F7">
 	<nav>
     <div class="nav-wrapper #fb8c00 orange darken-1">
@@ -140,7 +137,7 @@ if ($categoria == 'quest') {
 ?>
 
 <form action="recpont.php" id="formquest" method="post">
-<div class="row">
+<div class="row" style="margin-top: 3%">
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
@@ -211,7 +208,7 @@ if ($categoria == 'quest') {
 ?>
 
 <form action="recpont.php" method="post">
-<div class="row">
+<div class="row" style="margin-top: 3%">
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
