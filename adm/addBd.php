@@ -40,6 +40,19 @@ if (isset($_POST['fototext'])) {
   
 }
 
+if (isset($_POST['fotoajudatext'])) {
+  $extensaoajuda = strtolower(substr($_FILES['fotoajudaquest']['name'], -4));
+  if ($extensaoajuda) {
+  $novo_nomeajuda = "ajuda".md5(time()).".".$extensaoajuda;
+  $diretorioajuda = "fotos/";
+  move_uploaded_file($_FILES['fotoajudaquest']['tmp_name'], $diretorioajuda.$novo_nomeajuda);
+  }else{
+  $novo_nomeajuda = "empty";
+  }
+  
+}
+
+
 
 }
 
@@ -63,6 +76,19 @@ if (isset($_POST['fototextvouf'])) {
   
 }
 
+
+if (isset($_POST['fotoajudatextvouf'])) {
+  $extensaoajudavouf = strtolower(substr($_FILES['fotoajudavouf']['name'], -4));
+  if ($extensaoajudavouf) {
+  $novo_nomeajudavouf = "ajuda".md5(time()).".".$extensaoajudavouf;
+  $diretorioajudavouf = "fotos/";
+  move_uploaded_file($_FILES['fotoajudavouf']['tmp_name'], $diretorioajudavouf.$novo_nomeajudavouf);
+  }else{
+  $novo_nomeajudavouf = "empty";
+  }
+  
+}
+
 }
 
 
@@ -70,12 +96,12 @@ mysqli_set_charset($connect, "UTF-8");
 
 if ($categoria == 'quest') {
 
-$sql = "INSERT INTO questoes (nivel, fase, texto, opcao1, opcao2, opcao3, opcao4, opcao5, categoria, textoajuda, foto, correta) VALUES ($nivel, $fase, '$texto', '$opcao1', '$opcao2', '$opcao3', '$opcao4', '$opcao5', '$categoria', '$ajuda', '$novo_nome', $correta) ";
+$sql = "INSERT INTO questoes (nivel, fase, texto, opcao1, opcao2, opcao3, opcao4, opcao5, categoria, textoajuda, fotoajuda, foto, correta) VALUES ($nivel, $fase, '$texto', '$opcao1', '$opcao2', '$opcao3', '$opcao4', '$opcao5', '$categoria', '$ajuda', '$novo_nomeajuda', '$novo_nome', $correta) ";
 
 }
 
 if ($categoria == 'vouf') {
-  $sql = "INSERT INTO questoes (nivel, fase, texto, categoria, textoajuda, foto, corretaVouf) VALUES ($nivel1, $fase1, '$texto1',  '$categoria', '$ajuda1', '$novo_nome', '$correta1') ";
+  $sql = "INSERT INTO questoes (nivel, fase, texto, categoria, textoajuda, fotoajuda, foto, corretaVouf) VALUES ($nivel1, $fase1, '$texto1',  '$categoria', '$ajuda1', '$novo_nomeajudavouf', '$novo_nome', '$correta1') ";
 
 }
 

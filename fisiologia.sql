@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Nov-2020 às 21:22
+-- Generation Time: 04-Dez-2020 às 05:19
 -- Versão do servidor: 5.6.17
 -- PHP Version: 7.4.8
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `cadastro` (
   `recnivel` int(2) NOT NULL,
   `recfase` int(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -74,11 +74,12 @@ CREATE TABLE IF NOT EXISTS `questoes` (
   `opcao5` text COLLATE utf8_unicode_ci NOT NULL,
   `categoria` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `textoajuda` text COLLATE utf8_unicode_ci NOT NULL,
+  `fotoajuda` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `foto` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
   `correta` int(1) NOT NULL,
   `corretaVouf` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

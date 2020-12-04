@@ -102,6 +102,7 @@ if ($dados['categoria'] == 'quest') {
             <p>Opção 3:</p>
             <textarea  maxlength="1500" name="opcao3"  class="materialize-textarea" style="max-width: 70%"><?php echo $dados['opcao3']; ?></textarea>
 
+            <p>Imagem na questão:</p>
           <div class="file-field input-field">
           <div class="btn">
             <span>Adicionar imagem</span>
@@ -138,6 +139,16 @@ if ($dados['categoria'] == 'quest') {
           <option value="5">5</option>
         </select>
             
+            <p> Imagem na caixa de ajuda:</p>
+            <div class="file-field input-field">
+          <div class="btn">
+            <span>Adicionar imagem</span>
+              <input type="file" name="fotoajudaquest">
+          </div>
+         <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" name="fotoajudatext" style="max-width: 45%">
+          </div>
+        </div>
 
       </div>
           
@@ -176,6 +187,7 @@ if ($dados['categoria'] == 'quest') {
           <p >Texto:</p>
             <textarea  maxlength="1500" name="texto1" id="editor3" class="materialize-textarea" style="max-width: 70%"><?php echo $dados['texto']; ?></textarea><br>
 
+            <p>Imagem na questão:</p>
             <div class="file-field input-field">
             <div class="btn">
               <span>Adicionar imagem</span>
@@ -185,6 +197,19 @@ if ($dados['categoria'] == 'quest') {
             <input class="file-path validate" type="text" name="fototextvouf">
           </div>
         </div> 
+
+
+        <p> Imagem na caixa de ajuda:</p>
+            <div class="file-field input-field">
+          <div class="btn">
+            <span>Adicionar imagem</span>
+              <input type="file" name="fotoajudavouf">
+          </div>
+         <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" name="fotoajudatextvouf">
+          </div>
+        </div>
+
           </div>
           
 

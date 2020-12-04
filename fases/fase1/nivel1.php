@@ -71,16 +71,27 @@ while ($linha = mysqli_fetch_array($result1)) {
   $texto_ajuda = $linha['textoajuda'];
   $foto = $linha['foto'];
   $categoria = $linha['categoria'];
+  $fotoajuda = $linha['fotoajuda'];
 }
 
 ?>
 
 <!-- Modal Structure -->
 
-  <div id="modal2" class="modal">
+  <div id="modal2" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>Ajuda</h4>
-      <p><?php echo $texto_ajuda; ?></p>
+      <p align="center"><?php echo $texto_ajuda; ?></p>
+      <br>
+      <?php
+      if ($fotoajuda != 'empty') {
+      ?>
+      
+        <img class="materialboxed" style="margin-left: 20%" width="300" height="300" src="../../adm/fotos/<?php echo $fotoajuda; ?>">
+      
+      <?php
+      }
+      ?>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat green" style="color: white">Ok</a>

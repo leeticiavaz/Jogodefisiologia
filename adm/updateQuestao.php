@@ -41,6 +41,18 @@ if (isset($_POST['fototext'])) {
   
 }
 
+if (isset($_POST['fotoajudatext'])) {
+  $extensaoajuda = strtolower(substr($_FILES['fotoajudaquest']['name'], -4));
+  if ($extensaoajuda) {
+  $novo_nomeajuda = "ajuda".md5(time()).".".$extensaoajuda;
+  $diretorioajuda = "fotos/";
+  move_uploaded_file($_FILES['fotoajudaquest']['tmp_name'], $diretorioajuda.$novo_nomeajuda);
+  }else{
+  $novo_nomeajuda = "empty";
+  }
+  
+}
+
 }
 
 if (isset($_POST['buttonVouf'])) {
@@ -60,6 +72,18 @@ if (isset($_POST['fototextvouf'])) {
   
 }
 
+if (isset($_POST['fotoajudatextvouf'])) {
+  $extensaoajudavouf = strtolower(substr($_FILES['fotoajudavouf']['name'], -4));
+  if ($extensaoajudavouf) {
+  $novo_nomeajudavouf = "ajuda".md5(time()).".".$extensaoajudavouf;
+  $diretorioajudavouf = "fotos/";
+  move_uploaded_file($_FILES['fotoajudavouf']['tmp_name'], $diretorioajudavouf.$novo_nomeajudavouf);
+  }else{
+  $novo_nomeajudavouf = "empty";
+  }
+  
+}
+
 }
 
 
@@ -70,14 +94,14 @@ $dados = mysqli_fetch_array($query1);
 if ($dados['categoria'] == 'quest') {
   
 
-$sql = "UPDATE questoes SET nivel=$nivel, fase=$fase, texto='$texto', opcao1='$opcao1', opcao2='$opcao2',opcao3='$opcao3', opcao4='$opcao4', opcao5='$opcao5', textoajuda='$ajuda', foto='$novo_nome', correta='$correta'  WHERE id = '$id'";
+$sql = "UPDATE questoes SET nivel=$nivel, fase=$fase, texto='$texto', opcao1='$opcao1', opcao2='$opcao2',opcao3='$opcao3', opcao4='$opcao4', opcao5='$opcao5', textoajuda='$ajuda', fotoajuda='$novo_nomeajuda', foto='$novo_nome', correta='$correta'  WHERE id = '$id'";
 
 }
 
 if ($dados['categoria'] == 'vouf') {
   
 
-$sql = "UPDATE questoes SET nivel=$nivel, fase=$fase, texto='$texto1', textoajuda='$ajuda1', corretaVouf='$correta1', foto='$novo_nome' WHERE id = '$id'";
+$sql = "UPDATE questoes SET nivel=$nivel, fase=$fase, texto='$texto1', textoajuda='$ajuda1', fotoajuda='$novo_nomeajudavouf', corretaVouf='$correta1', foto='$novo_nome' WHERE id = '$id'";
 
 }
 
