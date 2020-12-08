@@ -50,6 +50,26 @@
         
         <div id="font" align="center"> <p style=" color: black; font-size: 20px; font-family: arial; text-align: left;"> Data de nascimento * </p></div>
         <input id="text2" placeholder="Clique aqui" name="dataNasc" type="date"  required>
+
+        <div id="font" align="center"> <p style=" color: black; font-size: 20px; font-family: arial; text-align: left;"> Gênero * </p></div>
+            <p align="left">
+          <label>
+            <input name="genero" type="radio" checked  value="masculino" />
+            <span>Masculino</span>
+          </label>
+        </p>
+        <p align="left">
+          <label>
+            <input name="genero" type="radio" value="feminino" />
+            <span>Feminino</span>
+          </label>
+        </p>
+        <p align="left">
+          <label>
+            <input name="genero" type="radio" value="outro" />
+            <span>Outro</span>
+          </label>
+        </p>
         </div>
         </fieldset>
         <br>
@@ -61,7 +81,7 @@
         <div id="font" align="center"> <p style="color: black; font-size: 20px; font-family: arial; text-align: left;"> Senha: * </p></div>
           <input placeholder="Digite aqui sua senha" id="text2" name="senha" type="password" class="validate" required>
         
-        <a target="__blank" href="termo_de_consentimento.php" style="color: blue; text-decoration: underline;">Termos de condição</a>
+        <a target="__blank" href="termo_de_consentimento.html" style="color: blue; text-decoration: underline;">Termo de consetimento livre e esclarecido</a>
         <br>
         <label>
         <input type="checkbox" required />
@@ -115,14 +135,23 @@
             <br><br>
             <p>
               <label>
-                <input class="with-gap" name="avatar" type="radio" value="masculino" checked />
-                <span style="color: black">Masculino</span>
-                <img src="avatar1.png" width="70" height="70" class="circle">
+                <input class="with-gap" name="avatar" type="radio" value="avatar1" checked />
+                <span><img src="avatar1.png" width="70" height="70" class="circle"></span>
               </label>
               <label>
-                <input class="with-gap" name="avatar" type="radio" value="feminino" />
-                <span style="color: black">Feminino</span>
-                <img src="avatar2.png" width="70" height="70" class="circle">
+                <input class="with-gap" name="avatar" type="radio" value="avatar2" />
+                <span><img src="avatar2.png" width="70" height="70" class="circle"></span>
+              </label>
+            </p>
+            <br>
+             <p>
+              <label>
+                <input class="with-gap" name="avatar" type="radio" value="avatar3" />
+                <span><img src="avatar3.png" width="70" height="70" class="circle"></span>
+              </label>
+              <label>
+                <input class="with-gap" name="avatar" type="radio" value="avatar4" />
+                <span><img src="avatar4.png" width="70" height="70" class="circle"></span>
               </label>
             </p>
 

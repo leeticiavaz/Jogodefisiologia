@@ -30,7 +30,7 @@
       <div class="card white">
         <nav>
           <div class="nav-wrapper #4a148c purple darken-4">
-           <a class="brand-logo center">Login</a>
+           <a class="brand-logo center" style="font-size: 35px">Login</a>
            </div>
   </nav>
         <div class="card-content white-text">
@@ -38,11 +38,11 @@
           <form action="../actions/logar.php" method="post">
 
         <div align="center">
-        <div id="font" align="center"> <p style=" color: black; font-size: 30px; font-weight: bold; text-align: left;"> Email * </p></div>
+        <div id="font" align="center"> <p style=" color: black; font-size: 35px; font-weight: bold; text-align: left;"> Email * </p></div>
         <input placeholder="Digite aqui seu email" id="text2" name="email" type="email" class="validate" required>
         <br>
         <br>
-        <div id="font" align="center"> <p style=" color: black; font-size: 30px; font-weight: bold; text-align: left;"> Senha * </p></div>
+        <div id="font" align="center"> <p style=" color: black; font-size: 35px; font-weight: bold; text-align: left;"> Senha * </p></div>
         <input placeholder="Digite aqui seu email" id="text2" name="senha" type="password" class="validate" required>
         </div>
 

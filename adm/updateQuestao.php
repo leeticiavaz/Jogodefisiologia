@@ -60,6 +60,14 @@ $texto1 = $_POST['texto1'];
 $ajuda1 = $_POST['ajuda1'];
 $correta1 = $_POST['correta1'];
 
+if ($correta1 == 'verdadeiro') {
+  $correta2 = 1;
+}
+
+if ($correta1 == 'falso') {
+  $correta2 = 0;
+}
+
 if (isset($_POST['fototextvouf'])) {
   $extensao = strtolower(substr($_FILES['fotovouf']['name'], -4));
   if ($extensao) {
@@ -101,7 +109,7 @@ $sql = "UPDATE questoes SET nivel=$nivel, fase=$fase, texto='$texto', opcao1='$o
 if ($dados['categoria'] == 'vouf') {
   
 
-$sql = "UPDATE questoes SET nivel=$nivel, fase=$fase, texto='$texto1', textoajuda='$ajuda1', fotoajuda='$novo_nomeajudavouf', corretaVouf='$correta1', foto='$novo_nome' WHERE id = '$id'";
+$sql = "UPDATE questoes SET nivel=$nivel, fase=$fase, texto='$texto1', textoajuda='$ajuda1', fotoajuda='$novo_nomeajudavouf', correta='$correta2', corretaVouf='$correta1', foto='$novo_nome' WHERE id = '$id'";
 
 }
 

@@ -67,7 +67,7 @@ while ($linha = mysqli_fetch_array($result1)) {
   $opcao4 = $linha['opcao4'];
   $opcao5 = $linha['opcao5'];
   $correta = $linha['correta'];
-  $corretaVouf = $linha['corretaVouf'];
+  $corretavouf = $linha['corretaVouf'];
   $texto_ajuda = $linha['textoajuda'];
   $foto = $linha['foto'];
   $categoria = $linha['categoria'];
@@ -109,6 +109,16 @@ while ($linha = mysqli_fetch_array($result1)) {
     </div>
   </div>
 
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <h4>Questão incorreta</h4>
+      <p>Você errou essa questão, por favor refaça a questão!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+    </div>
+  </div>
+
 
 <?php
 if ($categoria == 'quest') {
@@ -120,7 +130,12 @@ if ($categoria == 'quest') {
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
-          <?php if ($foto != 'empty') {
+
+          <fieldset style="border-radius: 30px; background-color: white">
+           <div style="color: black;"><?php echo $texto; ?></div>
+         </fieldset>
+         <br>
+         <?php if ($foto != 'empty') {
           ?>
           <p>
           <div class="zoom" style="cursor: zoom-in;">
@@ -130,8 +145,7 @@ if ($categoria == 'quest') {
           </div> </p>
           <?php
           }  ?> 
-          <p><blockquote><?php echo $texto; ?></blockquote></p>
-
+          <br>
           <p>
       		<label>
         	<input name="q1" type="radio" checked value="1" />
@@ -185,16 +199,20 @@ if ($categoria == 'quest') {
 }else{
 ?>
 
-<form action="fase1formq1.php" method="post">
+<form action="fase1formq1.php" id="form2" method="post">
 <div class="row" style="margin-top: 3%">
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
+          <fieldset style="border-radius: 30px; background-color: white">
+           <div style="color: black;"><?php echo $texto; ?></div>
+         </fieldset>
+         <br>
            <?php if ($foto != 'empty') {
           ?>
           <p>
-            <p><blockquote><?php echo $texto; ?></blockquote></p>
+           
           <div class="zoom" style="cursor: zoom-in;">
           <img class="materialboxed" style="margin-left: 20%" width="300" height="300" src="../../adm/fotos/<?php echo $foto ?>">
           <?php
@@ -202,24 +220,25 @@ if ($categoria == 'quest') {
           </div> </p>
           <?php
           }  ?> 
-
+          
+         <br>
           <p>
           <label>
-          <input name="q1" type="radio" checked value="verdadeiro" />
+          <input name="q1" id="r1" type="radio" checked value="1" />
           <span style="color: white">Verdadeiro</span>
           </label>
       </p>
 
       <p>
           <label>
-          <input name="q1" type="radio" value="falso" />
+          <input name="q1" id="r2" type="radio" value="0" />
           <span style="color: white">Falso</span>
           </label>
       </p>
 
       
       <input type="hidden" name="fase" value="<?php echo $fase_jogador; ?>">
-      <input type="hidden" name="correta" value="<?php echo $corretaVouf; ?>">
+      <input type="hidden" name="correta" value="<?php echo $corretavouf; ?>">
         </div>
         <div class="card-action">
           <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
@@ -233,6 +252,7 @@ if ($categoria == 'quest') {
 </form>
 
 <?php
+
 }
 ?>
 
@@ -246,21 +266,36 @@ if ($categoria == 'quest') {
 
   var tentativa = 1;
 
+
 $(document).on('submit', '#formquest', function(event){
 
       var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
       var correta = <?php echo $correta; ?>
 
-      if(opcaocheck != correta && tentativa == 1) {
-        $('#modal4').modal('open');
-        tentativa = 0;
+      if(opcaocheck != tentativa) {
+        $('#modal5').modal('open');
         event.preventDefault();
       }
 
 });
 
+$(document).on('submit', '#form2', function(event){
 
+
+      var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
+      var correta = <?php echo $correta; ?>;
+      
+      
+
+      if(correta != opcaocheck){
+        $('#modal5').modal('open');
+        event.preventDefault();
+      }
+
+
+});
 </script>
+
 
 </body>
 </html>

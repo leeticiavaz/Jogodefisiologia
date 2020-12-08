@@ -64,6 +64,14 @@ $texto1 = $_POST['texto1'];
 $ajuda1 = $_POST['ajuda1'];
 $correta1 = $_POST['correta1'];
 
+if ($correta1 == 'verdadeiro') {
+  $correta2 = 1;
+}
+
+if ($correta1 == 'falso') {
+  $correta2 = 0;
+}
+
 if (isset($_POST['fototextvouf'])) {
   $extensao = strtolower(substr($_FILES['fotovouf']['name'], -4));
   if ($extensao) {
@@ -101,7 +109,7 @@ $sql = "INSERT INTO questoes (nivel, fase, texto, opcao1, opcao2, opcao3, opcao4
 }
 
 if ($categoria == 'vouf') {
-  $sql = "INSERT INTO questoes (nivel, fase, texto, categoria, textoajuda, fotoajuda, foto, corretaVouf) VALUES ($nivel1, $fase1, '$texto1',  '$categoria', '$ajuda1', '$novo_nomeajudavouf', '$novo_nome', '$correta1') ";
+  $sql = "INSERT INTO questoes (nivel, fase, texto, categoria, textoajuda, fotoajuda, foto, correta, corretaVouf) VALUES ($nivel1, $fase1, '$texto1',  '$categoria', '$ajuda1', '$novo_nomeajudavouf', '$novo_nome', '$correta2', '$correta1') ";
 
 }
 

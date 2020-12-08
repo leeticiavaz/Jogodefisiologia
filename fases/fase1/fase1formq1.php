@@ -157,10 +157,12 @@ if ($fase > 10) {
 }
 }
 }else{
-  if ($resultado == $corretaVouf) {
+  if ($resultado == $correta) {
 
   $fase = $fase + 1;
-  $pontuacao = $pontuacao + 10;
+  
+  $pontuacao = $pontuacao + 10; 
+  
   
 ?>
 <div id="modal1" class="modal">
@@ -220,38 +222,6 @@ switch ($nivel_jogador) {
     </div>
     <div class="modal-footer">
       <a href="nivel1.php" class="modal-close waves-effect waves-green btn-flat green" style="color: white">Ok</a>
-    </div>
-  </div>
-<?php
-}
-}else{
-$fase = $fase + 1;
-$sql = "UPDATE cadastro SET fase = $fase WHERE email = '$email'";
-$result = mysqli_query($connect, $sql);
-?>
-<div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Resposta errada!</h4>
-      <p>Infelizmente você errou essa questão!</p>
-    </div>
-    <div class="modal-footer">
-      <a href="nivel1.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
-    </div>
-  </div>
-<?php
-
-if ($fase > 10) {
-  $nivel_jogador = $nivel_jogador + 1;
-  $sql = "UPDATE cadastro SET nivel = $nivel_jogador, fase = 1 WHERE email = '$email'";
-  $result = mysqli_query($connect, $sql);
-?>
-<div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Resposta errada!</h4>
-      <p>Infelizmente você errou essa questão! Clique em Ok para avançar de nível</p>
-    </div>
-    <div class="modal-footer">
-      <a href="nivel1.php" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
     </div>
   </div>
 <?php

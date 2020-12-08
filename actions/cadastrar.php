@@ -33,6 +33,8 @@ $fase = $_POST['fase'];
 $recnivel = 0;
 $recfase = 1;
 
+$genero = $_POST['genero'];
+
 
 $avatar = $_POST['avatar'];
 
@@ -58,7 +60,7 @@ if(mysqli_num_rows($select) > 0){
   <?php
         die;
     }else{
-        $query = "INSERT INTO cadastro (nome, nick, dataNasc,curso,matricula,semestre,ano,email,senha, avatar, nivel, fase, recnivel, recfase) VALUES ('$nome', '$nick', '$dataNasc','$curso','$matricula','$semestre','$ano','$email','$senha','$avatar', $nivel, $fase, $recnivel, $recfase)";
+        $query = "INSERT INTO cadastro (nome, nick, dataNasc,curso,matricula,semestre,ano,email,senha, genero, avatar, nivel, fase, recnivel, recfase) VALUES ('$nome', '$nick', '$dataNasc','$curso','$matricula','$semestre','$ano','$email','$senha', '$genero', '$avatar', $nivel, $fase, $recnivel, $recfase)";
         $insert = mysqli_query($connect,$query);
 
     if($insert){
