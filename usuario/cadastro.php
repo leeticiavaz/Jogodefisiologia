@@ -139,15 +139,24 @@
                 <span><img src="avatar1.png" width="70" height="70" class="circle"></span>
               </label>
               <label>
-                <input class="with-gap" name="avatar" type="radio" value="avatar2" />
-                <span><img src="avatar2.png" width="70" height="70" class="circle"></span>
+                <input class="with-gap" name="avatar" type="radio" value="avatar5" />
+                <span><img src="avatar5.png" width="70" height="70" class="circle"></span>
               </label>
+              <label>
+                <input class="with-gap" name="avatar" type="radio" value="avatar3" />
+                <span><img src="avatar3.png" width="70" height="70" class="circle"></span>
+              </label>
+              
             </p>
             <br>
              <p>
               <label>
-                <input class="with-gap" name="avatar" type="radio" value="avatar3" />
-                <span><img src="avatar3.png" width="70" height="70" class="circle"></span>
+                <input class="with-gap" name="avatar" type="radio" value="avatar2" />
+                <span><img src="avatar2.png" width="70" height="70" class="circle"></span>
+              </label>
+              <label>
+                <input class="with-gap" name="avatar" type="radio" value="avatar6" />
+                <span><img src="avatar6.png" width="70" height="70" class="circle"></span>
               </label>
               <label>
                 <input class="with-gap" name="avatar" type="radio" value="avatar4" />

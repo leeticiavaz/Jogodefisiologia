@@ -41,6 +41,14 @@
             ?>
             <td><img src="usuario/avatar4.png" class="circle" width="35" height="35"></td>
             <?php
+          }if ($dados['avatar'] == 'avatar5') {
+            ?>
+            <td><img src="usuario/avatar5.png" class="circle" width="35" height="35"></td>
+            <?php
+          }if ($dados['avatar'] == 'avatar6') {
+            ?>
+            <td><img src="usuario/avatar6.png" class="circle" width="35" height="35"></td>
+            <?php
           }
             ?>
                         </tr>                       

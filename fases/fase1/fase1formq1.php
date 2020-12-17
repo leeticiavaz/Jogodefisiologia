@@ -18,6 +18,7 @@ require "../../bd.php";
 $resultado = $_POST['q1'];
 $email = $_SESSION['email'];
 $correta = $_POST['correta'];
+$tentativa = $_POST['tentativa'];
 
 $sql1 = "SELECT * FROM cadastro WHERE email = '$email'";
 $result1 = mysqli_query($connect, $sql1);
@@ -57,7 +58,13 @@ if ($categoria == 'quest') {
   if ($resultado == $correta) {
 
   $fase = $fase + 1;
-  $pontuacao = $pontuacao + 10;
+
+  if ($tentativa == 1) {
+    $pontuacao = $pontuacao + 10;
+  }else{
+    $pontuacao = $pontuacao + 5;
+  }
+  
   
   
 ?>
@@ -160,8 +167,13 @@ if ($fase > 10) {
   if ($resultado == $correta) {
 
   $fase = $fase + 1;
-  
-  $pontuacao = $pontuacao + 10; 
+
+  if ($tentativa == 1) {
+       $pontuacao = $pontuacao + 10; 
+    }else{
+      $pontuacao = $pontuacao + 5; 
+    }
+ 
   
   
 ?>

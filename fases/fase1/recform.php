@@ -45,8 +45,32 @@ while ($linha = mysqli_fetch_array($result1)){
  $result = mysqli_query($connect, $sql);
  if ($fase_jogador == 1) {
    $string = "p".strval($nivel_jogador);
-   $sql2 = "UPDATE cadastro SET $string = 0 WHERE email = '$email'";
+   
+   $sql2 = "UPDATE cadastro SET $string = 0  WHERE email = '$email'";
    $result2 = mysqli_query($connect, $sql2);
+ }
+
+if ($nivel_jogador == 2 and $fase_jogador == 6) {
+   header("Location: r1rec.php");
+ }
+ if ($nivel_jogador == 2 and $fase_jogador == 8) {
+   header("Location: r2rec.php");
+ }
+
+if ($nivel_jogador == 3 and $fase_jogador == 6) {
+   header("Location: r3rec.php");
+ }
+
+if ($nivel_jogador == 4 and $fase_jogador == 2) {
+   header("Location: r4rec.php");
+ }
+
+ if ($nivel_jogador == 6 and $fase_jogador == 3) {
+   header("Location: r5rec.php");
+ }
+
+ if ($nivel_jogador == 1 and $fase_jogador == 8) {
+   header("Location: cruzadinha1rec.php");
  }
 
  }
@@ -191,6 +215,7 @@ if ($categoria == 'quest') {
       
       <input type="hidden" name="fase" value="<?php echo $fase_jogador; ?>">
       <input type="hidden" name="correta" value="<?php echo $correta; ?>">
+      <input type="hidden" name="tentativa">
         </div>
         <div class="card-action">
           <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
@@ -207,7 +232,7 @@ if ($categoria == 'quest') {
 }else{
 ?>
 
-<form action="recpont.php" method="post">
+<form action="recpont.php" method="post" id="form2">
 <div class="row" style="margin-top: 3%">
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
@@ -227,14 +252,14 @@ if ($categoria == 'quest') {
 
           <p>
           <label>
-          <input name="q1" type="radio" checked value="verdadeiro" />
+          <input name="q1" type="radio" checked value="1" />
           <span style="color: white">Verdadeiro</span>
           </label>
       </p>
 
       <p>
           <label>
-          <input name="q1" type="radio" value="falso" />
+          <input name="q1" type="radio" value="0" />
           <span style="color: white">Falso</span>
           </label>
       </p>
@@ -242,6 +267,7 @@ if ($categoria == 'quest') {
       
       <input type="hidden" name="fase" value="<?php echo $fase_jogador; ?>">
       <input type="hidden" name="correta" value="<?php echo $corretaVouf; ?>">
+      <input type="hidden" name="tentativa">
         </div>
         <div class="card-action">
           <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
@@ -254,6 +280,15 @@ if ($categoria == 'quest') {
   </div>
 </form>
 
+<div id="modal5" class="modal">
+    <div class="modal-content">
+      <h4>Questão incorreta</h4>
+      <p>Você errou essa questão, por favor refaça a questão!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+    </div>
+  </div>
 <?php
 }
 ?>
@@ -268,16 +303,36 @@ if ($categoria == 'quest') {
 
 var tentativa = 1;
 
+
 $(document).on('submit', '#formquest', function(event){
 
-      var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
-      var correta = <?php echo $correta; ?>
+  $("input[name='tentativa']").val(tentativa);
 
-      if(opcaocheck != correta && tentativa == 1) {
-        $('#modal4').modal('open');
+      var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
+      var correta = <?php echo $correta; ?>;
+
+      if(opcaocheck != correta) {
+        $('#modal5').modal('open');
         tentativa = 0;
         event.preventDefault();
       }
+
+});
+
+$(document).on('submit', '#form2', function(event){
+
+  $("input[name='tentativa']").val(tentativa);
+
+      var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
+      var correta = <?php echo $correta; ?>;
+      
+
+      if(correta != opcaocheck){
+        $('#modal5').modal('open');
+        tentativa = 0;
+        event.preventDefault();
+      }
+
 
 });
 

@@ -8,6 +8,28 @@ $result = mysqli_query($connect, $sql);
 while ($linha = mysqli_fetch_array($result)){
  $nivel_jogador = $linha['nivel'];
  $fase_jogador = $linha['fase'];
+
+ if ($nivel_jogador == 2 and $fase_jogador == 6) {
+   header("Location: r1.php");
+ }
+ if ($nivel_jogador == 2 and $fase_jogador == 8) {
+   header("Location: r2.php");
+ }
+
+ if ($nivel_jogador == 3 and $fase_jogador == 6) {
+   header("Location: r3.php");
+ }
+ if ($nivel_jogador == 4 and $fase_jogador == 2) {
+   header("Location: r4.php");
+ }
+ if ($nivel_jogador == 6 and $fase_jogador == 3) {
+   header("Location: r5.php");
+ }
+
+ if ($nivel_jogador == 1 and $fase_jogador == 8) {
+   header("Location: cruzadinha1.php");
+ }
+
 }
 ?>
 
@@ -183,6 +205,7 @@ if ($categoria == 'quest') {
       
       <input type="hidden" name="fase" value="<?php echo $fase_jogador; ?>">
       <input type="hidden" name="correta" value="<?php echo $correta; ?>">
+      <input type="hidden" name="tentativa">
         </div>
         <div class="card-action">
           <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
@@ -239,6 +262,7 @@ if ($categoria == 'quest') {
       
       <input type="hidden" name="fase" value="<?php echo $fase_jogador; ?>">
       <input type="hidden" name="correta" value="<?php echo $corretavouf; ?>">
+      <input type="hidden" name="tentativa">
         </div>
         <div class="card-action">
           <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
@@ -269,11 +293,14 @@ if ($categoria == 'quest') {
 
 $(document).on('submit', '#formquest', function(event){
 
-      var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
-      var correta = <?php echo $correta; ?>
+  $("input[name='tentativa']").val(tentativa);
 
-      if(opcaocheck != tentativa) {
+      var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
+      var correta = <?php echo $correta; ?>;
+
+      if(opcaocheck != correta) {
         $('#modal5').modal('open');
+        tentativa = 0;
         event.preventDefault();
       }
 
@@ -281,6 +308,7 @@ $(document).on('submit', '#formquest', function(event){
 
 $(document).on('submit', '#form2', function(event){
 
+  $("input[name='tentativa']").val(tentativa);
 
       var opcaocheck = document.querySelector('input[name="q1"]:checked').value;
       var correta = <?php echo $correta; ?>;
@@ -289,6 +317,7 @@ $(document).on('submit', '#form2', function(event){
 
       if(correta != opcaocheck){
         $('#modal5').modal('open');
+        tentativa = 0;
         event.preventDefault();
       }
 
