@@ -20,8 +20,17 @@ if (!isset($email)) {
 
 $fase_up = $fase_jogador + 1;
 $pontuacao = $pontuacao_jogador + 10;
+$nivel_up = $nivel_jogador + 1;
 
-$sql="UPDATE cadastro SET fase = $fase_up, $string = $pontuacao WHERE email = '$email'";
+if ($nivel_jogador == 1 and $fase_up == 9) {
+	$sql="UPDATE cadastro SET fase = 1, $string = $pontuacao, nivel = 2 WHERE email = '$email'";
+mysqli_query($connect, $sql);
+
+header("Location: nivel1.php");
+die;
+}
+
+$sql="UPDATE cadastro SET fase = 1, $string = $pontuacao, nivel = $nivel_up WHERE email = '$email'";
 mysqli_query($connect, $sql);
 
 header("Location: nivel1.php");

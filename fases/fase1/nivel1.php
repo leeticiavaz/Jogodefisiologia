@@ -30,6 +30,10 @@ while ($linha = mysqli_fetch_array($result)){
    header("Location: cruzadinha1.php");
  }
 
+ if ($nivel_jogador == 2 and $fase_jogador == 10) {
+   header("Location: cruzadinha2.php?rec=0");
+ }
+
 }
 ?>
 
@@ -42,6 +46,7 @@ while ($linha = mysqli_fetch_array($result)){
 	<script src="../../materialize/js/materialize.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
+    <link rel="icon" href="../../fav.png" />
     <style type="text/css">
       .zoom {
   overflow: hidden;
@@ -141,6 +146,16 @@ while ($linha = mysqli_fetch_array($result1)) {
     </div>
   </div>
 
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <h4>Parabéns! Você está no nível <?php echo $nivel_jogador; ?>!</h4>
+      <p>Continue respondendo as questões para passar de nível!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat green" style="color: white">Ok</a>
+    </div>
+  </div>
+
 
 <?php
 if ($categoria == 'quest') {
@@ -151,7 +166,7 @@ if ($categoria == 'quest') {
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
+          <span class="card-title center"><?php echo "Questão $fase_questao"; ?></span><br><br>
 
           <fieldset style="border-radius: 30px; background-color: white">
            <div style="color: black;"><?php echo $texto; ?></div>
@@ -227,7 +242,7 @@ if ($categoria == 'quest') {
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
+          <span class="card-title center"><?php echo "Questão $fase_questao"; ?></span><br><br>
           <fieldset style="border-radius: 30px; background-color: white">
            <div style="color: black;"><?php echo $texto; ?></div>
          </fieldset>
@@ -278,6 +293,9 @@ if ($categoria == 'quest') {
 <?php
 
 }
+
+
+
 ?>
 
 
@@ -286,6 +304,13 @@ if ($categoria == 'quest') {
   $('.materialboxed').materialbox();
 	$('.modal').modal();
     $('#modal1').modal('open');
+  <?php
+    if ($fase_jogador == 1 and $nivel_jogador != 1) {
+  ?>
+  $('#modal6').modal('open');
+  <?php
+  }
+  ?>
   });
 
   var tentativa = 1;

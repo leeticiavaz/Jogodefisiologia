@@ -7,15 +7,16 @@
 	<script src="../materialize/js/materialize.min.js"></script>
     <link rel="stylesheet" href="../materialize/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="icon" href="../fav.png" />
 </head>
 <body bgcolor="#26c6da">
 
 	<!-- navbar -->
 <nav>
     <div class="nav-wrapper #fb8c00 orange darken-1">
-      <a href="#" class="brand-logo left">Fisiologia</a>
+      <a href="#" class="brand-logo left">HipoGame</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="../index.html">Página inicial</a></li>
+        <li><a style="font-size: 20px" href="../index.html">Página inicial</a></li>
       </ul>
     </div>
   </nav>
@@ -30,7 +31,7 @@
       <div class="card white">
         <nav>
           <div class="nav-wrapper #4a148c purple darken-4">
-           <a class="brand-logo center" style="font-size: 35px">Login</a>
+           <a class="brand-logo center" style="font-size: 35px">LOGIN</a>
            </div>
   </nav>
         <div class="card-content white-text">

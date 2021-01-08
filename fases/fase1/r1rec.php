@@ -25,12 +25,13 @@ if (!isset($email)) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jogo</title>
+	<title>HipoGame</title>
 	<meta charset="utf-8">
     <script type="text/javascript" src="../../jquery-3.4.1.js"></script>
 	<script src="../../materialize/js/materialize.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
+    <link rel="icon" href="../../fav.png" />
 </head>
 <body bgcolor="#21D6F7">
 <nav>
@@ -50,7 +51,7 @@ if (!isset($email)) {
     <div class="col s12 m10 push-m1">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
-         <span class="card-title center"><?php echo "Questão $fase_jogador - 10 pontos"; ?></span><br><br>
+         <span class="card-title center"><?php echo "Questão $fase_jogador"; ?></span><br><br>
            <fieldset style="border-radius: 30px; background-color: white">
            <div style="color: black;">O lobo anterior da hipófise contém muitos tipos diferentes de células secretoras. Em geral, existe um tipo celular para cada hormônio principal sintetizado nessa glândula. Dito isso, relacione o hormônio com a sua célula alvo.<br>
            	1)      Hormônio tireoestimulante<br>

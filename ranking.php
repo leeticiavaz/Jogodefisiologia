@@ -8,14 +8,15 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="materialize/css/materialize.min.css">
     <script type="text/javascript" src="consulta.js"></script>
+    <link rel="icon" href="fav.png" />
 </head>
 <body bgcolor="#26c6da">
 
 <nav>
     <div class="nav-wrapper #fb8c00 orange darken-1">
-      <a href="#" class="brand-logo left">Fisiologia</a>
+      <a href="#" class="brand-logo left">HipoGame</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="index.html">Voltar</a></li>
+        <li><a href="index.html" style="font-size: 20px">Página Inicial</a></li>
       </ul>
     </div>
   </nav>

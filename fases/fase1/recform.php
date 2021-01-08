@@ -7,12 +7,13 @@ $email = $_SESSION['email'];
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Jogo</title>
+  <title>HipoGame</title>
   <meta charset="utf-8">
     <script type="text/javascript" src="../../jquery-3.4.1.js"></script>
   <script src="../../materialize/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
+    <link rel="icon" href="../../fav.png" />
     <style type="text/css">
       .zoom {
   overflow: hidden;
@@ -71,6 +72,9 @@ if ($nivel_jogador == 4 and $fase_jogador == 2) {
 
  if ($nivel_jogador == 1 and $fase_jogador == 8) {
    header("Location: cruzadinha1rec.php");
+ }
+ if ($nivel_jogador == 2 and $fase_jogador == 10) {
+   header("Location: cruzadinha2.php?rec=1");
  }
 
  }
@@ -165,7 +169,7 @@ if ($categoria == 'quest') {
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
+          <span class="card-title center"><?php echo "Questão $fase_questao"; ?></span><br><br>
           <?php if ($foto != 'empty') {
           ?>
           <p>
@@ -237,7 +241,7 @@ if ($categoria == 'quest') {
     <div class="col s12 m6 push-m3">
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title center"><?php echo "Questão $fase_questao - 10 pontos"; ?></span><br><br>
+          <span class="card-title center"><?php echo "Questão $fase_questao"; ?></span><br><br>
            <?php if ($foto != 'empty') {
           ?>
           <p>
@@ -289,6 +293,7 @@ if ($categoria == 'quest') {
       <a href="#!" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
     </div>
   </div>
+
 <?php
 }
 ?>
@@ -298,7 +303,8 @@ if ($categoria == 'quest') {
 	$(document).ready(function(){
   $('.materialboxed').materialbox();
 	$('.modal').modal();
-    $('#modal1').modal('open');
+  $('#modal1').modal('open');
+  $('#modal6').modal('open');
   });
 
 var tentativa = 1;

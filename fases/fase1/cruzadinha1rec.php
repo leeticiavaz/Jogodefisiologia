@@ -21,11 +21,12 @@ if (!isset($email)) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta name="generator" content="EclipseCrossword" />
-<title>Jogo</title>
+<title>HipoGame</title>
 	<meta charset="utf-8">
     <script type="text/javascript" src="../../jquery-3.4.1.js"></script>
 	<script src="../../materialize/js/materialize.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
 body, h1, h2, h3, h4, h5, h6
@@ -42,8 +43,63 @@ body
 {
 	cursor: default;
 	font-size: small;
+	padding: 0;
+	margin: 0;
 }
 
+nav {
+
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+
+    background-color: #fb8c00;
+
+    z-index: 99;
+
+    padding-top: 3%;
+
+    box-shadow: 1px 1px 1px black;
+    
+
+  }
+
+ #logo {
+
+    color: #fff;
+
+    margin-top: -2%;
+
+    position: absolute;
+
+   	
+
+   	font-size: 25px;
+
+    text-decoration: none;
+
+	font-weight: bold;
+
+
+}
+
+#voltar {
+
+    text-align: right;
+
+    list-style: none;
+
+    text-decoration: none;
+
+    position: absolute;
+
+    margin-left: 86%;
+
+    margin-top: -3%;
+
+}
 .ecw-answerbox
 {
 	color: black;
@@ -177,12 +233,20 @@ body
 --></style>
 
 </head>
-<body>
+<body bgcolor="#27c5db">
+
+<nav>
+      <a href="#" id="logo">HipoGame</a>
+      
+      <ul>
+        <li id="voltar"><a style="font-size: 20px; text-decoration: none; color: #fff;" href="../../usuario/jogo.php">Página inicial</a></li>
+      </ul>
+  		
+</nav>
 
 <div align="center">
 
 <h1>Cruzadinha!</h1>
-<h3 style="margin-top: -1em;">10 pontos!</h3>
 
 <div id="waitmessage" class="ecw-answerbox">
 	This interactive crossword puzzle requires JavaScript and any 
@@ -312,7 +376,7 @@ function BeginCrossword()
 	{
 		document.getElementById("welcomemessage").style.display = "";
 		document.getElementById("checkbutton").style.display = "";
-		document.getElementById("checkbutton").style.color = "green";
+		document.getElementById("checkbutton").style.color = "white";
 		document.getElementById("checkbutton").style.width = "20%";
 
 	}
@@ -561,9 +625,9 @@ function CheckClick()
 	
 	// If errors were found, just exit now.
 	if (ErrorsFound > 0 && EmptyFound > 0)
-		document.getElementById("welcomemessage").innerHTML = ErrorsFound + (ErrorsFound > 1 ? " errors" : " error") + " and " + EmptyFound + (EmptyFound > 1 ? " incomplete words were" : " incomplete word was") + " found.";
+		document.getElementById("welcomemessage").innerHTML = ErrorsFound + (ErrorsFound > 1 ? " erros" : " erro") + " e " + EmptyFound + (EmptyFound > 1 ? " palavras incompletas foram" : " palavra incompleta foram") + " encontradas.";
 	else if (ErrorsFound > 0)
-		document.getElementById("welcomemessage").innerHTML = ErrorsFound + (ErrorsFound > 1 ? " errors were" : " error was") + " found.";
+		document.getElementById("welcomemessage").innerHTML = ErrorsFound + (ErrorsFound > 1 ? " erros foram" : " erro foram") + " encontrados.";
 	else if (EmptyFound > 0)
 		document.getElementById("welcomemessage").innerHTML = "Sem erros encontrados mas " + EmptyFound + (EmptyFound > 1 ? " palavras ainda não foram solucionadas" : " palavras ainda não foram solucionadas");
 	
@@ -585,7 +649,6 @@ function CheatClick()
 {
 	if (CrosswordFinished) return;
 	var OldWord = CurrentWord;
-	document.getElementById("wordentry").value = Word[CurrentWord];
 	OKClick();
 	ChangeWordStyle(OldWord, "ecw-box ecw-boxcheated_unsel");
 }
@@ -625,7 +688,7 @@ function HashWord(Word)
 <div id="worderror" class="ecw-worderror"></div>
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" style="margin-top:1em;"><tbody><tr><td>
-<button id="cheatbutton" type="button" class="ecw-input ecw-button" onclick="CheatClick();">Resposta</button>
+<button disabled id="cheatbutton" type="button" class="ecw-input ecw-button" onclick="CheatClick();">Resposta</button>
 </td><td align="right">
 <button id="okbutton" type="button" class="ecw-input ecw-button" onclick="OKClick();" style="font-weight: bold;">OK</button> &nbsp;
 <button id="cancelbutton" type="button" class="ecw-input ecw-button" onclick="DeselectCurrentWord();">Cancelar</button>
@@ -635,14 +698,14 @@ function HashWord(Word)
 
 <div id="congratulations" class="ecw-answerbox" style="display:none;">
 <h3>Parabéns!</h3>
-<p>Você completou a questão de ouro!<a href="cruzresprec.php"> clique aqui </a> para prosseguir ao próximo nível!.
+<p>Você completou a cruzadinha!<a href="cruzresprec.php"> clique aqui </a> para concluir o nível!
 </p>
 </div>
 
 </td></tr></table>
 
-<div style="margin-top: 1em;">
-	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none;'">Enviar</button>
+<div style="margin-top: 1em;" align="center">
+	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none; padding: 20px; background-color: green; font-size: 20px; border-radius: 8px; cursor: pointer;">Enviar</button>
 </div>
 
 <script type="text/javascript"><!--

@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 require "../../bd.php";
@@ -11,18 +10,22 @@ while ($linha = mysqli_fetch_array($result)){
  $fase_jogador = $linha['fase'];
 }
 
-if ($nivel_jogador != 1 and $fase_jogador != 8) {
+$rec = $_GET['rec'];
+
+if ($rec == 0) {
+	if ($nivel_jogador != 2 and $fase_jogador != 10) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
 }
+}
+
+
 
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-<meta name="generator" content="EclipseCrossword" />
-<title>Jogo</title>
-	<meta charset="utf-8">
-	<link rel="icon" href="../../fav.png" />
+<title>HipoGame</title>
+<meta name="generator" content="EclipseCrossword" charset="utf-8" />
 <style type="text/css"><!--
 
 body, h1, h2, h3, h4, h5, h6
@@ -97,7 +100,6 @@ nav {
 
 }
 
-
 .ecw-answerbox
 {
 	color: black;
@@ -115,7 +117,7 @@ nav {
 	border-style: solid;
 	border-width: 1pt;
 	cursor: pointer;
-	font-size: 12px;
+	font-size: .12in;
 	font-weight: bold;
 	height: .18in;
 	overflow: hidden;
@@ -194,7 +196,6 @@ nav {
 	padding: .5em;
 	font-family: "Segoe UI", "Verdana", "Arial", sans-serif;
 	font-size: small;
-
 }
 
 .ecw-copyright
@@ -229,14 +230,12 @@ nav {
 	margin-top: 1em;
 }
 
-
-
 --></style>
 
-</head>
-<body bgcolor="#27c5db">
+</head><body bgcolor="#27c5db">
+
 <nav>
-      <a href="#" id="logo">Nível 1</a>
+      <a href="#" id="logo">Nível 2</a>
       
       <ul>
         <li id="voltar"><a style="font-size: 20px; text-decoration: none; color: #fff;" href="../../usuario/jogo.php">Página inicial</a></li>
@@ -246,31 +245,32 @@ nav {
 
 <div style="width: 50%; margin-left: 25%;">
 
-<h1 align="center">Cruzadinha!</h1><br>
+<h1 align="center">Cruzadinha</h1>
 
 <div id="waitmessage" class="ecw-answerbox">
 	Essa é uma cruzadinha interativa, se você não habilitou o Javascript nessa página, por favor clique em aceitar para ativá-lo.
 </div>
 
-<table cellpadding="0" cellspacing="0" border="0" class="striped"><tr>
+<table cellpadding="0" cellspacing="0" border="0"><tr>
 
 <td class="ecw-crosswordarea">
 
 <script type="text/javascript"><!--
-	CrosswordWidth = 20;
-	CrosswordHeight = 15;
-	Words = 5;
-	WordLength = new Array(14, 10, 5, 13, 13);
-	Word = new Array("MAGNOCELULARES", "HIPOTÁLAMO", "PORTA", "NEUROHIPÓFISE", "ADENOHIPÓFISE");
-	Clue = new Array("Os neurônios _______________ fazem transporte de neurônios do hipotálamo para a hipófise posterior.", 
-"Estrutura do cérebro envolvida na coordenação das respostas fisiológicas de diferentes órgãos que, em conjunto, mantém a homeostasia.", 
-"Realiza comunicação do hipotálamo com a hipófise anterior: Sistema  ___________ hipotalâmico-hipofisário.", 
-"Também chamado de hipófise posterior.", 
-"Também chamado de Hipófise anterior.");
-	AnswerHash = new Array(49383, 86645, 67127, 90408, 14370);
-	WordX = new Array(0, 10, 1, 8, 12);
-	WordY = new Array(4, 9, 0, 2, 2);
-	LastHorizontalWord = 1;
+	CrosswordWidth = 18;
+	CrosswordHeight = 14;
+	Words = 6;
+	WordLength = new Array(12, 14, 12, 8, 14, 8);
+	Word = new Array("SOMATOTROFOS", "PARVICELULARES", "GONADOTROFOS", "DOPAMINA", "MAGNOCELULARES", "NEGATIVO");
+	Clue = new Array("Estimulada pelo peptídeo GHRH.", 
+"Secretam neuro-hormônios, que podem ser tanto estimulatórios quanto inibitórios, que terão ação nas células presentes na adenohipófise.", 
+"Estimulada pelo peptídeo GNRH", 
+"Inibe a ação da lactotrofos", 
+"Neurônios que produzem os hormônios que serão transportados até a neurohipófise.", 
+"Qual o tipo de feedback dos hormônios hipotalâmicos?");
+	AnswerHash = new Array(29251, 57163, 15187, 76460, 49383, 72478);
+	WordX = new Array(6, 2, 0, 3, 11, 8);
+	WordY = new Array(4, 7, 13, 0, 0, 6);
+	LastHorizontalWord = 2;
 	OnlyCheckOnce = false;
 //-->
 </script>
@@ -501,7 +501,7 @@ function SelectThisWord(event)
 	}
 	
 	document.getElementById("wordlabel").innerHTML = TheirWord;
-	document.getElementById("wordinfo").innerHTML = ((CurrentWord <= LastHorizontalWord) ? "Horizontal, " : "Vertical, ") + WordLength[CurrentWord] + " Letras.";
+	document.getElementById("wordinfo").innerHTML = ((CurrentWord <= LastHorizontalWord) ? "Horizontal, " : "Vertical, ") + WordLength[CurrentWord] + " letras.";
 	document.getElementById("wordclue").innerHTML = Clue[CurrentWord];
 	document.getElementById("worderror").style.display = "none";
 	document.getElementById("cheatbutton").style.display = (Word.length == 0) ? "none" : "";
@@ -625,7 +625,7 @@ function CheckClick()
 	else if (ErrorsFound > 0)
 		document.getElementById("welcomemessage").innerHTML = ErrorsFound + (ErrorsFound > 1 ? " erros foram" : " erro foram") + " encontrados.";
 	else if (EmptyFound > 0)
-		document.getElementById("welcomemessage").innerHTML = "Sem erros encontrados mas " + EmptyFound + (EmptyFound > 1 ? " palavras ainda não foram solucionadas" : " palavras ainda não foram solucionadas");
+		document.getElementById("welcomemessage").innerHTML = "Sem erros encontrados mas " + EmptyFound + (EmptyFound > 1 ? " palavras incompletas foram" : " palavra incompleta foram") + " encontradas.";
 	
 	if (ErrorsFound + EmptyFound > 0)
 	{
@@ -646,7 +646,6 @@ function CheatClick()
 	if (CrosswordFinished) return;
 	var OldWord = CurrentWord;
 	
-	OKClick();
 	ChangeWordStyle(OldWord, "ecw-box ecw-boxcheated_unsel");
 }
 
@@ -669,7 +668,6 @@ function HashWord(Word)
 <td valign="top" style="padding-left: 1em;">
 
 
-
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
 <p>Clique em um dos quadradinhos para começar.</p>
@@ -685,7 +683,7 @@ function HashWord(Word)
 <div id="worderror" class="ecw-worderror"></div>
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" style="margin-top:1em;"><tbody><tr><td>
-<button disabled id="cheatbutton" type="button" class="ecw-input ecw-button" onclick="CheatClick();">Resposta</button>
+<button id="cheatbutton" disabled type="button" class="ecw-input ecw-button" onclick="CheatClick();">Resposta</button>
 </td><td align="right">
 <button id="okbutton" type="button" class="ecw-input ecw-button" onclick="OKClick();" style="font-weight: bold;">OK</button> &nbsp;
 <button id="cancelbutton" type="button" class="ecw-input ecw-button" onclick="DeselectCurrentWord();">Cancelar</button>
@@ -694,9 +692,21 @@ function HashWord(Word)
 </div>
 
 <div id="congratulations" class="ecw-answerbox" style="display:none;">
+<?php
+if ($rec == 0) {
+?>
 <h3>Parabéns!</h3>
 <p>Você completou a cruzadinha!<a href="respostacruzadinha.php"> clique aqui </a> para prosseguir ao próximo nível!.
 </p>
+<?php
+}else{
+?>
+<h3>Parabéns!</h3>
+<p>Você completou a cruzadinha!<a href="cruzresprec.php"> clique aqui </a> para concluir o nível!
+</p>
+<?php
+}
+?>
 </div>
 
 </td></tr></table>
@@ -711,6 +721,8 @@ BeginCrossword();
 </script>
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
+
 </div>
+
 </body></html>
 

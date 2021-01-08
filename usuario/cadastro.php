@@ -7,15 +7,16 @@
 	<script src="../materialize/js/materialize.min.js"></script>
     <link rel="stylesheet" href="../materialize/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="icon" href="../fav.png" />
 </head>
 <body bgcolor="#26c6da">
 
 <!-- navbar -->
 <nav>
     <div class="nav-wrapper #fb8c00 orange darken-1">
-      <a href="#" class="brand-logo left">Fisiologia</a>
+      <a href="#" class="brand-logo left">HipoGame</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="../index.html">Página inicial</a></li>
+        <li><a style="font-size: 20px" href="../index.html">Página inicial</a></li>
       </ul>
     </div>
   </nav>
@@ -53,19 +54,19 @@
 
         <div id="font" align="center"> <p style=" color: black; font-size: 20px; font-family: arial; text-align: left;"> Gênero * </p></div>
             <p align="left">
-          <label>
+          <label style="color: black">
             <input name="genero" type="radio" checked  value="masculino" />
             <span>Masculino</span>
           </label>
         </p>
         <p align="left">
-          <label>
+          <label style="color: black">
             <input name="genero" type="radio" value="feminino" />
             <span>Feminino</span>
           </label>
         </p>
         <p align="left">
-          <label>
+          <label style="color: black">
             <input name="genero" type="radio" value="outro" />
             <span>Outro</span>
           </label>

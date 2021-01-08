@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jogo</title>
+	<title>HipoGame</title>
 	<meta charset="utf-8">
     <script type="text/javascript" src="../../jquery-3.4.1.js"></script>
 	<script src="../../materialize/js/materialize.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../../materialize/css/materialize.min.css">
+    <link rel="icon" href="../../fav.png" />
 </head>
-<body>
+<body bgcolor="#27c5db">
+  <nav>
+    <div class="nav-wrapper #fb8c00 orange darken-1">
+
+      <a href="#" class="brand-logo">HipoGame</a>
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li style="font-size: 200%"><a href="../../usuario/jogo.php">Página inicial</a></li>
+      </ul>
+    </div>
+</nav>
 <?php
 
 session_start();

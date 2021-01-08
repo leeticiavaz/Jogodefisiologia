@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jogo</title>
+	<title>HipoGame</title>
 	<meta charset="utf-8">
     <script type="text/javascript" src="../jquery-3.4.1.js"></script>
 	<script src="../materialize/js/materialize.min.js"></script>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../materialize/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="icon" href="../fav.png" />
     <style type="text/css">
 
       body{
@@ -52,6 +53,10 @@
         top: 11%;
        }
 
+       #niveis{
+        margin-top: 5%
+       }
+
        @keyframes border {
           0% {
             border-color: blue;
@@ -73,6 +78,8 @@
             
           }
         }
+
+
     </style>
 
 </head>
@@ -139,7 +146,7 @@ $result = mysqli_query($connect, $sql);
 
 <br>
 <br>
-<div class="row">
+<div class="row" id="niveis">
 <div class=" col s4 push-m3">
 
 <?php
