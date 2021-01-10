@@ -30,6 +30,14 @@ header("Location: ../../usuario/jogo.php");
 die;
 }
 
+if ($nivel_jogador == 3 and $fase_up == 9) {
+	$sql="UPDATE cadastro SET recfase = 1, $string = $pontuacao, recnivel = 1 WHERE email = '$email'";
+mysqli_query($connect, $sql);
+
+header("Location: ../../usuario/jogo.php");
+die;
+}
+
 $sql="UPDATE cadastro SET recfase = 1, $string = $pontuacao, recnivel = $nivel_up  WHERE email = '$email'";
 mysqli_query($connect, $sql);
 

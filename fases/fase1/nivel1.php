@@ -33,6 +33,18 @@ while ($linha = mysqli_fetch_array($result)){
  if ($nivel_jogador == 2 and $fase_jogador == 10) {
    header("Location: cruzadinha2.php?rec=0");
  }
+ if ($nivel_jogador == 3 and $fase_jogador == 8) {
+   header("Location: cruzadinha3.php?rec=0");
+ }
+ if ($nivel_jogador == 4 and $fase_jogador == 10) {
+   header("Location: cruzadinha4.php?rec=0");
+ }
+ if ($nivel_jogador == 5 and $fase_jogador == 10) {
+   header("Location: cruzadinha5.php?rec=0");
+ }
+ if ($nivel_jogador == 6 and $fase_jogador == 10) {
+   header("Location: cruzadinha6.php?rec=0");
+ }
 
 }
 ?>
@@ -73,7 +85,7 @@ while ($linha = mysqli_fetch_array($result)){
     	<a href="#" class="brand-logo">Nivel <?php echo $nivel_jogador; ?></a>
       
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li style="font-size: 200%"><a href="../../usuario/jogo.php">Página inicial</a></li>
+        <li><a style="font-size: 20px" href="../../usuario/jogo.php">Página inicial</a></li>
       </ul>
     </div>
 </nav>

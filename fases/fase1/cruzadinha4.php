@@ -5,15 +5,15 @@ $email = $_SESSION['email'];
 
 $sql = "SELECT * FROM cadastro WHERE email = '$email'";
 $result = mysqli_query($connect, $sql);
-while ($linha = mysqli_fetch_array($result)){
+$linha = mysqli_fetch_array($result);
  $nivel_jogador = $linha['nivel'];
  $fase_jogador = $linha['fase'];
-}
+
 
 $rec = $_GET['rec'];
 
 if ($rec == 0) {
-	if ($nivel_jogador != 2 and $fase_jogador != 10) {
+	if ($nivel_jogador != 4 and $fase_jogador != 10) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
 }
 }
@@ -21,11 +21,11 @@ if ($rec == 0) {
 
 
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <title>HipoGame</title>
-<meta name="generator" content="EclipseCrossword" charset="utf-8" />
+<meta name="generator" content="EclipseCrossword" />
+<meta charset="utf-8">
 <link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
@@ -236,7 +236,7 @@ nav {
 </head><body bgcolor="#27c5db">
 
 <nav>
-      <a href="#" id="logo">Nível 2</a>
+      <a href="#" id="logo">Nível 4</a>
       
       <ul>
         <li id="voltar"><a style="font-size: 20px; text-decoration: none; color: #fff;" href="../../usuario/jogo.php">Página inicial</a></li>
@@ -244,9 +244,9 @@ nav {
   		
 </nav>
 
-<div style="width: 50%; margin-left: 25%;">
+<div style="margin-left: 20%">
 
-<h1 align="center">Cruzadinha</h1>
+<h1 style="margin-left: 30%">Cruzadinha</h1>
 
 <div id="waitmessage" class="ecw-answerbox">
 	Essa é uma cruzadinha interativa, se você não habilitou o Javascript nessa página, por favor clique em aceitar para ativá-lo.
@@ -257,20 +257,22 @@ nav {
 <td class="ecw-crosswordarea">
 
 <script type="text/javascript"><!--
-	CrosswordWidth = 18;
-	CrosswordHeight = 14;
-	Words = 6;
-	WordLength = new Array(12, 14, 12, 8, 14, 8);
-	Word = new Array("SOMATOTROFOS", "PARVICELULARES", "GONADOTROFOS", "DOPAMINA", "MAGNOCELULARES", "NEGATIVO");
-	Clue = new Array("Estimulada pelo peptídeo GHRH.", 
-"Secretam neuro-hormônios, que podem ser tanto estimulatórios quanto inibitórios, que terão ação nas células presentes na adenohipófise.", 
-"Estimulada pelo peptídeo GNRH", 
-"Inibe a ação da lactotrofos", 
-"Neurônios que produzem os hormônios que serão transportados até a neurohipófise.", 
-"Qual o tipo de feedback dos hormônios hipotalâmicos?");
-	AnswerHash = new Array(29251, 57163, 15187, 76460, 49383, 72478);
-	WordX = new Array(6, 2, 0, 3, 11, 8);
-	WordY = new Array(4, 7, 13, 0, 0, 6);
+	CrosswordWidth = 23;
+	CrosswordHeight = 28;
+	Words = 8;
+	WordLength = new Array(8, 8, 23, 17, 21, 13, 16, 13);
+	Word = new Array("DOPAMINA", "GLICEMIA", "HORMÔNIO DO CRESCIMENTO", "FEEDBACK NEGATIVO", "MÚSCULOS ESQUELÉTICOS", "CATECOLAMINAS", "TIREOESTIMULANTE", "SOMATOSTATINA");
+	Clue = new Array("Inibição do hormônio tireoestimulante", 
+"A secreção de GH aumenta durante exercício físico para ajudar na manutenção da ________________.", 
+"Tem como principal função estimular o crescimento e a multiplicação celular.", 
+"Tipo de retroalimentação do eixo hipotalâmico-hipofisário-tireoidiano", 
+"são um dos órgãos alvos do GH", 
+"É um fator de liberação do GH.", 
+"Hormônio que regula as funções da glândula tireoide", 
+"É um mediador neuroendócrino que inibe a secreção de TSH.");
+	AnswerHash = new Array(76460, 45385, 1884, 78314, 57604, 66728, 39529, 4854);
+	WordX = new Array(7, 6, 0, 21, 1, 10, 19, 3);
+	WordY = new Array(9, 11, 13, 0, 7, 8, 8, 11);
 	LastHorizontalWord = 2;
 	OnlyCheckOnce = false;
 //-->
@@ -375,7 +377,6 @@ function BeginCrossword()
 		document.getElementById("checkbutton").style.display = "";
 		document.getElementById("checkbutton").style.color = "white";
 		document.getElementById("checkbutton").style.width = "20%";
-
 	}
 }
 
@@ -646,7 +647,6 @@ function CheatClick()
 {
 	if (CrosswordFinished) return;
 	var OldWord = CurrentWord;
-	
 	ChangeWordStyle(OldWord, "ecw-box ecw-boxcheated_unsel");
 }
 
@@ -712,7 +712,7 @@ if ($rec == 0) {
 
 </td></tr></table>
 
-<div style="margin-top: 1em;" align="center">
+<div style="margin-top: 1em; margin-left: 30%">
 	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none; padding: 20px; background-color: green; font-size: 20px; border-radius: 8px; cursor: pointer;">Enviar</button>
 </div>
 
@@ -722,8 +722,6 @@ BeginCrossword();
 </script>
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
-
 </div>
-
 </body></html>
 

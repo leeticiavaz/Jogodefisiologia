@@ -5,15 +5,15 @@ $email = $_SESSION['email'];
 
 $sql = "SELECT * FROM cadastro WHERE email = '$email'";
 $result = mysqli_query($connect, $sql);
-while ($linha = mysqli_fetch_array($result)){
+$linha = mysqli_fetch_array($result);
  $nivel_jogador = $linha['nivel'];
  $fase_jogador = $linha['fase'];
-}
+
 
 $rec = $_GET['rec'];
 
 if ($rec == 0) {
-	if ($nivel_jogador != 2 and $fase_jogador != 10) {
+	if ($nivel_jogador != 5 and $fase_jogador != 10) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
 }
 }
@@ -21,11 +21,11 @@ if ($rec == 0) {
 
 
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <title>HipoGame</title>
-<meta name="generator" content="EclipseCrossword" charset="utf-8" />
+<meta name="generator" content="EclipseCrossword" />
+<meta charset="utf-8">
 <link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
@@ -236,7 +236,7 @@ nav {
 </head><body bgcolor="#27c5db">
 
 <nav>
-      <a href="#" id="logo">Nível 2</a>
+      <a href="#" id="logo">Nível 5</a>
       
       <ul>
         <li id="voltar"><a style="font-size: 20px; text-decoration: none; color: #fff;" href="../../usuario/jogo.php">Página inicial</a></li>
@@ -244,9 +244,9 @@ nav {
   		
 </nav>
 
-<div style="width: 50%; margin-left: 25%;">
+<div align="center">
 
-<h1 align="center">Cruzadinha</h1>
+<h1>Cruzadinha</h1>
 
 <div id="waitmessage" class="ecw-answerbox">
 	Essa é uma cruzadinha interativa, se você não habilitou o Javascript nessa página, por favor clique em aceitar para ativá-lo.
@@ -257,20 +257,23 @@ nav {
 <td class="ecw-crosswordarea">
 
 <script type="text/javascript"><!--
-	CrosswordWidth = 18;
-	CrosswordHeight = 14;
-	Words = 6;
-	WordLength = new Array(12, 14, 12, 8, 14, 8);
-	Word = new Array("SOMATOTROFOS", "PARVICELULARES", "GONADOTROFOS", "DOPAMINA", "MAGNOCELULARES", "NEGATIVO");
-	Clue = new Array("Estimulada pelo peptídeo GHRH.", 
-"Secretam neuro-hormônios, que podem ser tanto estimulatórios quanto inibitórios, que terão ação nas células presentes na adenohipófise.", 
-"Estimulada pelo peptídeo GNRH", 
-"Inibe a ação da lactotrofos", 
-"Neurônios que produzem os hormônios que serão transportados até a neurohipófise.", 
-"Qual o tipo de feedback dos hormônios hipotalâmicos?");
-	AnswerHash = new Array(29251, 57163, 15187, 76460, 49383, 72478);
-	WordX = new Array(6, 2, 0, 3, 11, 8);
-	WordY = new Array(4, 7, 13, 0, 0, 6);
+	CrosswordWidth = 12;
+	CrosswordHeight = 20;
+	Words = 9;
+	WordLength = new Array(8, 8, 6, 13, 4, 14, 11, 13, 9);
+	Word = new Array("GESTAÇÃO", "CORTISOL", "OVÁRIO", "LEITE MATERNO", "SONO", "CORTICOTROFINA", "ALDOSTERONA", "INFERTILIDADE", "ESTRESSES");
+	Clue = new Array("Momento da mulher no qual terá um protagonismo da prolactina.", 
+"É considerado o hormônio do estresse.", 
+"Um dos locais caracterizados pela ação da prolactina.", 
+"O _______ __________ é ejetado através do reflexo de sucção.", 
+"O ______ de má qualidade, poderá afetar a concentração de cortisol.", 
+"Outro nome dado ao hormônio adrenocorticotrófico.", 
+"Um dos hormônios liberados através da ativação do ACTH.", 
+"Disfunção da prolactina pode causar _____________ na mulher.", 
+"A liberação de ACTH é estimulada por ________________ psicológicos e físicos.");
+	AnswerHash = new Array(79829, 14303, 33757, 207, 78991, 69743, 46782, 4784, 13980);
+	WordX = new Array(2, 0, 6, 11, 9, 0, 6, 4, 9);
+	WordY = new Array(4, 7, 12, 0, 1, 2, 4, 7, 9);
 	LastHorizontalWord = 2;
 	OnlyCheckOnce = false;
 //-->
@@ -375,7 +378,6 @@ function BeginCrossword()
 		document.getElementById("checkbutton").style.display = "";
 		document.getElementById("checkbutton").style.color = "white";
 		document.getElementById("checkbutton").style.width = "20%";
-
 	}
 }
 
@@ -646,7 +648,6 @@ function CheatClick()
 {
 	if (CrosswordFinished) return;
 	var OldWord = CurrentWord;
-	
 	ChangeWordStyle(OldWord, "ecw-box ecw-boxcheated_unsel");
 }
 
@@ -667,7 +668,6 @@ function HashWord(Word)
 </td>
 
 <td valign="top" style="padding-left: 1em;">
-
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
@@ -712,7 +712,7 @@ if ($rec == 0) {
 
 </td></tr></table>
 
-<div style="margin-top: 1em;" align="center">
+<div style="margin-top: 1em">
 	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none; padding: 20px; background-color: green; font-size: 20px; border-radius: 8px; cursor: pointer;">Enviar</button>
 </div>
 
@@ -722,8 +722,6 @@ BeginCrossword();
 </script>
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
-
 </div>
-
 </body></html>
 

@@ -5,15 +5,15 @@ $email = $_SESSION['email'];
 
 $sql = "SELECT * FROM cadastro WHERE email = '$email'";
 $result = mysqli_query($connect, $sql);
-while ($linha = mysqli_fetch_array($result)){
+$linha = mysqli_fetch_array($result);
  $nivel_jogador = $linha['nivel'];
  $fase_jogador = $linha['fase'];
-}
+
 
 $rec = $_GET['rec'];
 
 if ($rec == 0) {
-	if ($nivel_jogador != 2 and $fase_jogador != 10) {
+	if ($nivel_jogador != 6 and $fase_jogador != 10) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
 }
 }
@@ -21,11 +21,11 @@ if ($rec == 0) {
 
 
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <title>HipoGame</title>
-<meta name="generator" content="EclipseCrossword" charset="utf-8" />
+<meta name="generator" content="EclipseCrossword" />
+<meta charset="utf-8">
 <link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
@@ -46,7 +46,6 @@ body
 	padding: 0;
 	margin: 0;
 }
-
 nav {
 
     width: 100%;
@@ -236,7 +235,7 @@ nav {
 </head><body bgcolor="#27c5db">
 
 <nav>
-      <a href="#" id="logo">Nível 2</a>
+      <a href="#" id="logo">Nível 6</a>
       
       <ul>
         <li id="voltar"><a style="font-size: 20px; text-decoration: none; color: #fff;" href="../../usuario/jogo.php">Página inicial</a></li>
@@ -244,9 +243,9 @@ nav {
   		
 </nav>
 
-<div style="width: 50%; margin-left: 25%;">
-
-<h1 align="center">Cruzadinha</h1>
+<div align="center">
+<h1>Cruzadinha</h1>
+<h3 style="margin-top: -1em;"></h3>
 
 <div id="waitmessage" class="ecw-answerbox">
 	Essa é uma cruzadinha interativa, se você não habilitou o Javascript nessa página, por favor clique em aceitar para ativá-lo.
@@ -257,21 +256,25 @@ nav {
 <td class="ecw-crosswordarea">
 
 <script type="text/javascript"><!--
-	CrosswordWidth = 18;
-	CrosswordHeight = 14;
-	Words = 6;
-	WordLength = new Array(12, 14, 12, 8, 14, 8);
-	Word = new Array("SOMATOTROFOS", "PARVICELULARES", "GONADOTROFOS", "DOPAMINA", "MAGNOCELULARES", "NEGATIVO");
-	Clue = new Array("Estimulada pelo peptídeo GHRH.", 
-"Secretam neuro-hormônios, que podem ser tanto estimulatórios quanto inibitórios, que terão ação nas células presentes na adenohipófise.", 
-"Estimulada pelo peptídeo GNRH", 
-"Inibe a ação da lactotrofos", 
-"Neurônios que produzem os hormônios que serão transportados até a neurohipófise.", 
-"Qual o tipo de feedback dos hormônios hipotalâmicos?");
-	AnswerHash = new Array(29251, 57163, 15187, 76460, 49383, 72478);
-	WordX = new Array(6, 2, 0, 3, 11, 8);
-	WordY = new Array(4, 7, 13, 0, 0, 6);
-	LastHorizontalWord = 2;
+	CrosswordWidth = 17;
+	CrosswordHeight = 16;
+	Words = 10;
+	WordLength = new Array(10, 16, 6, 9, 5, 10, 12, 12, 9, 11);
+	Word = new Array("TESTÍCULOS", "MATURAÇÃO SEXUAL", "OVÁRIO", "FOLICULAR", "LÚTEA", "ESTROGÊNIO", "PROGESTERONA", "TESTOSTERONA", "ESTRADIOL", "CORPO-LÚTEO");
+	Clue = new Array("Órgão em que é produzida a testosterona.", 
+"Uma das funções da testosterona.", 
+"órgão em que são produzidos os hormônios progesterona e estrogênio.", 
+"Primeira fase do ciclo reprodutivo.", 
+"Segunda fase do ciclo reprodutivo feminino.", 
+"Responsável pelo desenvolvimento das características sexuais secundárias femininas durante a puberdade.", 
+"impede a lactogênese durante a gravidez.", 
+"O LH regula a síntese de __________________ pelas células de Leydig.", 
+"prepara o endométrio para receber o óvulo fecundado.", 
+"Principal fonte de progesterona durante a fase inicial da gravidez.");
+	AnswerHash = new Array(5646, 83805, 33757, 45825, 28081, 94559, 25570, 20214, 66039, 94014);
+	WordX = new Array(2, 0, 4, 8, 11, 7, 0, 2, 11, 9);
+	WordY = new Array(0, 3, 6, 9, 11, 13, 15, 0, 3, 5);
+	LastHorizontalWord = 6;
 	OnlyCheckOnce = false;
 //-->
 </script>
@@ -375,7 +378,6 @@ function BeginCrossword()
 		document.getElementById("checkbutton").style.display = "";
 		document.getElementById("checkbutton").style.color = "white";
 		document.getElementById("checkbutton").style.width = "20%";
-
 	}
 }
 
@@ -668,7 +670,6 @@ function HashWord(Word)
 
 <td valign="top" style="padding-left: 1em;">
 
-
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
 <p>Clique em um dos quadradinhos para começar.</p>
@@ -712,7 +713,7 @@ if ($rec == 0) {
 
 </td></tr></table>
 
-<div style="margin-top: 1em;" align="center">
+<div style="margin-top: 1em">
 	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none; padding: 20px; background-color: green; font-size: 20px; border-radius: 8px; cursor: pointer;">Enviar</button>
 </div>
 

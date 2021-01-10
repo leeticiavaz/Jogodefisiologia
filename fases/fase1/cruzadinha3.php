@@ -5,15 +5,15 @@ $email = $_SESSION['email'];
 
 $sql = "SELECT * FROM cadastro WHERE email = '$email'";
 $result = mysqli_query($connect, $sql);
-while ($linha = mysqli_fetch_array($result)){
+$linha = mysqli_fetch_array($result);
  $nivel_jogador = $linha['nivel'];
  $fase_jogador = $linha['fase'];
-}
+
 
 $rec = $_GET['rec'];
 
 if ($rec == 0) {
-	if ($nivel_jogador != 2 and $fase_jogador != 10) {
+	if ($nivel_jogador != 3 and $fase_jogador != 8) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
 }
 }
@@ -21,11 +21,11 @@ if ($rec == 0) {
 
 
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <title>HipoGame</title>
-<meta name="generator" content="EclipseCrossword" charset="utf-8" />
+<meta name="generator" content="EclipseCrossword" />
+<meta charset="utf-8">
 <link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
@@ -236,7 +236,7 @@ nav {
 </head><body bgcolor="#27c5db">
 
 <nav>
-      <a href="#" id="logo">Nível 2</a>
+      <a href="#" id="logo">Nível 3</a>
       
       <ul>
         <li id="voltar"><a style="font-size: 20px; text-decoration: none; color: #fff;" href="../../usuario/jogo.php">Página inicial</a></li>
@@ -244,9 +244,9 @@ nav {
   		
 </nav>
 
-<div style="width: 50%; margin-left: 25%;">
+<div style="margin-left: 20%;">
 
-<h1 align="center">Cruzadinha</h1>
+<h1 style="margin-left: 30%">Cruzadinha</h1>
 
 <div id="waitmessage" class="ecw-answerbox">
 	Essa é uma cruzadinha interativa, se você não habilitou o Javascript nessa página, por favor clique em aceitar para ativá-lo.
@@ -257,21 +257,22 @@ nav {
 <td class="ecw-crosswordarea">
 
 <script type="text/javascript"><!--
-	CrosswordWidth = 18;
-	CrosswordHeight = 14;
-	Words = 6;
-	WordLength = new Array(12, 14, 12, 8, 14, 8);
-	Word = new Array("SOMATOTROFOS", "PARVICELULARES", "GONADOTROFOS", "DOPAMINA", "MAGNOCELULARES", "NEGATIVO");
-	Clue = new Array("Estimulada pelo peptídeo GHRH.", 
-"Secretam neuro-hormônios, que podem ser tanto estimulatórios quanto inibitórios, que terão ação nas células presentes na adenohipófise.", 
-"Estimulada pelo peptídeo GNRH", 
-"Inibe a ação da lactotrofos", 
-"Neurônios que produzem os hormônios que serão transportados até a neurohipófise.", 
-"Qual o tipo de feedback dos hormônios hipotalâmicos?");
-	AnswerHash = new Array(29251, 57163, 15187, 76460, 49383, 72478);
-	WordX = new Array(6, 2, 0, 3, 11, 8);
-	WordY = new Array(4, 7, 13, 0, 0, 6);
-	LastHorizontalWord = 2;
+	CrosswordWidth = 21;
+	CrosswordHeight = 24;
+	Words = 7;
+	WordLength = new Array(20, 9, 10, 12, 13, 13, 12);
+	Word = new Array("ADRENOCORTICOTROFICO", "OCITOCINA", "PROLACTINA", "VASOPRESSINA", "NEUROHIPOFISE", "ADENOHIPOFISE", "LUTEINIZANTE");
+	Clue = new Array("hormônio ACTH secretado pela adenohipófise.", 
+"não é liberado pela ativação das células gonadotrofos.", 
+"Não faz parte da neurohipófise.", 
+"Não é secretado pela pituitária anterior.", 
+"Porção da hipófise que não produz hormônios.", 
+"porção da hipófise que é a maior função endócrina.", 
+"hormônio secretado através da ativação da célula gonadotrofos");
+	AnswerHash = new Array(56114, 57691, 76727, 23113, 37082, 14370, 43018);
+	WordX = new Array(1, 0, 18, 9, 13, 2, 6);
+	WordY = new Array(7, 16, 0, 2, 3, 6, 12);
+	LastHorizontalWord = 1;
 	OnlyCheckOnce = false;
 //-->
 </script>
@@ -375,7 +376,6 @@ function BeginCrossword()
 		document.getElementById("checkbutton").style.display = "";
 		document.getElementById("checkbutton").style.color = "white";
 		document.getElementById("checkbutton").style.width = "20%";
-
 	}
 }
 
@@ -646,7 +646,6 @@ function CheatClick()
 {
 	if (CrosswordFinished) return;
 	var OldWord = CurrentWord;
-	
 	ChangeWordStyle(OldWord, "ecw-box ecw-boxcheated_unsel");
 }
 
@@ -667,7 +666,6 @@ function HashWord(Word)
 </td>
 
 <td valign="top" style="padding-left: 1em;">
-
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
@@ -712,7 +710,7 @@ if ($rec == 0) {
 
 </td></tr></table>
 
-<div style="margin-top: 1em;" align="center">
+<div style="margin-top: 1em; margin-left: 30%">
 	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none; padding: 20px; background-color: green; font-size: 20px; border-radius: 8px; cursor: pointer;">Enviar</button>
 </div>
 
