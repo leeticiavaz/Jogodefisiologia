@@ -501,12 +501,34 @@ if ($nivel == 6) {
     </div>
   </div>
 
+<!-- Modal Structure -->
+  <div id="modal15" class="modal">
+    <div class="modal-content">
+      <h4>Você completou todos os níveis!</h4>
+      <p>Parabéns! Você já completou todos os níveis, agora você pode refazer algum nivel caso queira aumentar sua pontuação.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-close waves-effect waves-green btn-flat green white-text">Ok</a>
+    </div>
+  </div>
 
 <script type="text/javascript">
   $(document).ready(function(){
     $('.modal').modal();
   });
 </script>
+
+<?php
+if ($nivel == 11) {
+?>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#modal15').modal('open');
+  });
+</script>
+<?php
+}
+?>
 
 </body>
 </html>

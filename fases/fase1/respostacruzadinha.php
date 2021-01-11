@@ -31,10 +31,26 @@ die;
 }
 
 if ($nivel_jogador == 3 and $fase_up == 9) {
-	$sql="UPDATE cadastro SET fase = 1, $string = $pontuacao, nivel = 2 WHERE email = '$email'";
+	$sql="UPDATE cadastro SET fase = 1, $string = $pontuacao, nivel = 4 WHERE email = '$email'";
 mysqli_query($connect, $sql);
 
 header("Location: nivel1.php");
+die;
+}
+
+if ($nivel_jogador == 8 and $fase_up == 10) {
+	$sql="UPDATE cadastro SET fase = 1, $string = $pontuacao, nivel = 9 WHERE email = '$email'";
+mysqli_query($connect, $sql);
+
+header("Location: nivel1.php");
+die;
+}
+
+if ($nivel_jogador == 10 and $fase_up == 11) {
+	$sql="UPDATE cadastro SET fase = 1, $string = $pontuacao, nivel = 11 WHERE email = '$email'";
+mysqli_query($connect, $sql);
+
+header("Location: ../../usuario/jogo.php");
 die;
 }
 
