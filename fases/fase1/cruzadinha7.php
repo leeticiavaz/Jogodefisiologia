@@ -12,6 +12,10 @@ $linha = mysqli_fetch_array($result);
 
 $rec = $_GET['rec'];
 
+if (!isset($rec)) {
+	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
+}
+
 if ($rec == 0) {
 	if ($nivel_jogador != 7 and $fase_jogador != 10) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
@@ -269,7 +273,7 @@ nav {
 "órgão alvo da ação do hormônio antidiurético.", 
 "A ocitocina estimula a ____________________.", 
 "no útero grávido a ocitocina produz ____________________ do útero para ajudar no trabalho de parto.", 
-"A ocitocina irá agir no relaxamento da musculatura lisa do útero", 
+"A ocitocina irá agir no __________ ________ do útero", 
 "Quando há deficiência de ADH há uma grande produção de _______________.", 
 "O ADH colabora para esse feito.", 
 "Um efeito fisiológico do ADH é o aumento da _________________.");
@@ -674,7 +678,7 @@ function HashWord(Word)
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
-<p>Clique em um dos quadradinhos para começar.</p>
+<p>Clique em um dos quadradinhos para começar. <br>Escreva a resposta utilizando todos acentos que a palavra tem e espaços caso seja necessário!</p>
 </div>
 
 <div id="answerbox" class="ecw-answerbox" style="display:none;">
@@ -725,6 +729,16 @@ BeginCrossword();
 </script>
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
+</div>
+
+<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-100%); border-radius: 8px ">
+	
+	
+	<fieldset style="border-radius: 8px; background-color: white">
+		<h3>Palavras utilizadas na cruzadinha:</h3>
+	<p>ÚTERO<br> OCITOCINA<br> ANTIDIURÉTICO<br> RIM<br> EJEÇÃO DE LEITE<br> CONTRAÇÕES RÍTMICAS<br> RELAXAMENTO MUSCULAR<br> URINA<br> RESISTÊNCIA VASCULAR<br> PRESSÃO ARTERIAL</p>
+	</fieldset>
+
 </div>
 
 </body></html>

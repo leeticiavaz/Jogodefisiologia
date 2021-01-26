@@ -12,6 +12,10 @@ $linha = mysqli_fetch_array($result);
 
 $rec = $_GET['rec'];
 
+if (!isset($rec)) {
+	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
+}
+
 if ($rec == 0) {
 	if ($nivel_jogador != 6 and $fase_jogador != 10) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
@@ -260,7 +264,7 @@ nav {
 	CrosswordHeight = 16;
 	Words = 10;
 	WordLength = new Array(10, 16, 6, 9, 5, 10, 12, 12, 9, 11);
-	Word = new Array("TESTÍCULOS", "MATURAÇÃO SEXUAL", "OVÁRIO", "FOLICULAR", "LÚTEA", "ESTROGÊNIO", "PROGESTERONA", "TESTOSTERONA", "ESTRADIOL", "CORPO-LÚTEO");
+	Word = new Array("TESTÍCULOS", "MATURAÇÃO SEXUAL", "OVÁRIO", "FOLICULAR", "LÚTEA", "ESTROGÊNIO", "PROGESTERONA", "TESTOSTERONA", "ESTRADIOL", "CORPO LÚTEO");
 	Clue = new Array("Órgão em que é produzida a testosterona.", 
 "Uma das funções da testosterona.", 
 "órgão em que são produzidos os hormônios progesterona e estrogênio.", 
@@ -672,7 +676,7 @@ function HashWord(Word)
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
-<p>Clique em um dos quadradinhos para começar.</p>
+<p>Clique em um dos quadradinhos para começar. <br>Escreva a resposta utilizando todos acentos que a palavra tem e espaços caso seja necessário!</p>
 </div>
 
 <div id="answerbox" class="ecw-answerbox" style="display:none;">
@@ -723,6 +727,16 @@ BeginCrossword();
 </script>
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
+
+</div>
+
+<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-60%); border-radius: 8px ">
+	
+	
+	<fieldset style="border-radius: 8px; background-color: white">
+		<h3>Palavras utilizadas na cruzadinha:</h3>
+	<p>TESTÍCULOS<br> MATURAÇÃO SEXUAL<br> OVÁRIO<br> FOLICULAR<br> LÚTEA<br> ESTROGÊNIO<br> PROGESTERONA<br> TESTOSTERONA<br> ESTRADIOL<br> CORPO-LÚTEO </p>
+	</fieldset>
 
 </div>
 

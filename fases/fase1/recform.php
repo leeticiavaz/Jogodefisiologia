@@ -70,6 +70,10 @@ if ($nivel_jogador == 4 and $fase_jogador == 2) {
    header("Location: r5rec.php");
  }
 
+ if ($nivel_jogador == 8 and $fase_jogador == 6) {
+   header("Location: r6rec.php");
+ }
+
  if ($nivel_jogador == 1 and $fase_jogador == 8) {
    header("Location: cruzadinha1rec.php");
  }
@@ -147,16 +151,27 @@ while ($linha = mysqli_fetch_array($result1)) {
   $texto_ajuda = $linha['textoajuda'];
   $foto = $linha['foto'];
   $categoria = $linha['categoria'];
+  $fotoajuda = $linha['fotoajuda'];
 }
 
 ?>
 
 <!-- Modal Structure -->
 
-  <div id="modal2" class="modal">
+ <div id="modal2" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>Ajuda</h4>
-      <p><?php echo $texto_ajuda; ?></p>
+      <p style="text-align: justify;"><?php echo $texto_ajuda; ?></p>
+      <br>
+      <?php
+      if ($fotoajuda != 'empty') {
+      ?>
+      
+        <img class="materialboxed" style="margin-left: 20%" width="300" height="300" src="../../adm/fotos/<?php echo $fotoajuda; ?>">
+      
+      <?php
+      }
+      ?>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat green" style="color: white">Ok</a>
@@ -183,6 +198,15 @@ while ($linha = mysqli_fetch_array($result1)) {
       <a href="#!" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
     </div>
   </div>
+<div id="modal5" class="modal">
+    <div class="modal-content">
+      <h4>Questão incorreta</h4>
+      <p>Você errou essa questão, por favor refaça a questão!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
+    </div>
+  </div>
 
 <?php
 if ($categoria == 'quest') {
@@ -194,7 +218,12 @@ if ($categoria == 'quest') {
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title center"><?php echo "Questão $fase_questao"; ?></span><br><br>
-          <?php if ($foto != 'empty') {
+
+          <fieldset style="border-radius: 30px; background-color: white">
+           <div style="color: black; text-align: justify;"><?php echo $texto; ?></div>
+         </fieldset>
+         <br>
+         <?php if ($foto != 'empty') {
           ?>
           <p>
           <div class="zoom" style="cursor: zoom-in;">
@@ -204,42 +233,41 @@ if ($categoria == 'quest') {
           </div> </p>
           <?php
           }  ?> 
-          <p><blockquote><?php echo $texto; ?></blockquote></p>
-
+          <br>
           <p>
-      		<label>
-        	<input name="q1" type="radio" checked value="1" />
-        	<span style="color: white"><?php echo $opcao1; ?></span>
-      		</label>
-    	</p>
+          <label>
+          <input name="q1" type="radio" checked value="1" />
+          <span style="color: white"><?php echo $opcao1; ?></span>
+          </label>
+      </p>
 
-    	<p>
-      		<label>
-        	<input name="q1" type="radio" value="2" />
-        	<span style="color: white"><?php echo $opcao2; ?></span>
-      		</label>
-    	</p>
+      <p>
+          <label>
+          <input name="q1" type="radio" value="2" />
+          <span style="color: white"><?php echo $opcao2; ?></span>
+          </label>
+      </p>
 
-    	<p>
-      		<label>
-        	<input name="q1" type="radio" value="3"  />
-        	<span style="color: white"><?php echo $opcao3; ?></span>
-      		</label>
-    	</p>
+      <p>
+          <label>
+          <input name="q1" type="radio" value="3"  />
+          <span style="color: white"><?php echo $opcao3; ?></span>
+          </label>
+      </p>
 
-    	<p>
-      		<label>
-        	<input name="q1" type="radio"  value="4" />
-        	<span style="color: white"><?php echo $opcao4; ?></span>
-      		</label>
-    	</p>
+      <p>
+          <label>
+          <input name="q1" type="radio"  value="4" />
+          <span style="color: white"><?php echo $opcao4; ?></span>
+          </label>
+      </p>
 
-    	<p>
-      		<label>
-        	<input name="q1" type="radio" value="5"  />
-        	<span style="color: white"><?php echo $opcao5; ?></span>
-      		</label>
-    	</p>
+      <p>
+          <label>
+          <input name="q1" type="radio" value="5"  />
+          <span style="color: white"><?php echo $opcao5; ?></span>
+          </label>
+      </p>
       
       <input type="hidden" name="fase" value="<?php echo $fase_jogador; ?>">
       <input type="hidden" name="correta" value="<?php echo $correta; ?>">
@@ -248,8 +276,8 @@ if ($categoria == 'quest') {
         <div class="card-action">
           <a class="modal-trigger btn #1976d2 blue darken-2 " href="#modal2"><i class="material-icons left">help</i>Ajuda</a>
            <button class="btn waves-effect waves-light green" type="submit" name="action">Enviar
-    		<i class="material-icons right">send</i>
-  			</button>
+        <i class="material-icons right">send</i>
+        </button>
         </div>
       </div>
     </div>
@@ -266,9 +294,14 @@ if ($categoria == 'quest') {
       <div class="card #546e7a blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title center"><?php echo "Questão $fase_questao"; ?></span><br><br>
+          <fieldset style="border-radius: 30px; background-color: white">
+           <div style="color: black;"><?php echo $texto; ?></div>
+         </fieldset>
+         <br>
            <?php if ($foto != 'empty') {
           ?>
           <p>
+           
           <div class="zoom" style="cursor: zoom-in;">
           <img class="materialboxed" style="margin-left: 20%" width="300" height="300" src="../../adm/fotos/<?php echo $foto ?>">
           <?php
@@ -276,25 +309,25 @@ if ($categoria == 'quest') {
           </div> </p>
           <?php
           }  ?> 
-          <p><blockquote><?php echo $texto; ?></blockquote></p>
-
+          
+         <br>
           <p>
           <label>
-          <input name="q1" type="radio" checked value="1" />
+          <input name="q1" id="r1" type="radio" checked value="1" />
           <span style="color: white">Verdadeiro</span>
           </label>
       </p>
 
       <p>
           <label>
-          <input name="q1" type="radio" value="0" />
+          <input name="q1" id="r2" type="radio" value="0" />
           <span style="color: white">Falso</span>
           </label>
       </p>
 
       
       <input type="hidden" name="fase" value="<?php echo $fase_jogador; ?>">
-      <input type="hidden" name="correta" value="<?php echo $corretaVouf; ?>">
+      <input type="hidden" name="correta" value="<?php echo $corretavouf; ?>">
       <input type="hidden" name="tentativa">
         </div>
         <div class="card-action">
@@ -308,15 +341,7 @@ if ($categoria == 'quest') {
   </div>
 </form>
 
-<div id="modal5" class="modal">
-    <div class="modal-content">
-      <h4>Questão incorreta</h4>
-      <p>Você errou essa questão, por favor refaça a questão!</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat red" style="color: white">Ok</a>
-    </div>
-  </div>
+
 
 <?php
 }

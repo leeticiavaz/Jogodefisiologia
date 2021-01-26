@@ -25,6 +25,9 @@ while ($linha = mysqli_fetch_array($result)){
  if ($nivel_jogador == 6 and $fase_jogador == 3) {
    header("Location: r5.php");
  }
+ if ($nivel_jogador == 8 and $fase_jogador == 6) {
+   header("Location: r6.php");
+ }
 
  if ($nivel_jogador == 1 and $fase_jogador == 8) {
    header("Location: cruzadinha1.php");
@@ -132,7 +135,7 @@ while ($linha = mysqli_fetch_array($result1)) {
   <div id="modal2" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>Ajuda</h4>
-      <p align="center"><?php echo $texto_ajuda; ?></p>
+      <p style="text-align: justify;"><?php echo $texto_ajuda; ?></p>
       <br>
       <?php
       if ($fotoajuda != 'empty') {
@@ -193,7 +196,7 @@ if ($categoria == 'quest') {
           <span class="card-title center"><?php echo "Questão $fase_questao"; ?></span><br><br>
 
           <fieldset style="border-radius: 30px; background-color: white">
-           <div style="color: black;"><?php echo $texto; ?></div>
+           <div style="color: black; text-align: justify;"><?php echo $texto; ?></div>
          </fieldset>
          <br>
          <?php if ($foto != 'empty') {

@@ -12,6 +12,10 @@ $linha = mysqli_fetch_array($result);
 
 $rec = $_GET['rec'];
 
+if (!isset($rec)) {
+	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
+}
+
 if ($rec == 0) {
 	if ($nivel_jogador != 3 and $fase_jogador != 8) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
@@ -261,10 +265,10 @@ nav {
 	CrosswordHeight = 24;
 	Words = 7;
 	WordLength = new Array(20, 9, 10, 12, 13, 13, 12);
-	Word = new Array("ADRENOCORTICOTROFICO", "OCITOCINA", "PROLACTINA", "VASOPRESSINA", "NEUROHIPOFISE", "ADENOHIPOFISE", "LUTEINIZANTE");
+	Word = new Array("ADRENOCORTICOTRÓFICO", "OCITOCINA", "PROLACTINA", "VASOPRESSINA", "NEUROHIPÓFISE", "ADENOHIPÓFISE", "LUTEINIZANTE");
 	Clue = new Array("hormônio ACTH secretado pela adenohipófise.", 
 "não é liberado pela ativação das células gonadotrofos.", 
-"Não faz parte da neurohipófise.", 
+"Não faz parte da neuro-hipófise.", 
 "Não é secretado pela pituitária anterior.", 
 "Porção da hipófise que não produz hormônios.", 
 "porção da hipófise que é a maior função endócrina.", 
@@ -669,7 +673,7 @@ function HashWord(Word)
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
-<p>Clique em um dos quadradinhos para começar.</p>
+<p>Clique em um dos quadradinhos para começar. <br>Escreva a resposta utilizando todos acentos que a palavra tem e espaços caso seja necessário!</p>
 </div>
 
 <div id="answerbox" class="ecw-answerbox" style="display:none;">
@@ -720,6 +724,16 @@ BeginCrossword();
 </script>
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
+
+</div>
+
+<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-100%); border-radius: 8px ">
+	
+	
+	<fieldset style="border-radius: 8px; background-color: white">
+		<h3>Palavras utilizadas na cruzadinha:</h3>
+	<p>ADRENOCORTICOTROFICO<br> OCITOCINA<br> PROLACTINA<br> VASOPRESSINA<br> NEUROHIPOFISE<br> ADENOHIPOFISE<br> LUTEINIZANTE</p>
+	</fieldset>
 
 </div>
 

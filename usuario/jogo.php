@@ -99,6 +99,10 @@ session_start();
 $email = $_SESSION['email'];
 $nome = $_SESSION['nome'];
 
+if (!isset($email) or !isset($nome)) {
+  header("Location: login.php");
+}
+
 require "../bd.php";
 
 $sql = "UPDATE cadastro SET recfase = 1 WHERE email = '$email'";

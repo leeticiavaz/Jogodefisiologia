@@ -11,6 +11,7 @@ while ($linha = mysqli_fetch_array($result)){
  $fase_jogador = $linha['fase'];
 }
 
+
 if ($nivel_jogador != 1 and $fase_jogador != 8) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
 }
@@ -235,6 +236,9 @@ nav {
 
 </head>
 <body bgcolor="#27c5db">
+
+
+
 <nav>
       <a href="#" id="logo">Nível 1</a>
       
@@ -666,13 +670,15 @@ function HashWord(Word)
 
 </td>
 
+
+
 <td valign="top" style="padding-left: 1em;">
 
 
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
-<p>Clique em um dos quadradinhos para começar.</p>
+<p>Clique em um dos quadradinhos para começar. <br>Escreva a resposta utilizando todos acentos que a palavra tem e espaços caso seja necessário!</p>
 </div>
 
 <div id="answerbox" class="ecw-answerbox" style="display:none;">
@@ -693,6 +699,8 @@ function HashWord(Word)
 
 </div>
 
+
+
 <div id="congratulations" class="ecw-answerbox" style="display:none;">
 <h3>Parabéns!</h3>
 <p>Você completou a cruzadinha!<a href="respostacruzadinha.php"> clique aqui </a> para prosseguir ao próximo nível!.
@@ -712,5 +720,16 @@ BeginCrossword();
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
 </div>
+
+<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-50%); border-radius: 8px ">
+	
+	
+	<fieldset style="border-radius: 8px; background-color: white">
+		<h3>Palavras utilizadas na cruzadinha:</h3>
+	<p>MAGNOCELULARES<br> HIPOTÁLAMO<br> PORTA<br> NEUROHIPÓFISE<br> ADENOHIPÓFISE</p>
+	</fieldset>
+
+</div>
+
 </body></html>
 

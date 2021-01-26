@@ -675,7 +675,7 @@ function HashWord(Word)
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
-<p>Clique em uma palavra para começar.</p>
+<p>Clique em um dos quadradinhos para começar. <br>Escreva a resposta utilizando todos acentos que a palavra tem e espaços caso seja necessário!</p>
 </div>
 
 <div id="answerbox" class="ecw-answerbox" style="display:none;">
@@ -715,5 +715,16 @@ BeginCrossword();
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
 </div>
+
+<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-50%); border-radius: 8px ">
+	
+	
+	<fieldset style="border-radius: 8px; background-color: white">
+		<h3>Palavras utilizadas na cruzadinha:</h3>
+	<p>MAGNOCELULARES<br> HIPOTÁLAMO<br> PORTA<br> NEUROHIPÓFISE<br> ADENOHIPÓFISE</p>
+	</fieldset>
+
+</div>
+
 </body></html>
 

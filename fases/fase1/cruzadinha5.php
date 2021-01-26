@@ -12,6 +12,10 @@ $linha = mysqli_fetch_array($result);
 
 $rec = $_GET['rec'];
 
+if (!isset($rec)) {
+	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
+}
+
 if ($rec == 0) {
 	if ($nivel_jogador != 5 and $fase_jogador != 10) {
 	echo "<script> window.location.href='../../usuario/jogo.php'; </script>";
@@ -671,7 +675,7 @@ function HashWord(Word)
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
-<p>Clique em um dos quadradinhos para começar.</p>
+<p>Clique em um dos quadradinhos para começar. <br>Escreva a resposta utilizando todos acentos que a palavra tem e espaços caso seja necessário!</p>
 </div>
 
 <div id="answerbox" class="ecw-answerbox" style="display:none;">
@@ -723,5 +727,16 @@ BeginCrossword();
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
 </div>
+
+<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-60%); border-radius: 8px ">
+	
+	
+	<fieldset style="border-radius: 8px; background-color: white">
+		<h3>Palavras utilizadas na cruzadinha:</h3>
+	<p>GESTAÇÃO<br> CORTISOL<br> OVÁRIO<br> LEITE MATERNO<br> SONO<br> CORTICOTROFINA<br> ALDOSTERONA<br> INFERTILIDADE<br> ESTRESSES</p>
+	</fieldset>
+
+</div>
+
 </body></html>
 

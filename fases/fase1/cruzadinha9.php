@@ -266,7 +266,7 @@ Essa é uma cruzadinha interativa, se você não habilitou o Javascript nessa p�
 	CrosswordHeight = 21;
 	Words = 7;
 	WordLength = new Array(16, 18, 15, 7, 9, 10, 12);
-	Word = new Array("HIPERTIREOIDISMO", "NANISMO-PITUITÁRIO", "HIPOTIREOIDISMO", "PALIDEZ", "OCITOCINA", "GIGANTISMO", "PROGESTERONA");
+	Word = new Array("HIPERTIREOIDISMO", "NANISMO PITUITÁRIO", "HIPOTIREOIDISMO", "PALIDEZ", "OCITOCINA", "GIGANTISMO", "PROGESTERONA");
 	Clue = new Array("Disfunção causada pelo baixo nível de TSH plasmático.", 
 "A baixa secreção de GH pode causar.", 
 "Disfunção causada pelo alto níel de TSH plasmático.", 
@@ -674,7 +674,7 @@ function HashWord(Word)
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
-<p>Clique em um dos quadradinhos para começar.</p>
+<p>Clique em um dos quadradinhos para começar. <br>Escreva a resposta utilizando todos acentos que a palavra tem e espaços caso seja necessário!</p>
 </div>
 
 <div id="answerbox" class="ecw-answerbox" style="display:none;">
@@ -726,6 +726,16 @@ BeginCrossword();
 </script>
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
+</div>
+
+<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-80%); border-radius: 8px ">
+	
+	
+	<fieldset style="border-radius: 8px; background-color: white">
+		<h3>Palavras utilizadas na cruzadinha:</h3>
+	<p>HIPERTIREOIDISMO<br> NANISMO-PITUITÁRIO<br> HIPOTIREOIDISMO<br> PALIDEZ<br> OCITOCINA<br> GIGANTISMO<br> PROGESTERONA</p>
+	</fieldset>
+
 </div>
 
 </body></html>
