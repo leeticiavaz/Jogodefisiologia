@@ -27,9 +27,8 @@ if ($rec == 0) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-<title>Cruzadinha</title>
+<title>HipoGame</title>
 <meta name="generator" content="EclipseCrossword" />
-<meta charset="utf-8">
 <link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
@@ -262,27 +261,27 @@ nav {
 <td class="ecw-crosswordarea">
 
 <script type="text/javascript"><!--
-	CrosswordWidth = 23;
+	CrosswordWidth = 25;
 	CrosswordHeight = 25;
 	Words = 12;
-	WordLength = new Array(13, 6, 6, 23, 17, 19, 8, 20, 20, 17, 10, 11);
-	Word = new Array("SOMATOSTATINA", "FÍGADO", "OVÁRIO", "HORMÔNIO DO CRESCIMENTO", "GLÂNDULA TIREOIDE", "PROLACTINA HORMÔNIO", "DOPAMINA", "ADRENOCORTICOTRÓFICO", "FOLÍCULO ESTIMULANTE", "FEEDBACK NEGATIVO", "TESTÍCULOS", "SUPRARRENAL");
-	Clue = new Array("Potente inibidor de GH e FSH.", 
-"Principal local de ação da somatostatina.", 
-"Um dos órgãos alvos dos hormônios gonadotróficos.", 
-"Qual hormônio da adenohipófise poderá afetar a síntese de proteínas e a diferenciação celular?", 
-"O hormônio tireoestimulante controla a secreção de tiroxina e triiodotironina. Elas irão agir diretamente em um glândula específica! de qual glândula estamos falando?", 
-"responsável pela estimulação da mama.", 
+	WordLength = new Array(10, 8, 13, 17, 6, 19, 20, 23, 17, 20, 6, 11);
+	Word = new Array("TESTÍCULOS", "DOPAMINA", "SOMATOSTATINA", "GLÂNDULA TIREOIDE", "FÍGADO", "HORMÔNIO PROLACTINA", "ADRENOCORTICOTRÓFICO", "HORMÔNIO DO CRESCIMENTO", "FEEDBACK NEGATIVO", "FOLÍCULO ESTIMULANTE", "OVÁRIO", "SUPRARRENAL");
+	Clue = new Array("Local de produção da testosterona.", 
 "Hormônio inibitório da prolactina.", 
+"Potente inibidor de GH e FSH.", 
+"O hormônio tireoestimulante controla a secreção de tiroxina e triiodotironina. Elas irão agir diretamente em um glândula específica! de qual glândula estamos falando?", 
+"Principal local de ação da somatostatina.", 
+"responsável pela estimulação da mama.", 
 "Responsável pela estimulação do cortisol.", 
+"Qual hormônio da adenohipófise poderá afetar a síntese de proteínas e a diferenciação celular?", 
+"Os hormônios hipotalâmicos agem através de  _______ _______.", 
 "Regula a produção de espermatozoides.", 
-"Os hormônios hipotalâmicos agem através de  ______________.", 
-"Local de produção da testosterona.", 
+"Um dos órgãos alvos dos hormônios gonadotróficos.", 
 "Local no rim onde é secretado o cortisol.");
-	AnswerHash = new Array(4854, 81531, 33757, 1884, -82240, 26394, 76460, 87040, 47438, 78314, 5646, 41766);
-	WordX = new Array(3, 1, 4, 0, 19, 4, 8, 12, 21, 14, 16, 2);
-	WordY = new Array(3, 5, 13, 16, 0, 1, 2, 5, 5, 6, 11, 13);
-	LastHorizontalWord = 3;
+	AnswerHash = new Array(5646, 76460, 4854, -82240, 81531, 89438, 87040, 1884, 78314, 47438, 33757, 41766);
+	WordX = new Array(0, 8, 4, 8, 0, 22, 5, 20, 15, 18, 13, 24);
+	WordY = new Array(7, 9, 13, 16, 20, 0, 1, 2, 4, 4, 5, 9);
+	LastHorizontalWord = 4;
 	OnlyCheckOnce = false;
 //-->
 </script>
@@ -677,11 +676,11 @@ function HashWord(Word)
 
 <td valign="top" style="padding-left: 1em;">
 
+
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
 <p>Clique em um dos quadradinhos para começar. <br>Escreva a resposta utilizando todos acentos que a palavra tem e espaços caso seja necessário!</p>
 </div>
-
 
 <div id="answerbox" class="ecw-answerbox" style="display:none;">
 <h3 id="wordlabel" class="ecw-wordlabel"> &nbsp;</h3>
@@ -730,18 +729,21 @@ BeginCrossword();
 //-->
 </script>
 
-<!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
 </div>
 
-<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-100%); border-radius: 8px ">
+<!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
+
+
+<div style="position: absolute;  width: 300px; height: 300px; right: 10%; top: 50%; border-radius: 8px ">
 	
 	
 	<fieldset style="border-radius: 8px; background-color: white">
 		<h3>Palavras utilizadas na cruzadinha:</h3>
-	<p>SOMATOSTATINA<br> FÍGADO<br> OVÁRIO<br> HORMÔNIO DO CRESCIMENTO<br> GLÂNDULA TIREOIDE<br> PROLACTINA HORMÔNIO<br> DOPAMINA<br> ADRENOCORTICOTRÓFICO<br> FOLÍCULO ESTIMULANTE<br> FEEDBACK NEGATIVO<br> TESTÍCULOS<br> SUPRARRENAL</p>
+	<p>SOMATOSTATINA<br> FÍGADO<br> OVÁRIO<br> HORMÔNIO DO CRESCIMENTO<br> GLÂNDULA TIREOIDE<br>  HORMÔNIO PROLACTINA<br> DOPAMINA<br> ADRENOCORTICOTRÓFICO<br> FOLÍCULO ESTIMULANTE<br> FEEDBACK NEGATIVO<br> TESTÍCULOS<br> SUPRARRENAL</p>
 	</fieldset>
 
 </div>
+
 
 </body></html>
 

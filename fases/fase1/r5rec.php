@@ -74,7 +74,7 @@ if (!isset($email)) {
               </select>
             </div>
             <div class="col s10">
-              <p class="black-text" style="margin-top: 2%">a. Regulador da síntese de testosterona pelas células de Leydig</p>
+              <p class="black-text" style="margin-top: 2%">Regulador da síntese de testosterona pelas células de Leydig</p>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ if (!isset($email)) {
               </select>
             </div>
             <div class="col s10">
-              <p class="black-text" style="margin-top: 2%">b. Desenvolvimento do testículo imaturo.  </p>
+              <p class="black-text" style="margin-top: 2%">Desenvolvimento do testículo imaturo.  </p>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ if (!isset($email)) {
               </select>
             </div>
             <div class="col s10">
-              <p class="black-text" style="margin-top: 2%">c. Processo de iniciação da espermatogênese durante a puberdade </p>
+              <p class="black-text" style="margin-top: 2%">Processo de iniciação da espermatogênese durante a puberdade </p>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ if (!isset($email)) {
               </select>
             </div>
             <div class="col s10">
-              <p class="black-text" style="margin-top: 2%">d. Hormônio estimulador das células intersticiais </p>
+              <p class="black-text" style="margin-top: 2%">Hormônio estimulador das células intersticiais </p>
             </div>
           </div>
         </div>

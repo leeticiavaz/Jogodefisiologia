@@ -25,11 +25,11 @@ if ($rec == 0) {
 
 
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <title>HipoGame</title>
 <meta name="generator" content="EclipseCrossword" />
-<meta charset="utf-8">
 <link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
@@ -248,6 +248,7 @@ nav {
 </nav>
 
 <div align="center">
+
 <h1>Cruzadinha</h1>
 <h3 style="margin-top: -1em;"></h3>
 
@@ -260,25 +261,25 @@ nav {
 <td class="ecw-crosswordarea">
 
 <script type="text/javascript"><!--
-	CrosswordWidth = 17;
-	CrosswordHeight = 16;
+	CrosswordWidth = 18;
+	CrosswordHeight = 21;
 	Words = 10;
-	WordLength = new Array(10, 16, 6, 9, 5, 10, 12, 12, 9, 11);
-	Word = new Array("TESTÍCULOS", "MATURAÇÃO SEXUAL", "OVÁRIO", "FOLICULAR", "LÚTEA", "ESTROGÊNIO", "PROGESTERONA", "TESTOSTERONA", "ESTRADIOL", "CORPO LÚTEO");
-	Clue = new Array("Órgão em que é produzida a testosterona.", 
-"Uma das funções da testosterona.", 
-"órgão em que são produzidos os hormônios progesterona e estrogênio.", 
-"Primeira fase do ciclo reprodutivo.", 
-"Segunda fase do ciclo reprodutivo feminino.", 
-"Responsável pelo desenvolvimento das características sexuais secundárias femininas durante a puberdade.", 
+	WordLength = new Array(6, 12, 11, 16, 9, 10, 12, 10, 9, 5);
+	Word = new Array("OVÁRIO", "PROGESTERONA", "CORPO LÚTEO", "MATURAÇÃO SEXUAL", "FOLICULAR", "ESTROGÊNIO", "TESTOSTERONA", "TESTÍCULOS", "ESTRADIOL", "LÚTEA");
+	Clue = new Array("órgão em que são produzidos os hormônios progesterona e estrogênio.", 
 "impede a lactogênese durante a gravidez.", 
+"Principal fonte de progesterona durante a fase inicial da gravidez.", 
+"Uma das funções da testosterona.", 
+"Primeira fase do ciclo reprodutivo.", 
+"Responsável pelo desenvolvimento das características sexuais secundárias femininas durante a puberdade.", 
 "O LH regula a síntese de __________________ pelas células de Leydig.", 
+"Órgão em que é produzida a testosterona.", 
 "prepara o endométrio para receber o óvulo fecundado.", 
-"Principal fonte de progesterona durante a fase inicial da gravidez.");
-	AnswerHash = new Array(5646, 83805, 33757, 45825, 28081, 94559, 25570, 20214, 66039, 94014);
-	WordX = new Array(2, 0, 4, 8, 11, 7, 0, 2, 11, 9);
-	WordY = new Array(0, 3, 6, 9, 11, 13, 15, 0, 3, 5);
-	LastHorizontalWord = 6;
+"Segunda fase do ciclo reprodutivo feminino.");
+	AnswerHash = new Array(33757, 25570, 53848, 83805, 45825, 94559, 20214, 5646, 66039, 28081);
+	WordX = new Array(1, 6, 0, 0, 1, 4, 8, 13, 11, 15);
+	WordY = new Array(3, 7, 9, 12, 14, 0, 3, 6, 12, 12);
+	LastHorizontalWord = 4;
 	OnlyCheckOnce = false;
 //-->
 </script>
@@ -652,7 +653,7 @@ function CheatClick()
 {
 	if (CrosswordFinished) return;
 	var OldWord = CurrentWord;
-	
+	OKClick();
 	ChangeWordStyle(OldWord, "ecw-box ecw-boxcheated_unsel");
 }
 
@@ -726,16 +727,16 @@ BeginCrossword();
 //-->
 </script>
 
-<!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
-
 </div>
 
-<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-60%); border-radius: 8px ">
+<!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
+
+<div style="position: absolute;  width: 300px; height: 300px; right: 10%; top: 50%; border-radius: 8px ">
 	
 	
 	<fieldset style="border-radius: 8px; background-color: white">
 		<h3>Palavras utilizadas na cruzadinha:</h3>
-	<p>TESTÍCULOS<br> MATURAÇÃO SEXUAL<br> OVÁRIO<br> FOLICULAR<br> LÚTEA<br> ESTROGÊNIO<br> PROGESTERONA<br> TESTOSTERONA<br> ESTRADIOL<br> CORPO-LÚTEO </p>
+	<p>TESTÍCULOS<br> MATURAÇÃO SEXUAL<br> OVÁRIO<br> FOLICULAR<br> LÚTEA<br> ESTROGÊNIO<br> PROGESTERONA<br> TESTOSTERONA<br> ESTRADIOL<br> CORPO LÚTEO </p>
 	</fieldset>
 
 </div>

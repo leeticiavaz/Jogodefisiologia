@@ -25,11 +25,11 @@ if ($rec == 0) {
 
 
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <title>HipoGame</title>
 <meta name="generator" content="EclipseCrossword" />
-<meta charset="utf-8">
 <link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
@@ -41,6 +41,12 @@ body, h1, h2, h3, h4, h5, h6
 h1, h2, h3, h4, h5, h6
 {
 	color: #5d6a86;
+}
+
+body
+{
+	cursor: default;
+	font-size: small;
 }
 
 body
@@ -248,9 +254,10 @@ nav {
   		
 </nav>
 
-<div style="margin-left: 20%;">
+<div style=" margin-left: 15%;">
 
 <h1 style="margin-left: 30%">Cruzadinha</h1>
+<h3 style="margin-top: -1em;"></h3>
 
 <div id="waitmessage" class="ecw-answerbox">
 	Essa é uma cruzadinha interativa, se você não habilitou o Javascript nessa página, por favor clique em aceitar para ativá-lo.
@@ -262,21 +269,21 @@ nav {
 
 <script type="text/javascript"><!--
 	CrosswordWidth = 21;
-	CrosswordHeight = 24;
+	CrosswordHeight = 23;
 	Words = 7;
-	WordLength = new Array(20, 9, 10, 12, 13, 13, 12);
-	Word = new Array("ADRENOCORTICOTRÓFICO", "OCITOCINA", "PROLACTINA", "VASOPRESSINA", "NEUROHIPÓFISE", "ADENOHIPÓFISE", "LUTEINIZANTE");
-	Clue = new Array("hormônio ACTH secretado pela adenohipófise.", 
-"não é liberado pela ativação das células gonadotrofos.", 
+	WordLength = new Array(9, 10, 13, 20, 12, 12, 13);
+	Word = new Array("OCITOCINA", "PROLACTINA", "ADENOHIPÓFISE", "ADRENOCORTICOTRÓFICO", "LUTEINIZANTE", "VASOPRESSINA", "NEUROHIPÓFISE");
+	Clue = new Array("não é liberado pela ativação das células gonadotrofos.", 
 "Não faz parte da neuro-hipófise.", 
-"Não é secretado pela pituitária anterior.", 
-"Porção da hipófise que não produz hormônios.", 
 "porção da hipófise que é a maior função endócrina.", 
-"hormônio secretado através da ativação da célula gonadotrofos");
-	AnswerHash = new Array(56114, 57691, 76727, 23113, 37082, 14370, 43018);
-	WordX = new Array(1, 0, 18, 9, 13, 2, 6);
-	WordY = new Array(7, 16, 0, 2, 3, 6, 12);
-	LastHorizontalWord = 1;
+"hormônio ACTH secretado pela adenohipófise.", 
+"hormônio secretado através da ativação da célula gonadotrofos.", 
+"Não é secretado pela pituitária anterior.", 
+"Porção da hipófise que não produz hormônios.");
+	AnswerHash = new Array(57691, 76727, 14370, 87040, 43018, 23113, 90408);
+	WordX = new Array(7, 0, 8, 12, 9, 15, 17);
+	WordY = new Array(6, 10, 19, 0, 2, 5, 10);
+	LastHorizontalWord = 2;
 	OnlyCheckOnce = false;
 //-->
 </script>
@@ -506,7 +513,7 @@ function SelectThisWord(event)
 	}
 	
 	document.getElementById("wordlabel").innerHTML = TheirWord;
-	document.getElementById("wordinfo").innerHTML = ((CurrentWord <= LastHorizontalWord) ? "Horizontal, " : "Vertical, ") + WordLength[CurrentWord] + " letras.";
+	document.getElementById("wordinfo").innerHTML = ((CurrentWord <= LastHorizontalWord) ? "Horizontal, " : "Verical, ") + WordLength[CurrentWord] + " letras.";
 	document.getElementById("wordclue").innerHTML = Clue[CurrentWord];
 	document.getElementById("worderror").style.display = "none";
 	document.getElementById("cheatbutton").style.display = (Word.length == 0) ? "none" : "";
@@ -650,6 +657,7 @@ function CheatClick()
 {
 	if (CrosswordFinished) return;
 	var OldWord = CurrentWord;
+	OKClick();
 	ChangeWordStyle(OldWord, "ecw-box ecw-boxcheated_unsel");
 }
 
@@ -670,6 +678,7 @@ function HashWord(Word)
 </td>
 
 <td valign="top" style="padding-left: 1em;">
+
 
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
@@ -723,16 +732,15 @@ BeginCrossword();
 //-->
 </script>
 
+</div>
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
 
-</div>
-
-<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-100%); border-radius: 8px ">
+<div style="position: absolute;  width: 300px; height: 300px; right: 10%; top: 50%; border-radius: 8px ">
 	
 	
 	<fieldset style="border-radius: 8px; background-color: white">
 		<h3>Palavras utilizadas na cruzadinha:</h3>
-	<p>ADRENOCORTICOTROFICO<br> OCITOCINA<br> PROLACTINA<br> VASOPRESSINA<br> NEUROHIPOFISE<br> ADENOHIPOFISE<br> LUTEINIZANTE</p>
+	<p>ADRENOCORTICOTRÓFICO<br> OCITOCINA<br> PROLACTINA<br> VASOPRESSINA<br> NEUROHIPÓFISE<br> ADENOHIPÓFISE<br> LUTEINIZANTE</p>
 	</fieldset>
 
 </div>

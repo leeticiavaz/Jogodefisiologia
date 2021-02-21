@@ -27,9 +27,8 @@ if ($rec == 0) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-<title>Cruzadinha</title>
+<title>HipoGame</title>
 <meta name="generator" content="EclipseCrossword" />
-<meta charset="utf-8">
 <link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
@@ -262,22 +261,22 @@ Essa é uma cruzadinha interativa, se você não habilitou o Javascript nessa p�
 <td class="ecw-crosswordarea">
 
 <script type="text/javascript"><!--
-	CrosswordWidth = 24;
-	CrosswordHeight = 21;
+	CrosswordWidth = 18;
+	CrosswordHeight = 20;
 	Words = 7;
-	WordLength = new Array(16, 18, 15, 7, 9, 10, 12);
-	Word = new Array("HIPERTIREOIDISMO", "NANISMO PITUITÁRIO", "HIPOTIREOIDISMO", "PALIDEZ", "OCITOCINA", "GIGANTISMO", "PROGESTERONA");
-	Clue = new Array("Disfunção causada pelo baixo nível de TSH plasmático.", 
-"A baixa secreção de GH pode causar.", 
-"Disfunção causada pelo alto níel de TSH plasmático.", 
-"Um dos sinais de diminuição de ocitocina no organismo.", 
-"Hormônio que estimula a contração da musculatura lisa durante o parto.", 
+	WordLength = new Array(18, 16, 10, 7, 15, 12, 9);
+	Word = new Array("NANISMO PITUITÁRIO", "HIPERTIREOIDISMO", "GIGANTISMO", "PALIDEZ", "HIPOTIREOIDISMO", "PROGESTERONA", "OCITOCINA");
+	Clue = new Array("A baixa secreção de GH pode causar.", 
+"Disfunção causada pelo baixo nível de TSH plasmático.", 
 "Doença causada pela hipersecreção de GH.", 
-"Um dos hormônios responsáveis pela retenção de líquido e, consequentemente, pelo inchaço.");
-	AnswerHash = new Array(40572, 19410, 9021, 46931, 57691, 29721, 25570);
-	WordX = new Array(8, 2, 0, 16, 2, 14, 17);
-	WordY = new Array(5, 10, 13, 0, 3, 4, 9);
-	LastHorizontalWord = 2;
+"Um dos sinais de diminuição de ocitocina no organismo.", 
+"Disfunção causada pelo alto nível de TSH plasmático.", 
+"Um dos hormônios responsáveis pela retenção de líquido e, consequentemente, pelo inchaço.", 
+"Hormônio que estimula a contração da musculatura lisa durante o parto.");
+	AnswerHash = new Array(80935, 40572, 29721, 46931, 9021, 25570, 57691);
+	WordX = new Array(0, 9, 13, 1, 3, 15, 17);
+	WordY = new Array(6, 0, 1, 5, 5, 5, 6);
+	LastHorizontalWord = 0;
 	OnlyCheckOnce = false;
 //-->
 </script>
@@ -719,21 +718,21 @@ if ($rec == 0) {
 	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none; padding: 20px; background-color: green; font-size: 20px; border-radius: 8px; cursor: pointer;">Enviar</button>
 </div>
 
-
 <script type="text/javascript"><!--
 BeginCrossword();
 //-->
 </script>
 
-<!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
 </div>
 
-<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-80%); border-radius: 8px ">
+<!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
+
+<div style="position: absolute;  width: 300px; height: 300px; border-radius: 8px; right: 10%; top: 50%">
 	
 	
 	<fieldset style="border-radius: 8px; background-color: white">
 		<h3>Palavras utilizadas na cruzadinha:</h3>
-	<p>HIPERTIREOIDISMO<br> NANISMO-PITUITÁRIO<br> HIPOTIREOIDISMO<br> PALIDEZ<br> OCITOCINA<br> GIGANTISMO<br> PROGESTERONA</p>
+	<p>HIPERTIREOIDISMO<br> NANISMO PITUITÁRIO<br> HIPOTIREOIDISMO<br> PALIDEZ<br> OCITOCINA<br> GIGANTISMO<br> PROGESTERONA</p>
 	</fieldset>
 
 </div>

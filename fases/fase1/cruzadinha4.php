@@ -728,7 +728,7 @@ BeginCrossword();
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
 </div>
 
-<div style="position: absolute;  width: 300px; height: 300px; transform: translateX(300%) translateY(-100%); border-radius: 8px ">
+<div style="position: absolute;  width: 300px; height: 300px; right: 10%; top: 50%; border-radius: 8px ">
 	
 	
 	<fieldset style="border-radius: 8px; background-color: white">
