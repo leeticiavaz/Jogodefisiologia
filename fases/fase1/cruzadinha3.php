@@ -276,7 +276,7 @@ nav {
 	Clue = new Array("não é liberado pela ativação das células gonadotrofos.", 
 "Não faz parte da neuro-hipófise.", 
 "porção da hipófise que é a maior função endócrina.", 
-"hormônio ACTH secretado pela adenohipófise.", 
+"hormônio ACTH secretado pela adeno-hipófise.", 
 "hormônio secretado através da ativação da célula gonadotrofos.", 
 "Não é secretado pela pituitária anterior.", 
 "Porção da hipófise que não produz hormônios.");

@@ -25,11 +25,11 @@ if ($rec == 0) {
 
 
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <title>HipoGame</title>
-<meta name="generator" content="EclipseCrossword" charset="utf-8" />
+<meta charset="utf-8">
+<meta name="generator" content="EclipseCrossword" />
 <link rel="icon" href="../../fav.png" />
 <style type="text/css"><!--
 
@@ -251,6 +251,7 @@ nav {
 <div style="width: 50%; margin-left: 25%;">
 
 <h1 align="center">Cruzadinha</h1>
+<h3 style="margin-top: -1em;"></h3>
 
 <div id="waitmessage" class="ecw-answerbox">
 	Essa é uma cruzadinha interativa, se você não habilitou o Javascript nessa página, por favor clique em aceitar para ativá-lo.
@@ -261,20 +262,20 @@ nav {
 <td class="ecw-crosswordarea">
 
 <script type="text/javascript"><!--
-	CrosswordWidth = 18;
-	CrosswordHeight = 14;
+	CrosswordWidth = 15;
+	CrosswordHeight = 16;
 	Words = 6;
-	WordLength = new Array(12, 14, 12, 8, 14, 8);
-	Word = new Array("SOMATOTROFOS", "PARVICELULARES", "GONADOTROFOS", "DOPAMINA", "MAGNOCELULARES", "NEGATIVO");
-	Clue = new Array("Estimulada pelo peptídeo GHRH.", 
-"Secretam neuro-hormônios, que podem ser tanto estimulatórios quanto inibitórios, que terão ação nas células presentes na adenohipófise.", 
-"Estimulada pelo peptídeo GNRH", 
+	WordLength = new Array(8, 14, 8, 14, 12, 12);
+	Word = new Array();
+	Clue = new Array("Qual o tipo de feedback dos hormônios hipotalâmicos?", 
+"Neurônios que produzem os hormônios que serão transportados até a neuro-hipófise.", 
 "Inibe a ação da lactotrofos", 
-"Neurônios que produzem os hormônios que serão transportados até a neurohipófise.", 
-"Qual o tipo de feedback dos hormônios hipotalâmicos?");
-	AnswerHash = new Array(29251, 57163, 15187, 76460, 49383, 72478);
-	WordX = new Array(6, 2, 0, 3, 11, 8);
-	WordY = new Array(4, 7, 13, 0, 0, 6);
+"Secretam neuro-hormônios, que podem ser tanto estimulatórios quanto inibitórios, que terão ação nas células presentes na adeno-hipófise.", 
+"Estimulada pelo peptídeo GHRH.", 
+"Estimulada pelo peptídeo GNRH.");
+	AnswerHash = new Array(72478, 49383, 76460, 57163, 1050, 24288);
+	WordX = new Array(7, 0, 2, 12, 0, 3);
+	WordY = new Array(4, 6, 9, 0, 4, 4);
 	LastHorizontalWord = 2;
 	OnlyCheckOnce = false;
 //-->
@@ -379,7 +380,6 @@ function BeginCrossword()
 		document.getElementById("checkbutton").style.display = "";
 		document.getElementById("checkbutton").style.color = "white";
 		document.getElementById("checkbutton").style.width = "20%";
-
 	}
 }
 
@@ -650,7 +650,8 @@ function CheatClick()
 {
 	if (CrosswordFinished) return;
 	var OldWord = CurrentWord;
-	
+	document.getElementById("wordentry").value = Word[CurrentWord];
+	OKClick();
 	ChangeWordStyle(OldWord, "ecw-box ecw-boxcheated_unsel");
 }
 
@@ -672,7 +673,6 @@ function HashWord(Word)
 
 <td valign="top" style="padding-left: 1em;">
 
-
 <div id="welcomemessage" class="ecw-answerbox" style="display:none;">
 <h3>Bem vindo!</h3>
 <p>Clique em um dos quadradinhos para começar. <br>Escreva a resposta utilizando todos acentos que a palavra tem e espaços caso seja necessário!</p>
@@ -688,7 +688,7 @@ function HashWord(Word)
 <div id="worderror" class="ecw-worderror"></div>
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" style="margin-top:1em;"><tbody><tr><td>
-<button id="cheatbutton" disabled type="button" class="ecw-input ecw-button" onclick="CheatClick();">Resposta</button>
+<button id="cheatbutton" type="button" class="ecw-input ecw-button" onclick="CheatClick();">Solve</button>
 </td><td align="right">
 <button id="okbutton" type="button" class="ecw-input ecw-button" onclick="OKClick();" style="font-weight: bold;">OK</button> &nbsp;
 <button id="cancelbutton" type="button" class="ecw-input ecw-button" onclick="DeselectCurrentWord();">Cancelar</button>
@@ -713,11 +713,20 @@ if ($rec == 0) {
 }
 ?>
 </div>
-
 </td></tr></table>
 
 <div style="margin-top: 1em;" align="center">
 	<button id="checkbutton" type="button" onclick="CheckClick();" style="display: none; padding: 20px; background-color: green; font-size: 20px; border-radius: 8px; cursor: pointer;">Enviar</button>
+</div>
+
+<div style="position: absolute;  width: 300px; height: 300px; right: 10%; top: 50%; border-radius: 8px ">
+	
+	
+	<fieldset style="border-radius: 8px; background-color: white">
+		<h3>Palavras utilizadas na cruzadinha:</h3>
+	<p>SOMATOTROPOS<br> PARVICELULARES<br> GONADOTROPOS<br> DOPAMINA<br> MAGNOCELULARES<br> NEGATIVO</p>
+	</fieldset>
+
 </div>
 
 <script type="text/javascript"><!--
@@ -726,18 +735,6 @@ BeginCrossword();
 </script>
 
 <!-- Created with EclipseCrossword, (C) Copyright 2000-2013 Green Eclipse.  eclipsecrossword.com -->
-
 </div>
-
-<div style="position: absolute;  width: 300px; height: 300px; right: 10%; top: 50%; border-radius: 8px ">
-	
-	
-	<fieldset style="border-radius: 8px; background-color: white">
-		<h3>Palavras utilizadas na cruzadinha:</h3>
-	<p>SOMATOTROFOS<br> PARVICELULARES<br> GONADOTROFOS<br> DOPAMINA<br> MAGNOCELULARES<br> NEGATIVO</p>
-	</fieldset>
-
-</div>
-
 </body></html>
 

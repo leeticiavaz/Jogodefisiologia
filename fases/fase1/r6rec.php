@@ -108,7 +108,7 @@ if (!isset($email)) {
               </select>
             </div>
             <div class="col s10">
-              <p class="black-text" style="margin-top: 2%">A adenohipófise é uma glândula endócrina verdadeira.</p>
+              <p class="black-text" style="margin-top: 2%">A adeno-hipófise é uma glândula endócrina verdadeira.</p>
             </div>
           </div>
         </div>

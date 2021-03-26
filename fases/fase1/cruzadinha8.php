@@ -273,7 +273,7 @@ nav {
 "Principal local de ação da somatostatina.", 
 "responsável pela estimulação da mama.", 
 "Responsável pela estimulação do cortisol.", 
-"Qual hormônio da adenohipófise poderá afetar a síntese de proteínas e a diferenciação celular?", 
+"Qual hormônio da adeno-hipófise poderá afetar a síntese de proteínas e a diferenciação celular?", 
 "Os hormônios hipotalâmicos agem através de  _______ _______.", 
 "Regula a produção de espermatozoides.", 
 "Um dos órgãos alvos dos hormônios gonadotróficos.", 

@@ -55,8 +55,8 @@ if (!isset($email)) {
            <fieldset style="border-radius: 30px; background-color: white">
            <div style="color: black;">Relacione os hormônios de acordo com sua região de secreção.
             <br>
-            (1) Adenohipófise<br>
-            (2) Neurohipófise<br>
+            (1) Adeno-hipófise<br>
+            (2) Neuro-hipófise<br>
            </div>
          </fieldset>
          <br>
